@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{{Van den Abeele} et~al.(2008){Van den Abeele}, Lacor, and
+  Wang}]{abeele-2008}
+{Van den Abeele}, K., Lacor, C., Wang, Z.~J., 2008. On the stability and
+  accuracy of the spectral difference method. Journal of Scientific Computing
+  37, 162--188.
+
+\end{thebibliography}

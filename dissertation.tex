@@ -1,0 +1,61 @@
+% The master file of dissertation
+\documentclass[]{gwthesis}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{enumerate}
+%\usepackage{slashbox}
+\usepackage{caption}
+\usepackage{mathtools}
+
+
+
+\begin{document}
+
+% Title page
+\title{A New Finite Element Method Enabling Parallel Solutions for Second Order Elliptic Equation}
+\author{Bin Zhang}
+\prevdegrees{B.S. in Mechanics, June 2009, University of Science and Technology of China \\
+             M.S. in Aerospace Engineering, August 2012, University of Notre Dame}
+\school{The School of Engineering and Applied Science}
+\institution{The George Washington University}
+\degree{Doctor of Philosophy}
+\degreeyear{2016}
+\degreemonth{August}
+\degreeday{31}
+\defensedate{July 22, 2016}
+\advisorname{Chunlei Liang}
+\advisortitle{Associate Professor of Engineering and Applied Science}
+\committeea{Chunlei Liang, Associate Professor of Engineering and Applied Science, Dissertation Director}
+\committeeb{Michael Plesniak, Professor of Engineering and Applied Science, Committee Member}
+\committeec{Charles Garris, Professor of Engineering and Applied Science, Committee Member}
+\committeed{Murli Gupta, Professor of Mathematics, Committee Member}
+\committeee{Johan Larsson, Assistant Professor of Mechanical Engineering, University of Maryland, College Park, Committee Member}
+\committeef{David Kopriva, Professor of Mathematics, Florida State University, Committee Member}
+
+\maketitle
+
+% frontmatter
+\begin{frontmatter}
+  \approvalpage
+  \copyrightpage
+  \include{dedication}
+  \include{acknowledgements}
+  \include{abstract}
+  \tableofcontents \clearpage
+  \listoffigures   \clearpage
+  \listoftables
+\end{frontmatter}
+
+
+% chapters
+\include{chapter1}
+
+
+\bibliographystyle{elsarticle}
+\bibliography{references}
+
+\end{document}
