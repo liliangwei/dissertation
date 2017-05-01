@@ -8,4 +8,28 @@
 \BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Engineering Background}{section.1.1}% 8
 \BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Numerical Background}{section.1.1}% 9
 \BOOKMARK [1][-]{section.1.2}{1.2 Objectives of this Work}{chapter.1}% 10
-\BOOKMARK [0][-]{chapter*.12}{References}{}% 11
+\BOOKMARK [0][-]{chapter.2}{Chapter 2: Numerical Method}{}% 11
+\BOOKMARK [1][-]{section.2.1}{2.1 Mathematical Models and Numerical Method}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Linear Elastic Equation and Weak Galerkin Method}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{2.2 Existing Numerical Methods Review}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Classic Continuous Galerkin Finite Element Method}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Discontinuous Galerkin Finite Element Method}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Mixed Finite Element Method}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{2.3 Weak Galerkin Finite Element Methods}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Weak Galerkin triangular meshes}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Weak Galerkin quadrilateral meshes}{section.2.3}% 20
+\BOOKMARK [0][-]{chapter.3}{Chapter 3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}{}% 21
+\BOOKMARK [0][-]{chapter.4}{Chapter 4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}{}% 22
+\BOOKMARK [1][-]{section.4.1}{4.1 Domain Decomposition Scheme}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 FETI Method}{section.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Balancing Domain Decomposition by Constraints}{section.4.1}% 25
+\BOOKMARK [1][-]{section.4.2}{4.2 WG-BDDC Method}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{4.3 Schur Complement Method for subdomain \040j }{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{4.4 BDDC Preconditioner}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.5}{4.5 WG-BDDC Method Implementation}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.6}{4.6 Preconditioned Conjugate Gradient Method}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.7}{4.7 Parallel Computing Scheme}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.8}{4.8 Numerical Results}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.8.1}{4.8.1 Poisson Equation}{section.4.8}% 33
+\BOOKMARK [2][-]{subsection.4.8.2}{4.8.2 Linear Elastic Equation}{section.4.8}% 34
+\BOOKMARK [0][-]{chapter*.23}{References}{}% 35

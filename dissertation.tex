@@ -12,29 +12,59 @@
 \usepackage{mathtools}
 
 
+\usepackage[makeroom]{cancel}
+\usepackage{multirow}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\newcommand{\highlight}[2][yellow]{\mathchoice%
+	{\colorbox{#1}{$\displaystyle#2$}}%
+	{\colorbox{#1}{$\textstyle#2$}}%
+	{\colorbox{#1}{$\scriptstyle#2$}}%
+	{\colorbox{#1}{$\scriptscriptstyle#2$}}}%
+
+
+\newcommand{\Keywords}[1]{\par\noindentß
+	{\small{\em Keywords\/}: #1}}
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{\ensuremath{#2}}}%
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage{tabularx}
+
+
 
 \begin{document}
 
 % Title page
 \title{A New Finite Element Method Enabling Parallel Solutions for Second Order Elliptic Equation}
-\author{Bin Zhang}
-\prevdegrees{B.S. in Mechanics, June 2009, University of Science and Technology of China \\
-             M.S. in Aerospace Engineering, August 2012, University of Notre Dame}
+\author{Liangwei Li}
+\prevdegrees{B.S. in Mechanical Engineering, June 2011, Sun Yat-San University \\
+             M.S. in Mechanical Engineering, August 2013, the George Washington University}
 \school{The School of Engineering and Applied Science}
 \institution{The George Washington University}
 \degree{Doctor of Philosophy}
-\degreeyear{2016}
-\degreemonth{August}
+\degreeyear{2017}
+\degreemonth{May}
 \degreeday{31}
-\defensedate{July 22, 2016}
-\advisorname{Chunlei Liang}
+\defensedate{March 15, 2017}
+\advisorname{Chunlei Liang, Junping Wang}
 \advisortitle{Associate Professor of Engineering and Applied Science}
 \committeea{Chunlei Liang, Associate Professor of Engineering and Applied Science, Dissertation Director}
-\committeeb{Michael Plesniak, Professor of Engineering and Applied Science, Committee Member}
-\committeec{Charles Garris, Professor of Engineering and Applied Science, Committee Member}
-\committeed{Murli Gupta, Professor of Mathematics, Committee Member}
-\committeee{Johan Larsson, Assistant Professor of Mechanical Engineering, University of Maryland, College Park, Committee Member}
-\committeef{David Kopriva, Professor of Mathematics, Florida State University, Committee Member}
+\committeeb{Adam Wickenheiser, Assistant Professor of Engineering and Applied Science, Committee Member}
+\committeec{Junping Wang, Professor of Engineering and Applied Science, Committee Member}
+\committeed{Lin Mu, Professor of Mathematics, Committee Member}
+\committeee{Mortan Friedman, Assistant Professor of Mechanical Engineering, Committee Member}
+
 
 \maketitle
 
@@ -50,9 +80,15 @@
   \listoftables
 \end{frontmatter}
 
-
 % chapters
 \include{chapter1}
+
+\include{chapter2}
+
+\include{chapter3}
+
+\include{chapter4}
+
 
 
 \bibliographystyle{elsarticle}

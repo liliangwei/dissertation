@@ -1,13 +1,119 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 
-\bibitem[{{Van den Abeele} et~al.(2008){Van den Abeele}, Lacor, and
-  Wang}]{abeele-2008}
-{Van den Abeele}, K., Lacor, C., Wang, Z.~J., 2008. On the stability and
-  accuracy of the spectral difference method. Journal of Scientific Computing
-  37, 162--188.
+\bibitem[{Anderson et~al.(1999)Anderson, Bai, Bischof, Blackford, Demmel,
+  Dongarra, Du~Croz, Greenbaum, Hammarling, McKenney,
+  et~al.}]{anderson1999lapack}
+Anderson, E., Bai, Z., Bischof, C., Blackford, L.~S., Demmel, J., Dongarra, J.,
+  Du~Croz, J., Greenbaum, A., Hammarling, S., McKenney, A., et~al., 1999.
+  LAPACK Users' guide. SIAM.
+
+\bibitem[{Bramble and Pasciak(1988)}]{bramble1988preconditioning}
+Bramble, J.~H., Pasciak, J.~E., 1988. A preconditioning technique for
+  indefinite systems resulting from mixed approximations of elliptic problems.
+  Mathematics of Computation 50~(181), 1--17.
+
+\bibitem[{Ciarlet(2002)}]{ciarlet2002finite}
+Ciarlet, P.~G., 2002. The finite element method for elliptic problems. SIAM.
+
+\bibitem[{Dohrmann(2003)}]{dohrmann2003preconditioner}
+Dohrmann, C.~R., 2003. A preconditioner for substructuring based on constrained
+  energy minimization. SIAM Journal on Scientific Computing 25~(1), 246--258.
+
+\bibitem[{Duff et~al.(1986)Duff, Erisman, and Reid}]{duff1986direct}
+Duff, I.~S., Erisman, A.~M., Reid, J.~K., 1986. Direct methods for sparse
+  matrices. Clarendon press Oxford.
+
+\bibitem[{Eisenstat(1981)}]{eisenstat1981efficient}
+Eisenstat, S.~C., 1981. Efficient implementation of a class of preconditioned
+  conjugate gradient methods. SIAM Journal on Scientific and Statistical
+  Computing 2~(1), 1--4.
+
+\bibitem[{Farhat et~al.(2001)Farhat, Lesoinne, LeTallec, Pierson, and
+  Rixen}]{farhat2001feti}
+Farhat, C., Lesoinne, M., LeTallec, P., Pierson, K., Rixen, D., 2001. Feti-dp:
+  a dual--primal unified feti method—part i: A faster alternative to the
+  two-level feti method. International journal for numerical methods in
+  engineering 50~(7), 1523--1544.
+
+\bibitem[{Farhat et~al.(1994)Farhat, Mandel, and Roux}]{farhat1994optimal}
+Farhat, C., Mandel, J., Roux, F.~X., 1994. Optimal convergence properties of
+  the feti domain decomposition method. Computer methods in applied mechanics
+  and engineering 115~(3-4), 365--385.
+
+\bibitem[{Gropp et~al.(1996)Gropp, Lusk, Doss, and Skjellum}]{gropp1996high}
+Gropp, W., Lusk, E., Doss, N., Skjellum, A., 1996. A high-performance, portable
+  implementation of the mpi message passing interface standard. Parallel
+  computing 22~(6), 789--828.
+
+\bibitem[{Hughes(2012)}]{hughes2012finite}
+Hughes, T.~J., 2012. The finite element method: linear static and dynamic
+  finite element analysis. Courier Corporation.
+
+\bibitem[{Li and Widlund(2006)}]{li2006feti}
+Li, J., Widlund, O.~B., 2006. Feti-dp, bddc, and block cholesky methods.
+  International journal for numerical methods in engineering 66~(2), 250--271.
+
+\bibitem[{Li and Wang(2013)}]{li2013weak}
+Li, Q.~H., Wang, J., 2013. Weak galerkin finite element methods for parabolic
+  equations. Numerical Methods for Partial Differential Equations 29~(6),
+  2004--2024.
+
+\bibitem[{Mandel(1993)}]{mandel1993balancing}
+Mandel, J., 1993. Balancing domain decomposition. Communications in numerical
+  methods in engineering 9~(3), 233--241.
+
+\bibitem[{Mandel et~al.(2005)Mandel, Dohrmann, and
+  Tezaur}]{mandel2005algebraic}
+Mandel, J., Dohrmann, C.~R., Tezaur, R., 2005. An algebraic theory for primal
+  and dual substructuring methods by constraints. Applied numerical mathematics
+  54~(2), 167--193.
+
+\bibitem[{Mu et~al.(2013)Mu, Wang, Wang, and Ye}]{mu2013computational}
+Mu, L., Wang, J., Wang, Y., Ye, X., 2013. A computational study of the weak
+  galerkin method for second-order elliptic equations. Numerical Algorithms
+  63~(4), 753--777.
+
+\bibitem[{Mu et~al.(2012)Mu, Wang, and Ye}]{mu2012weak}
+Mu, L., Wang, J., Ye, X., 2012. Weak galerkin finite element methods on
+  polytopal meshes. arXiv preprint arXiv:1204.3655.
+
+\bibitem[{Mu et~al.(2014)Mu, Wang, and Ye}]{mu2014weak}
+Mu, L., Wang, J., Ye, X., 2014. Weak galerkin finite element methods for the
+  biharmonic equation on polytopal meshes. Numerical Methods for Partial
+  Differential Equations 30~(3), 1003--1029.
+
+\bibitem[{Mu et~al.(2015)Mu, Wang, and Ye}]{Mu2015new}
+Mu, L., Wang, J., Ye, X., 2015. A new weak galerkin finite element method for
+  the helmholtz equation. IMA Journal of Numerical Analysis 35~(3), 1228--1255.
+
+\bibitem[{Reddy(1993)}]{reddy1993introduction}
+Reddy, J.~N., 1993. An introduction to the finite element method. Vol.~2.
+  McGraw-Hill New York.
+
+\bibitem[{Tu(2007{\natexlab{a}})}]{tu2007three3d}
+Tu, X., 2007{\natexlab{a}}. Three-level bddc in three dimensions. SIAM Journal
+  on Scientific Computing 29~(4), 1759--1780.
+
+\bibitem[{Tu(2007{\natexlab{b}})}]{tu2007three2d}
+Tu, X., 2007{\natexlab{b}}. Three-level bddc in two dimensions. International
+  journal for numerical methods in engineering 69~(1), 33--59.
+
+\bibitem[{Wang et~al.(2016)Wang, Wang, Wang, and Zhang}]{wang2016locking}
+Wang, C., Wang, J., Wang, R., Zhang, R., 2016. A locking-free weak galerkin
+  finite element method for elasticity problems in the primal formulation.
+  Journal of Computational and Applied Mathematics 307, 346--366.
+
+\bibitem[{Wang and Ye(2014)}]{wang2014weak}
+Wang, J., Ye, X., 2014. A weak galerkin mixed finite element method for second
+  order elliptic problems. Mathematics of Computation 83~(289), 2101--2126.
+
+\bibitem[{Zienkiewicz et~al.(1977)Zienkiewicz, Taylor, and
+  Taylor}]{zienkiewicz1977finite}
+Zienkiewicz, O.~C., Taylor, R.~L., Taylor, R.~L., 1977. The finite element
+  method. Vol.~3. McGraw-hill London.
 
 \end{thebibliography}

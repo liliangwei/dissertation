@@ -1,12 +1,36 @@
 \contentsline {chapter}{Dedication}{iv}{section*.1}
 \contentsline {chapter}{Acknowledgements}{v}{section*.3}
 \contentsline {chapter}{Abstract}{vi}{section*.5}
-\contentsline {chapter}{List of Figures}{viii}{section*.8}
-\contentsline {chapter}{List of Tables}{ix}{section*.10}
+\contentsline {chapter}{List of Figures}{xi}{section*.8}
+\contentsline {chapter}{List of Tables}{xii}{section*.10}
 \contentsline {chapter}{{Chapter\nobreakspace {}1: Introduction}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Backgrounds}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Engineering Background}{1}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}Numerical Background}{1}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}Objectives of this Work}{1}{section.1.2}
-\contentsline {chapter}{References}{2}{chapter*.12}
+\contentsline {chapter}{{Chapter\nobreakspace {}2: Numerical Method}}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Mathematical Models and Numerical Method}{2}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Linear Elastic Equation and Weak Galerkin Method}{2}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Existing Numerical Methods Review}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Classic Continuous Galerkin Finite Element Method}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Discontinuous Galerkin Finite Element Method}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Mixed Finite Element Method}{5}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Weak Galerkin Finite Element Methods}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Weak Galerkin triangular meshes}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Weak Galerkin quadrilateral meshes}{6}{subsection.2.3.2}
+\contentsline {chapter}{{Chapter\nobreakspace {}3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}}{7}{chapter.3}
+\contentsline {chapter}{{Chapter\nobreakspace {}4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}Domain Decomposition Scheme}{8}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}FETI Method}{9}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{9}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}WG-BDDC Method}{10}{section.4.2}
+\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{12}{section.4.3}
+\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{15}{section.4.4}
+\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{16}{section.4.5}
+\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{17}{section.4.6}
+\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{20}{section.4.7}
+\contentsline {section}{\numberline {4.8}Numerical Results}{20}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{20}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{23}{subsection.4.8.2}
+\contentsline {chapter}{References}{26}{chapter*.23}
 \contentsfinish 
