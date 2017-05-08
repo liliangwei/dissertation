@@ -19,17 +19,25 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Weak Galerkin triangular meshes}{section.2.3}% 19
 \BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Weak Galerkin quadrilateral meshes}{section.2.3}% 20
 \BOOKMARK [0][-]{chapter.3}{Chapter 3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}{}% 21
-\BOOKMARK [0][-]{chapter.4}{Chapter 4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}{}% 22
-\BOOKMARK [1][-]{section.4.1}{4.1 Domain Decomposition Scheme}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 FETI Method}{section.4.1}% 24
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Balancing Domain Decomposition by Constraints}{section.4.1}% 25
-\BOOKMARK [1][-]{section.4.2}{4.2 WG-BDDC Method}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.3}{4.3 Schur Complement Method for subdomain \040j }{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.4}{4.4 BDDC Preconditioner}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.5}{4.5 WG-BDDC Method Implementation}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.6}{4.6 Preconditioned Conjugate Gradient Method}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.7}{4.7 Parallel Computing Scheme}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.8}{4.8 Numerical Results}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.8.1}{4.8.1 Poisson Equation}{section.4.8}% 33
-\BOOKMARK [2][-]{subsection.4.8.2}{4.8.2 Linear Elastic Equation}{section.4.8}% 34
-\BOOKMARK [0][-]{chapter*.23}{References}{}% 35
+\BOOKMARK [1][-]{section.3.1}{3.1 Nonlinear Elasticity Equation}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.2}{3.2 Hybrid WG-CG Element}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.3}{3.3 Generic Stabilizer}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.4}{3.4 Parallel Computing Method}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.5}{3.5 The Parallel Computing Work Flow}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.6}{3.6 Numerical Results}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.6.1}{3.6.1 Geometric linear elastic equation}{section.3.6}% 28
+\BOOKMARK [2][-]{subsection.3.6.2}{3.6.2 Geometric nonlinear elasticity equation}{section.3.6}% 29
+\BOOKMARK [0][-]{chapter.4}{Chapter 4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}{}% 30
+\BOOKMARK [1][-]{section.4.1}{4.1 Domain Decomposition Scheme}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 FETI-DP Method}{section.4.1}% 32
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Balancing Domain Decomposition by Constraints}{section.4.1}% 33
+\BOOKMARK [1][-]{section.4.2}{4.2 WG-BDDC Method}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.3}{4.3 Schur Complement Method for subdomain \040j }{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.4}{4.4 BDDC Preconditioner}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.5}{4.5 WG-BDDC Method Implementation}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.6}{4.6 Preconditioned Conjugate Gradient Method}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.7}{4.7 Parallel Computing Scheme}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.8}{4.8 Numerical Results}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.8.1}{4.8.1 Poisson Equation}{section.4.8}% 41
+\BOOKMARK [2][-]{subsection.4.8.2}{4.8.2 Linear Elastic Equation}{section.4.8}% 42
+\BOOKMARK [0][-]{chapter*.40}{References}{}% 43

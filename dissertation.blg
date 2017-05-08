@@ -10,46 +10,66 @@ A level-1 auxiliary file: chapter3.aux
 A level-1 auxiliary file: chapter4.aux
 The style file: elsarticle.bst
 Database file #1: references.bib
+Repeated entry---line 621 of file references.bib
+ : @article{wang2013weak
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 641 of file references.bib
+ : @article{li2013weak
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 663 of file references.bib
+ : @article{wang2014weak
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 765 of file references.bib
+ : @article{farhat2001feti
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 787 of file references.bib
+ : @article{farhat1994optimal
+ :                           ,
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in reddy1993introduction
-You've used 24 entries,
+You've used 36 entries,
             2821 wiz_defined-function locations,
-            785 strings with 8531 characters,
-and the built_in function-call counts, 11764 in all, are:
-= -- 1207
-> -- 584
-< -- 14
-+ -- 244
-- -- 195
-* -- 1023
-:= -- 2127
-add.period$ -- 74
-call.type$ -- 24
-change.case$ -- 178
-chr.to.int$ -- 23
-cite$ -- 25
-duplicate$ -- 415
-empty$ -- 815
-format.name$ -- 259
-if$ -- 2349
+            856 strings with 10399 characters,
+and the built_in function-call counts, 17478 in all, are:
+= -- 1839
+> -- 792
+< -- 25
++ -- 334
+- -- 261
+* -- 1492
+:= -- 3123
+add.period$ -- 111
+call.type$ -- 36
+change.case$ -- 262
+chr.to.int$ -- 35
+cite$ -- 37
+duplicate$ -- 636
+empty$ -- 1237
+format.name$ -- 365
+if$ -- 3521
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 30
-newline$ -- 79
-num.names$ -- 96
-pop$ -- 171
+missing$ -- 42
+newline$ -- 115
+num.names$ -- 144
+pop$ -- 241
 preamble$ -- 1
-purify$ -- 160
+purify$ -- 230
 quote$ -- 0
-skip$ -- 326
+skip$ -- 505
 stack$ -- 0
-substring$ -- 722
-swap$ -- 48
-text.length$ -- 2
+substring$ -- 1137
+swap$ -- 83
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 306
 warning$ -- 1
-while$ -- 106
+while$ -- 165
 width$ -- 0
-write$ -- 265
-(There was 1 warning)
+write$ -- 396
+(There were 5 error messages)

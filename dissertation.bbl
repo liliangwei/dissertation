@@ -1,8 +1,12 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{36}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Adeli et~al.(1978)Adeli, Weaver, and Gere}]{adeli1978algorithms}
+Adeli, H., Weaver, W., Gere, J.~M., 1978. Algorithms for nonlinear structural
+  dynamics. Journal of the Structural Division 104~(2), 263--280.
 
 \bibitem[{Anderson et~al.(1999)Anderson, Bai, Bischof, Blackford, Demmel,
   Dongarra, Du~Croz, Greenbaum, Hammarling, McKenney,
@@ -18,6 +22,15 @@ Bramble, J.~H., Pasciak, J.~E., 1988. A preconditioning technique for
 
 \bibitem[{Ciarlet(2002)}]{ciarlet2002finite}
 Ciarlet, P.~G., 2002. The finite element method for elliptic problems. SIAM.
+
+\bibitem[{Courant(1994)}]{courant1994variational}
+Courant, R., 1994. Variational methods for the solution of problems of
+  equilibrium and vibrations. Lecture Notes in Pure and Applied Mathematics,
+  1--1.
+
+\bibitem[{Cundall and Strack(1979)}]{cundall1979discrete}
+Cundall, P.~A., Strack, O.~D., 1979. A discrete numerical model for granular
+  assemblies. geotechnique 29~(1), 47--65.
 
 \bibitem[{Dohrmann(2003)}]{dohrmann2003preconditioner}
 Dohrmann, C.~R., 2003. A preconditioner for substructuring based on constrained
@@ -39,19 +52,52 @@ Farhat, C., Lesoinne, M., LeTallec, P., Pierson, K., Rixen, D., 2001. Feti-dp:
   two-level feti method. International journal for numerical methods in
   engineering 50~(7), 1523--1544.
 
+\bibitem[{Farhat and Mandel(1998)}]{farhat1998two}
+Farhat, C., Mandel, J., 1998. The two-level feti method for static and dynamic
+  plate problems part i: An optimal iterative solver for biharmonic systems.
+  Computer methods in applied mechanics and engineering 155~(1-2), 129--151.
+
 \bibitem[{Farhat et~al.(1994)Farhat, Mandel, and Roux}]{farhat1994optimal}
 Farhat, C., Mandel, J., Roux, F.~X., 1994. Optimal convergence properties of
   the feti domain decomposition method. Computer methods in applied mechanics
   and engineering 115~(3-4), 365--385.
+
+\bibitem[{Farhat and Roux(1991)}]{farhat1991method}
+Farhat, C., Roux, F.-X., 1991. A method of finite element tearing and
+  interconnecting and its parallel solution algorithm. International Journal
+  for Numerical Methods in Engineering 32~(6), 1205--1227.
 
 \bibitem[{Gropp et~al.(1996)Gropp, Lusk, Doss, and Skjellum}]{gropp1996high}
 Gropp, W., Lusk, E., Doss, N., Skjellum, A., 1996. A high-performance, portable
   implementation of the mpi message passing interface standard. Parallel
   computing 22~(6), 789--828.
 
+\bibitem[{Hahn(1991)}]{hahn1991modified}
+Hahn, G., 1991. A modified euler method for dynamic analyses. International
+  Journal for Numerical Methods in Engineering 32~(5), 943--955.
+
+\bibitem[{Hrennikoff(1941)}]{hrennikoff1941solution}
+Hrennikoff, A., 1941. Solution of problems of elasticity by the framework
+  method. Journal of applied mechanics 8~(4), 169--175.
+
 \bibitem[{Hughes(2012)}]{hughes2012finite}
 Hughes, T.~J., 2012. The finite element method: linear static and dynamic
   finite element analysis. Courier Corporation.
+
+\bibitem[{Jameson(1991)}]{jameson1991time}
+Jameson, A., 1991. Time dependent calculations using multigrid, with
+  applications to unsteady flows past airfoils and wings. In: 10th
+  Computational Fluid Dynamics Conference. p. 1596.
+
+\bibitem[{Klawonn and Widlund(2001)}]{klawonn2001feti}
+Klawonn, A., Widlund, O.~B., 2001. Feti and neumann-neumann iterative
+  substructuring methods: connections and new results. Communications on pure
+  and applied Mathematics 54~(1), 57--90.
+
+\bibitem[{Klawonn and Widlund(2006)}]{klawonn2006dual}
+Klawonn, A., Widlund, O.~B., 2006. Dual-primal feti methods for linear
+  elasticity. Communications on pure and applied mathematics 59~(11),
+  1523--1572.
 
 \bibitem[{Li and Widlund(2006)}]{li2006feti}
 Li, J., Widlund, O.~B., 2006. Feti-dp, bddc, and block cholesky methods.
@@ -90,6 +136,11 @@ Mu, L., Wang, J., Ye, X., 2014. Weak galerkin finite element methods for the
 Mu, L., Wang, J., Ye, X., 2015. A new weak galerkin finite element method for
   the helmholtz equation. IMA Journal of Numerical Analysis 35~(3), 1228--1255.
 
+\bibitem[{Ng et~al.(1999)Ng, Chan, and Tang}]{ng1999fast}
+Ng, M.~K., Chan, R.~H., Tang, W.-C., 1999. A fast algorithm for deblurring
+  models with neumann boundary conditions. SIAM Journal on Scientific Computing
+  21~(3), 851--866.
+
 \bibitem[{Reddy(1993)}]{reddy1993introduction}
 Reddy, J.~N., 1993. An introduction to the finite element method. Vol.~2.
   McGraw-Hill New York.
@@ -106,6 +157,11 @@ Tu, X., 2007{\natexlab{b}}. Three-level bddc in two dimensions. International
 Wang, C., Wang, J., Wang, R., Zhang, R., 2016. A locking-free weak galerkin
   finite element method for elasticity problems in the primal formulation.
   Journal of Computational and Applied Mathematics 307, 346--366.
+
+\bibitem[{Wang and Ye(2013)}]{wang2013weak}
+Wang, J., Ye, X., 2013. A weak galerkin finite element method for second-order
+  elliptic problems. Journal of Computational and Applied Mathematics 241,
+  103--115.
 
 \bibitem[{Wang and Ye(2014)}]{wang2014weak}
 Wang, J., Ye, X., 2014. A weak galerkin mixed finite element method for second
