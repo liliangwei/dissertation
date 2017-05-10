@@ -5,8 +5,8 @@
 \contentsline {table}{\numberline {3.2}{\ignorespaces Numerical results for triangular element.\relax }}{25}{table.caption.27}
 \contentsline {table}{\numberline {3.3}{\ignorespaces Numerical results for quadrilateral element.\relax }}{25}{table.caption.28}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Performance with $P_{k}P_{k-1}P_{k-1}^2$.\relax }}{50}{table.caption.35}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Performance with $P_{k}P_{k}P_{k-1}^2$.\relax }}{51}{table.caption.36}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Case 1: Performance with $P_{k}P_{k}P_{k}^2$.\relax }}{52}{table.caption.37}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Case 1: Performance with $P_{1}P_{1}$, $ \lambda = 1, \mu = 0.5 $\relax }}{52}{table.caption.38}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Performance with $P_{k}P_{k-1}P_{k-1}^2$.\relax }}{51}{table.caption.35}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Performance with $P_{k}P_{k}P_{k-1}^2$.\relax }}{52}{table.caption.36}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Case 1: Performance with $P_{k}P_{k}P_{k}^2$.\relax }}{53}{table.caption.37}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Case 1: Performance with $P_{1}P_{1}$, $ \lambda = 1, \mu = 0.5 $\relax }}{53}{table.caption.38}
 \contentsfinish 
