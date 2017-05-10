@@ -21,7 +21,7 @@ In this section, we begin with an example of a two-dimensional, two partitioned 
 	\begin{tabular}{c}
 		\includegraphics[width=0.6\textwidth]{./pics/feti1}
 	\end{tabular}
-	\caption{\footnotesize Computational domain partitioned into two nonoverlapping subdomains}\label{fig4: feti1}
+	\caption{\footnotesize Computational domain partitioned into two nonoverlapping subdomains.}\label{fig4: feti1}
 \end{figure}
 
 the original governing equation in matrix form is $ \mathbf{A} \mathbf{u} = \mathbf{f} $. We begin to compute the stiffness matrix for each subdomain that
@@ -36,9 +36,324 @@ u_{I}^{(j)} \\ u_{\Gamma}^{(j)}
 f_{I}^{(j)} \\ f_{\Gamma}^{(j)}
 \end{pmatrix}
 \end{equation}
+where $ j = 1, 2 $.
+
+
+The boundary condition along $ \partial \Omega  $ is Dirichlet condition, a homogeneous Neumann condition is applied on $ \Gamma $.
+
+The global problem after assemblage is that
+\begin{equation}
+\begin{pmatrix}
+A_{II}^{(1)} & 0 & A_{I\Gamma}^{(1)} \\
+0 & A_{II}^{(2)} & A_{I\Gamma}^{(2)} \\
+A_{\Gamma I}^{(1)} & A_{\Gamma I}^{(2)} & A_{\Gamma \Gamma}\\
+\end{pmatrix} \begin{pmatrix}
+u_{I}^{(1)} \\ u_{I}^{(2)} \\ u_{\Gamma}
+\end{pmatrix} = \begin{pmatrix}
+f_{I}^{(1)} \\ f_{I}^{(2)} \\ f_{\Gamma}
+\end{pmatrix}
+\end{equation}
+where $ A_{\Gamma} = A_{\Gamma \Gamma}^{(1)} + A_{\Gamma \Gamma}^{(2)} $ and $ f_{\Gamma} = f_{\Gamma}^{(1)} + f_{\Gamma}^{(2)} $. The unknown variables are decomposed into two computational subdomains. The DOFs are represented by $ \Omega_{1}, \Omega_{2} $ and $ \Gamma $ respectively.
+
+Since the interior matrix are square and can be inversed. Then we can eliminate the interior unknown variables by Schur complement operators. The interface unknown DOFs shall have the new form as
+\begin{equation}
+S^{(j)} := A_{\Gamma \Gamma}^{(j)} - A_{\Gamma I}^{(j)} {A_{II}^{(j)}}^{-1}A_{I \Gamma}^{(j)}
+\end{equation}
+
+\begin{equation}
+g_{\Gamma}^{(j)} := f_{\Gamma}^{(j)} - A_{\Gamma I}^{(j)} {A_{II}^{(i)}}^{-1} f_{I}^{(j)}
+\end{equation}
+
+based on the given matrix $ Au = f $, we can reduce the equation matrices into interface DOF only system
+
+\begin{equation}
+(S^{(1)} + S^{(2)}) u_{\Gamma} = g_{\Gamma}^{(1)} + g_{\Gamma}^{2}
+\end{equation}
+
+Now we can find that the original large matrix $ A $ is reduced to a small global matrix $ S^{(j)} $ which times unknown variable vector along the interface. The interior unknown variables can be recovered locally based the solution of interface.
+
+For FETI method, we introduce the Lagrange multiplier to enforce the continuity along the interface. The governing equation in matrix form is 
+\begin{equation}
+\begin{pmatrix}
+A_{II}^{(j)} & A_{I \Gamma}^{(j)} \\
+A_{\Gamma I}^{(j)} & A_{\Gamma \Gamma}^{(j)} \\
+\end{pmatrix} \begin{pmatrix}
+u_{I}^{(j)} \\ u_{\Gamma}^{(j)} 
+\end{pmatrix} = \begin{pmatrix}
+f_{I}^{(j)} \\ f_{\Gamma}^{(j)} + \lambda_{\Gamma}^{(j)}
+\end{pmatrix}
+\end{equation}
+where $ j = 1, 2 $ and $ \lambda_{\Gamma} = \lambda_{\Gamma}^{(1)} = - \lambda_{\Gamma}^{(2)} $. $ \lambda_{\Gamma} $ is an unknown flux vector, namely, Lagrange multiplier. We can solve this linear system following previous fashion that
+
+\begin{equation}
+g_{\Gamma}^{(j)} = f_{\Gamma}^{(j)} - A_{\Gamma I}^{(j)} {A_{II}^{(j)}}^{-1} f_{I}^{(j)}
+\end{equation}
+
+\begin{equation}
+u_{\Gamma}^{(j)} = {S^{(j)}}^{-1} (g_{\Gamma}^{(j)} + \lambda_{\Gamma}^{(j)})
+\end{equation}
+
+to maintain the continuity along the interface, the condition is set as
+\begin{equation}
+u_{\Gamma}^{(1)} = u_{\Gamma}^{(2)}
+\end{equation}
+the value of DOFs for the same position has to be same. To resolve the rigid body motion problem, we obtain
+\begin{equation}
+F \lambda_{\Gamma} = d_{\Gamma}
+\end{equation}
+\begin{equation}
+F = {S^{(1)}}^{-1} + {S^{(2)}}^{-1}
+\end{equation}
+
+An improved version of FETI is FETI-DP. We can partitioned the subdomains with floating constraints.
+
+\begin{figure}[h]
+	\centering
+	\begin{tabular}{c}
+		\includegraphics[width=0.5\textwidth]{./pics/feti2}
+	\end{tabular}
+	\caption{\footnotesize Computational domain partitioned into two nonoverlapping subdomains with floating constaint.}
+\end{figure}
+
+From the above figure, the interface edge is continued to split into $ (u_1, \cdots, u_m, \cdots, u+l) $ then the linear system can be written as
+
+\begin{equation}
+\begin{pmatrix}
+A_{II}^{(j)} & A_{1I}^{(j)} & \cdots & A_{mI}^{(j)} & \cdots & A_{l I}^{(j)} \\
+A_{1 I}^{(j)} & A_{11}^{(j)} & \cdots & A_{1m}^{(j)} & \cdots & A_{1l}^{(j)} \\
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+A_{mI}^{(j)} & A_{m1}^{(j)} & \cdots & A_{mm}^{(j)} & \cdots & A_{ml}^{(j)} \\
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+A_{lI}^{(j)} & A_{l1}^{(j)} & \cdots & A_{lm}^{(j)} & \cdots & A_{ll}^{(j)}\\
+\end{pmatrix} \begin{pmatrix}
+u_{I}^{(j)} \\ u_{1}^{(j)} \\ \vdots \\ u_{m}^{(j)} \\ \vdots \\ u_{l}^{(j)}\\
+\end{pmatrix} = \begin{pmatrix}
+f_{I}^{(j)} \\ f_{1}^{(j)} \\ \vdots \\ f_{m}^{(j)} \\ \vdots \\ f_{l}^{(j)}
+\end{pmatrix}
+\end{equation}
+
+The variable along the interface of two nonoverlapping subdomian can be elaborate as
+\begin{equation}
+\begin{pmatrix}
+u_{1}^{(j)} \\ \vdots \\ u_{m}^{(j)} \\ \vdots \\ u_{l}^{(j)}
+\end{pmatrix} = T_{E} \begin{pmatrix}
+\hat{u}_{1}^{(j)} \\ \vdots \\ \hat{u}_{m}^{(j)} \\ \vdots \\ \hat{u}_{l}^{(j)}
+\end{pmatrix} = \begin{pmatrix}
+1 & \cdots & 1 & 0 & \cdots \\
+\vdots & \ddots & \vdots & 0 & \cdots \\
+-1 & \cdots & 1 & \cdots & -1 \\
+\cdots & 0 & \vdots & \ddots &  \vdots \\
+\cdots & 0 & 1 & \cdots & 1\\
+\end{pmatrix} \begin{pmatrix}
+\hat{u}_{1}^{(j)} \\ \vdots \\ \hat{u}_{m}^{(j)} \\ \vdots \\ \hat{u}_{l}^{(j)}
+\end{pmatrix}
+\end{equation}
+
+After the multiplication between vector and matrix we have
+\begin{equation}
+T_{E} \begin{pmatrix}
+\hat{u}_{1}^{(j)} \\ \vdots \\ \hat{u}_{m}^{(j)} \\ \vdots \\ \hat{u}_{l}^{(j)}
+\end{pmatrix} = \begin{pmatrix}
+1 \\ \vdots \\ 1 \\ \vdots \\ 1
+\end{pmatrix} \hat{u}_{m}^{(j)} + \begin{pmatrix}
+& & \hat{u}_{1}^{(j)} & & \\
+& & \vdots & & \\
+-\hat{u}_{1}^{(j)} & -\cdots & -\hat{u}_{m-1}^{(j)} & \hat{u}_{m+1}^{(j)} & -\hat{u}_{l}^{(j)}\\
+& & \vdots & & \\
+& & \hat{u}_{l}^{(j)} & & \\
+\end{pmatrix}
+\end{equation}
+the $ T_{E} $ is a square matrix and the columns representing the new space of interface unknown variables. The original interface is divided into two parts. One part is that the value of unknown variables has a value on its own subdomain. The other part is that the function has zero interface averages. The the problem can be rewrite as
+
+\begin{equation}
+T^{T} \begin{pmatrix}
+A_{II}^{(j)} & A_{1I}^{(j)} & \cdots & A_{mI}^{(j)} & \cdots & A_{l I}^{(j)} \\
+A_{1 I}^{(j)} & A_{11}^{(j)} & \cdots & A_{1m}^{(j)} & \cdots & A_{1l}^{(j)} \\
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+A_{mI}^{(j)} & A_{m1}^{(j)} & \cdots & A_{mm}^{(j)} & \cdots & A_{ml}^{(j)} \\
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+A_{lI}^{(j)} & A_{l1}^{(j)} & \cdots & A_{lm}^{(j)} & \cdots & A_{ll}^{(j)}\\
+\end{pmatrix} T \begin{pmatrix}
+u_{I}^{(j)} \\ \hat{u}_{1}^{(j)} \\ \vdots \\ \hat{u}_{m}^{(j)} \\ \vdots \\ \hat{u}_{l}^{(j)}\\
+\end{pmatrix} = T^{T} \begin{pmatrix}
+f_{I}^{(j)} \\ f_{1}^{(j)} \\ \vdots \\ f_{m}^{(j)} \\ \vdots \\ f_{l}^{(j)}
+\end{pmatrix}
+\end{equation}
+
+same as previous equation, $ T $ is a diagonal block matrix 
+\begin{equation}
+T = \begin{pmatrix}
+I & 0 \\ 
+0 & T_{E}\\
+\end{pmatrix}
+\end{equation}
+
+We find out that the change is an individual interface edge local procedure. We can assume that the unknown variables on each subdomain have been changed when using primal edges or faces. In last figure, we can see that the primal space is the only connection along the interface. The other DOFs are in dual space including interior unknowns and the rest interface nodes.
+
+\begin{equation}
+\begin{pmatrix}
+A_{II}^{(1)} &  A_{\Delta I}^{(1)}& 0 & 0 & A_{\Pi I}^{(1)} & 0 \\
+A_{\Delta I}^{(1)} & A_{\Delta \Delta}^{(1)} & 0 & 0& A_{\Pi \Delta}^{(1)} & B_{\Delta}^{(1)}\\
+0 & 0 & A_{II}^{(2)} & A_{\Delta I}^{(2)} & A_{\Pi I}^{(2)} & 0 \\
+0 & 0 & A_{\Delta I}^{(2)} & A_{\Delta \Delta}^{(2)} & A_{\Pi \Delta}^{(2)} & B_{\Delta}^{(2)} \\
+A_{\Pi I}^{(1)} & A_{\Pi \Delta}^{(1)} & A_{\Pi I}^{(2)} & A_{\Pi \Delta}^{(2)} & A_{\Pi \Pi}^{(1)} + A_{\Pi \Pi}^{(2)} & 0 \\
+0 & B_{\Delta}^{(1)} & 0 & B_{\Delta}^{(2)} & 0 & 0 \\
+\end{pmatrix} \begin{pmatrix}
+u_{I}^{(1)} \\ u_{\Delta}^{(1)} \\ u_{I}^{(2)} \\ u_{\Delta}^{(2)} \\ u_{\Pi} \\ \lambda\\
+\end{pmatrix} = \begin{pmatrix}
+f_{I}^{(1)} \\ f_{\Delta}^{(1)} \\ f_{I}^{(2)} \\ f_{\Delta}^{(2)} \\ f_{\Pi}^{(1)} + f_{\Pi}^{(2)} \\ 0\\
+\end{pmatrix}
+\end{equation}
+
+We can further eliminate the local variables $ u_{I}^{(1)}, u_{\Delta}^{(1)}, u_{I}^{(2)} $ and $ u_{\Delta}^{(2)} $, so that we can obtain
+\begin{equation}
+\begin{pmatrix}
+S_{\Pi \Pi} & \tilde{B}_{\Lambda \Pi}^{T} \\ 
+\tilde{B}_{\Lambda \Pi} & \tilde{B}_{\Lambda \Lambda} \\
+\end{pmatrix} \begin{pmatrix}
+u_{\Pi} \\ \lambda \\
+\end{pmatrix} = \begin{pmatrix}
+g_{\Pi} \\ d_{\Lambda}\\
+\end{pmatrix}
+\end{equation}
+
+the details of above equation is 
+
+\begin{equation}
+S_{\Pi \Pi} = \sum_{j = 1}^{2} R_{\Pi}^{(j)} \begin{pmatrix}
+A_{\Pi \Pi}^{(j)} - \begin{bmatrix}
+A_{\Pi I}^{(j)} & A_{\Pi \Delta}^{(j)} \\
+\end{bmatrix} \begin{bmatrix}
+A_{II}^{(j)} & A_{I \Delta}^{(j)} \\
+A_{\Delta I}^{(j)} & A_{\Delta \Delta}^{(j)}
+\end{bmatrix}^{-1} \begin{bmatrix}
+A_{\Pi I}^{(j)} \\ A_{\Pi \Delta}^{(j)} \\
+\end{bmatrix}
+\end{pmatrix} R_{\Pi}^{(j)} ,
+\end{equation}
+
+\begin{equation}
+\tilde{B}_{\Lambda \Pi} = - \sum_{j = 1}^{2} \begin{bmatrix}
+0 & B_{\Pi}^{(j)}
+\end{bmatrix} \begin{bmatrix}
+A_{II}^{(j)} & A_{\Delta I}^{(j)} \\
+A_{\Delta I}^{(j)} & A_{\Delta \Delta}^{(j)}
+\end{bmatrix}^{-1} \begin{bmatrix}
+A_{\Pi I}^{(j)} \\ A_{\Pi \Delta}^{(j)}
+\end{bmatrix} R_{\Pi}^{(j)} ,
+\end{equation}
+
+\begin{equation}
+\tilde{B}_{\Lambda \Lambda} = - \sum_{j = 1}^{2} \begin{bmatrix}
+0 & B_{\Delta}^{(j)}
+\end{bmatrix} \begin{bmatrix}
+A_{II}^{(j)} & A_{\Delta I}^{(j)} \\
+A_{\Delta I}^{(j)} & A_{\Delta \Delta}^{(j)}
+\end{bmatrix}^{-1} \begin{bmatrix}
+0 \\B_{\Delta}^{(j)} \\
+\end{bmatrix} ,
+\end{equation}
+
+\begin{equation}
+g_{\Pi} = \sum_{j = 1}^{2} R_{\Pi}^{(j)} \begin{pmatrix}
+f_{\Pi}^{(j)} - \begin{bmatrix}
+A_{\Pi I}^{(j)} & A_{\Pi \Delta}^{(j)}
+\end{bmatrix} \begin{bmatrix}
+A_{II}^{(j)} & A_{\Pi \Delta}^{(j)} \\
+\end{bmatrix} \begin{bmatrix}
+A_{II}^{(j)} & A_{\Delta I}^{(j)} \\
+A_{\Delta I}^{(j)} & A_{\Delta \Delta}^{(j)}\\
+\end{bmatrix}^{-1} \begin{bmatrix}
+f_{I}^{(j)} \\ f_{\Delta}^{(j)}
+\end{bmatrix}
+\end{pmatrix} ,
+\end{equation}
+
+\begin{equation}
+d_{\Lambda} = - \sum_{j = 1}^{2} \begin{bmatrix}
+0 & B_{\Delta}^{(j)} \\
+\end{bmatrix} \begin{bmatrix}
+A_{II}^{(j)} & A_{\Delta I}^{(j)} \\
+A_{\Delta I}^{(j)} & A_{\Delta \Delta}^{(j)} 
+\end{bmatrix}^{-1} \begin{bmatrix}
+f_{I}^{(j)} \\ f_{\Delta}^{(j)} \\
+\end{bmatrix}
+\end{equation}
+
+whre the $ R_{\Pi}^{(j)} $ is a projection matrix that mapping the local subdomain element to global elements with $ \{0, 1\} $ values. In this example, both projection values are equal to $ 1 $.
+
+For the linear system, the Lagrange multiplier $ \lambda $ is
+\begin{equation}
+\begin{pmatrix}
+\tilde{B}_{\Lambda \Lambda} - \tilde{B}_{\Lambda \Pi} S_{\Pi \Pi}^{-1} \tilde{B}_{\Lambda \Pi}^{T}
+\end{pmatrix} \lambda = d_{\Lambda} - \tilde{B}_{\Lambda \Pi} S_{\Pi \Pi}^{-1} g_{\Pi}
+\end{equation}
+
+A Dirichlet preconditioner is applied in FETI-DP method for solving above equation. 
+
+Based on above linear system, we can find out that the Lagrange multiplier is an external unknown vector and requires lots of computational effort to assemble the matrix. When we solve the such a linear system, it's common to obtain the result along the dual space that $ u_{\Delta}^{(1)} \neq  u_{\Delta}^{(2)}$. To maintain the continuity, we shall restore the computing a weighted average of the vectors. Therefore, an assembled residual of resulting vector needs to be compute. The residue is mapped into the appropriate space of enforced vector on the right-hand side of the equation. Then we can use the residue vector to correct the solution and gradually obtain the final results. An improved algorithm, BDDC method, will be discussed in the following section.
+
+
 \subsection{Balancing Domain Decomposition by Constraints}
 
 The balancing domain decomposition method was introduced by Mandel \cite{mandel2005algebraic}. The original idea of BDD method is applying a coarse correction to guarantee the convergence of residuals. The BDDC is a domain decomposition method for solving large symmetric, positive definite equations of linear systems. The main function is to solve problems arises from the finite element method, including WG method. It is inspired by FETI-DP method of Farhat et al \cite{farhat1994optimal, farhat2001feti} which has been extended multi-dimension varying problems. Comparing to BDD method, the substructure spaces and the coarse spaces are connected by the corner cell as constraints only. The main difference is that the BDDC method applies the coarse problem in an additive routine, which makes it possible to use a different bilinear form on the coarse problem. In this way, the BDDC method is considered as a simpler primal alternative to FETI-DP domain decomposition method \cite{li2006feti}. In this paper, we only consider the corner connections of subdomain as the only constraints. The substructure spaces, coarse space, and the substructure bilinear forms are same as Mandel’s paper. Comparing with FETI-DP, BDDC method adds coarse degrees of freedom involving averages over edges and faces of elements. This improvement causes an obvious simplification through domain decomposition and matrix calculation.
+
+After the Schur complement, the preconditioner for interface is 
+\begin{equation}
+\hat{S}u_{\Gamma} = \sum_{j = 1}^{N} R_{\Gamma}^{(j)} g_{\Gamma}
+\end{equation}
+
+where
+\begin{equation}
+\tilde{S} = \tilde{R}_{\Gamma}^{T} \tilde{S}_{\Gamma} \tilde{R}_{\Gamma}
+\end{equation}
+
+In the BDDC algorithm, a two-level Neumann-Neumann type preconditioner for solving this interface problem is as above equation. In the BDDC preconditioner, the coarse grid is assembled from coarse basis functions. We can apply the minimum energy method on the subdomains to obtain primal constrains. The primal constraints maintain the continuity along the edge interface between two subdomains, as in FETI-DP algorithm. 
+
+Dohrmann's BDDC preconditioner \cite{dohrmann2003preconditioner, dohrmann2003study, mandel2005algebraic} has the form
+\begin{equation}
+M_{BDDC}^{-1} = R_{D, \Gamma}^{T} T R_{D, \Gamma}
+\end{equation}
+for the coarse-level $ T $ is defined by 
+\begin{equation}
+T = \Psi (\Psi^{T} S \Psi)^{-1} \Psi^{T}
+\end{equation}
+the coarse level basis function vector is defined by 
+\begin{equation}
+\Psi = \begin{pmatrix}
+\Psi^{(1)} \\ \vdots \\ \Psi^{(N)}\\
+\end{pmatrix}
+\end{equation}
+
+Then the Schur complement coarse-level matrix can be written as 
+\begin{equation}
+\begin{pmatrix}
+S^{(j)} & {C^{(j)}}^{T} \\
+C^{(j)} & 0 \\
+\end{pmatrix} \begin{pmatrix}
+\Psi^{(j)} \\ V^{(j)} \\
+\end{pmatrix} = \begin{pmatrix}
+0 \\ R_{\Pi}^{(j)}\\
+\end{pmatrix}
+\end{equation}
+ where $ C^{(j)} $ is the primal constraints of each subdomain and $ V^{(j)} $ is Lagrange multiplier vector. If we assume the variable is changing, then the Lagrange multiplier vector is no longer needed to enforce the primal continuity constraints and the new BDDC preconditioner can be designed as
+ 
+ \begin{equation}
+ M_{BDDC}^{-1} = R_{D, \Gamma}^{T} \{ R_{\Gamma \Delta}^{T} S^{-1}_{\Delta} R_{\Gamma \Delta} + \Psi (\Psi^{T} S \Psi)^{-1} \Psi^{T} \} R_{D, \Gamma}
+ \end{equation}
+ 
+ The primal space DOFs are used to enforce the continuity by restricting the operators to the dual interface space $ \Delta $. The governing matrix equation can be designed as
+ \begin{equation}
+ \begin{pmatrix}
+ A_{II}^{(j)} & A_{\Delta I}^{(j)} & A^{(j)}_{\Pi I} \\
+ A_{\Delta I}^{(j)} & A_{\Delta \Delta}^{(j)} & A_{\Pi \Delta}^{(j)} \\
+ A_{\Pi I}^{(j)} & A_{\Pi \Delta}^{(j)} & A_{\Pi \Pi}^{(j)} \\
+ \end{pmatrix} \begin{pmatrix}
+ u_{I}^{(j)} \\ \Psi_{\Delta}^{(j)} \\ R_{\Pi}^{(j)} \\
+ \end{pmatrix} = \begin{pmatrix}
+ 0 \\ 0 \\ S_{\Pi \Pi}^{(j)} R_{\Pi}^{(j)}
+ \end{pmatrix}
+ \end{equation}
 
 \section{WG-BDDC Method}
 In this section, we discuss the details of design the parallel computing scheme by combining WG method with BDDC method. 

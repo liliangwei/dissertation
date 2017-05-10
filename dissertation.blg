@@ -31,45 +31,45 @@ Repeated entry---line 787 of file references.bib
  :                           ,
 I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in reddy1993introduction
-You've used 36 entries,
+You've used 37 entries,
             2821 wiz_defined-function locations,
-            856 strings with 10399 characters,
-and the built_in function-call counts, 17478 in all, are:
-= -- 1839
-> -- 792
-< -- 25
-+ -- 334
-- -- 261
-* -- 1492
-:= -- 3123
-add.period$ -- 111
-call.type$ -- 36
-change.case$ -- 262
+            859 strings with 10548 characters,
+and the built_in function-call counts, 17806 in all, are:
+= -- 1874
+> -- 802
+< -- 26
++ -- 341
+- -- 264
+* -- 1514
+:= -- 3188
+add.period$ -- 114
+call.type$ -- 37
+change.case$ -- 269
 chr.to.int$ -- 35
-cite$ -- 37
-duplicate$ -- 636
-empty$ -- 1237
-format.name$ -- 365
-if$ -- 3521
-int.to.chr$ -- 2
+cite$ -- 38
+duplicate$ -- 651
+empty$ -- 1261
+format.name$ -- 369
+if$ -- 3585
+int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 42
-newline$ -- 115
-num.names$ -- 144
-pop$ -- 241
+newline$ -- 118
+num.names$ -- 148
+pop$ -- 245
 preamble$ -- 1
-purify$ -- 230
+purify$ -- 235
 quote$ -- 0
-skip$ -- 505
+skip$ -- 515
 stack$ -- 0
-substring$ -- 1137
-swap$ -- 83
+substring$ -- 1150
+swap$ -- 86
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 306
+type$ -- 315
 warning$ -- 1
-while$ -- 165
+while$ -- 168
 width$ -- 0
-write$ -- 396
+write$ -- 407
 (There were 5 error messages)

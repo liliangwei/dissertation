@@ -30,15 +30,15 @@
 \contentsline {chapter}{{Chapter\nobreakspace {}4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Domain Decomposition Scheme}{27}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}FETI-DP Method}{28}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{29}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}WG-BDDC Method}{30}{section.4.2}
-\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{33}{section.4.3}
-\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{35}{section.4.4}
-\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{36}{section.4.5}
-\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{38}{section.4.6}
-\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{40}{section.4.7}
-\contentsline {section}{\numberline {4.8}Numerical Results}{40}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{40}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{43}{subsection.4.8.2}
-\contentsline {chapter}{References}{47}{chapter*.40}
+\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{35}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}WG-BDDC Method}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{40}{section.4.3}
+\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{43}{section.4.4}
+\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{44}{section.4.5}
+\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{45}{section.4.6}
+\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{48}{section.4.7}
+\contentsline {section}{\numberline {4.8}Numerical Results}{48}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{48}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{51}{subsection.4.8.2}
+\contentsline {chapter}{References}{55}{chapter*.41}
 \contentsfinish 
