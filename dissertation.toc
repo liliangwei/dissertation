@@ -1,8 +1,8 @@
 \contentsline {chapter}{Dedication}{iv}{section*.1}
 \contentsline {chapter}{Acknowledgements}{v}{section*.3}
 \contentsline {chapter}{Abstract}{vi}{section*.5}
-\contentsline {chapter}{List of Figures}{xi}{section*.8}
-\contentsline {chapter}{List of Tables}{xiii}{section*.10}
+\contentsline {chapter}{List of Figures}{xii}{section*.8}
+\contentsline {chapter}{List of Tables}{xiv}{section*.10}
 \contentsline {chapter}{{Chapter\nobreakspace {}1: Introduction}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Backgrounds}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Engineering Background}{1}{subsection.1.1.1}
@@ -14,31 +14,34 @@
 \contentsline {section}{\numberline {2.2}Existing Numerical Methods Review}{4}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Classic Continuous Galerkin Finite Element Method}{4}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Discontinuous Galerkin Finite Element Method}{5}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Mixed Finite Element Method}{5}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Weak Galerkin Finite Element Methods}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Weak Galerkin triangular meshes}{5}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Weak Galerkin quadrilateral meshes}{6}{subsection.2.3.2}
-\contentsline {chapter}{{Chapter\nobreakspace {}3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Nonlinear Elasticity Equation}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hybrid WG-CG Element}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Generic Stabilizer}{13}{section.3.3}
-\contentsline {section}{\numberline {3.4}Parallel Computing Method}{14}{section.3.4}
-\contentsline {section}{\numberline {3.5}The Parallel Computing Work Flow}{15}{section.3.5}
-\contentsline {section}{\numberline {3.6}Numerical Results}{17}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Geometric linear elastic equation}{17}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Geometric nonlinear elasticity equation}{20}{subsection.3.6.2}
-\contentsline {chapter}{{Chapter\nobreakspace {}4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Domain Decomposition Scheme}{27}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}FETI-DP Method}{28}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{35}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}WG-BDDC Method}{39}{section.4.2}
-\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{44}{section.4.4}
-\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{45}{section.4.5}
-\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{47}{section.4.6}
-\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{49}{section.4.7}
-\contentsline {section}{\numberline {4.8}Numerical Results}{49}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{49}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{52}{subsection.4.8.2}
-\contentsline {chapter}{References}{56}{chapter*.41}
+\contentsline {subsection}{\numberline {2.2.3}Mixed Finite Element Method}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Weak Galerkin Finite Element Methods}{10}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Preliminary}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Weak operators}{11}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Second order elliptic equation in WG}{12}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Weak Galerkin triangular meshes}{15}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Weak Galerkin quadrilateral meshes}{16}{subsection.2.3.5}
+\contentsline {chapter}{{Chapter\nobreakspace {}3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}Nonlinear Elasticity Equation}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hybrid WG-CG Element}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}Generic Stabilizer}{23}{section.3.3}
+\contentsline {section}{\numberline {3.4}Parallel Computing Method}{24}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Parallel Computing Work Flow}{25}{section.3.5}
+\contentsline {section}{\numberline {3.6}Numerical Results}{27}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Geometric linear elastic equation}{27}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Geometric nonlinear elasticity equation}{30}{subsection.3.6.2}
+\contentsline {chapter}{{Chapter\nobreakspace {}4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Domain Decomposition Scheme}{37}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}FETI-DP Method}{38}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{45}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}WG-BDDC Method}{49}{section.4.2}
+\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{52}{section.4.3}
+\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{54}{section.4.4}
+\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{55}{section.4.5}
+\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{57}{section.4.6}
+\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{59}{section.4.7}
+\contentsline {section}{\numberline {4.8}Numerical Results}{59}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{59}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{62}{subsection.4.8.2}
+\contentsline {chapter}{References}{66}{chapter*.41}
 \contentsfinish 

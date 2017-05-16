@@ -31,45 +31,45 @@ Repeated entry---line 787 of file references.bib
  :                           ,
 I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in reddy1993introduction
-You've used 37 entries,
+You've used 39 entries,
             2821 wiz_defined-function locations,
-            859 strings with 10548 characters,
-and the built_in function-call counts, 17806 in all, are:
-= -- 1874
-> -- 802
-< -- 26
-+ -- 341
-- -- 264
-* -- 1514
-:= -- 3188
-add.period$ -- 114
-call.type$ -- 37
-change.case$ -- 269
-chr.to.int$ -- 35
-cite$ -- 38
-duplicate$ -- 651
-empty$ -- 1261
-format.name$ -- 369
-if$ -- 3585
+            871 strings with 10803 characters,
+and the built_in function-call counts, 18654 in all, are:
+= -- 1965
+> -- 831
+< -- 29
++ -- 354
+- -- 273
+* -- 1579
+:= -- 3339
+add.period$ -- 121
+call.type$ -- 39
+change.case$ -- 281
+chr.to.int$ -- 37
+cite$ -- 40
+duplicate$ -- 685
+empty$ -- 1328
+format.name$ -- 384
+if$ -- 3761
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 42
-newline$ -- 118
-num.names$ -- 148
-pop$ -- 245
+missing$ -- 45
+newline$ -- 124
+num.names$ -- 156
+pop$ -- 258
 preamble$ -- 1
-purify$ -- 235
+purify$ -- 246
 quote$ -- 0
-skip$ -- 515
+skip$ -- 544
 stack$ -- 0
-substring$ -- 1150
-swap$ -- 86
-text.length$ -- 3
+substring$ -- 1199
+swap$ -- 91
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 315
+type$ -- 330
 warning$ -- 1
-while$ -- 168
+while$ -- 176
 width$ -- 0
-write$ -- 407
+write$ -- 429
 (There were 5 error messages)
