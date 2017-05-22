@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{61}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -15,6 +15,20 @@ Anderson, E., Bai, Z., Bischof, C., Blackford, L.~S., Demmel, J., Dongarra, J.,
   Du~Croz, J., Greenbaum, A., Hammarling, S., McKenney, A., et~al., 1999.
   LAPACK Users' guide. SIAM.
 
+\bibitem[{Bertolotti et~al.(2006)Bertolotti, Qin, Lamontagne, Durand, Soulez,
+  and Cloutier}]{bertolotti2006influence}
+Bertolotti, C., Qin, Z., Lamontagne, B., Durand, L.-G., Soulez, G., Cloutier,
+  G., 2006. Influence of multiple stenoses on echo-doppler functional diagnosis
+  of peripheral arterial disease: a numerical and experimental study. Annals of
+  biomedical engineering 34~(4), 564.
+
+\bibitem[{B{\"o}ger et~al.(1997)B{\"o}ger, Bode-B{\"o}ger, Thiele, Junker,
+  Alexander, and Fr{\"o}lich}]{boger1997biochemical}
+B{\"o}ger, R.~H., Bode-B{\"o}ger, S.~M., Thiele, W., Junker, W., Alexander, K.,
+  Fr{\"o}lich, J.~C., 1997. Biochemical evidence for impaired nitric oxide
+  synthesis in patients with peripheral arterial occlusive disease. Circulation
+  95~(8), 2068--2074.
+
 \bibitem[{Bramble and Pasciak(1988)}]{bramble1988preconditioning}
 Bramble, J.~H., Pasciak, J.~E., 1988. A preconditioning technique for
   indefinite systems resulting from mixed approximations of elliptic problems.
@@ -23,6 +37,11 @@ Bramble, J.~H., Pasciak, J.~E., 1988. A preconditioning technique for
 \bibitem[{Brenner and Scott(2007)}]{brenner2007mathematical}
 Brenner, S., Scott, R., 2007. The mathematical theory of finite element
   methods. Vol.~15. Springer Science \& Business Media.
+
+\bibitem[{Briley and McDonald(1977)}]{briley1977solution}
+Briley, W., McDonald, H., 1977. Solution of the multidimensional compressible
+  navier-stokes equations by a generalized implicit method. Journal of
+  Computational Physics 24~(4), 372--397.
 
 \bibitem[{Ciarlet(2002)}]{ciarlet2002finite}
 Ciarlet, P.~G., 2002. The finite element method for elliptic problems. SIAM.
@@ -54,6 +73,11 @@ Dohrmann, C.~R., 2003{\natexlab{b}}. A study of domain decomposition
 Duff, I.~S., Erisman, A.~M., Reid, J.~K., 1986. Direct methods for sparse
   matrices. Clarendon press Oxford.
 
+\bibitem[{Duncan et~al.(1995)Duncan, Singh, Wise, Carter, and
+  Alaghband-Zadeh}]{duncan1995simple}
+Duncan, M., Singh, B., Wise, P., Carter, G., Alaghband-Zadeh, J., 1995. A
+  simple measure of insulin resistance. The Lancet 346~(8967), 120--121.
+
 \bibitem[{Eisenstat(1981)}]{eisenstat1981efficient}
 Eisenstat, S.~C., 1981. Efficient implementation of a class of preconditioned
   conjugate gradient methods. SIAM Journal on Scientific and Statistical
@@ -81,6 +105,17 @@ Farhat, C., Roux, F.-X., 1991. A method of finite element tearing and
   interconnecting and its parallel solution algorithm. International Journal
   for Numerical Methods in Engineering 32~(6), 1205--1227.
 
+\bibitem[{Ferziger et~al.(1997)Ferziger, Peric, and
+  Leonard}]{ferziger1997computational}
+Ferziger, J.~H., Peric, M., Leonard, A., 1997. Computational methods for fluid
+  dynamics.
+
+\bibitem[{Flanigan et~al.(1977)Flanigan, Tullis, Streeter, Whitehouse~Jr, Fry,
+  and Stanley}]{flanigan1977multiple}
+Flanigan, D., Tullis, J., Streeter, V., Whitehouse~Jr, W., Fry, W., Stanley,
+  J., 1977. Multiple subcritical arterial stenoses: effect on poststenotic
+  pressure and flow. Annals of surgery 186~(5), 663.
+
 \bibitem[{Gropp et~al.(1996)Gropp, Lusk, Doss, and Skjellum}]{gropp1996high}
 Gropp, W., Lusk, E., Doss, N., Skjellum, A., 1996. A high-performance, portable
   implementation of the mpi message passing interface standard. Parallel
@@ -90,6 +125,21 @@ Gropp, W., Lusk, E., Doss, N., Skjellum, A., 1996. A high-performance, portable
 Hahn, G., 1991. A modified euler method for dynamic analyses. International
   Journal for Numerical Methods in Engineering 32~(5), 943--955.
 
+\bibitem[{Holmes et~al.(1984)Holmes, Vlietstra, Smith, Vetrovec, Kent, Cowley,
+  Faxon, Gruentzig, Kelsey, Detre, et~al.}]{holmes1984restenosis}
+Holmes, D.~R., Vlietstra, R.~E., Smith, H.~C., Vetrovec, G.~W., Kent, K.~M.,
+  Cowley, M.~J., Faxon, D.~P., Gruentzig, A.~R., Kelsey, S.~F., Detre, K.~M.,
+  et~al., 1984. Restenosis after percutaneous transluminal coronary angioplasty
+  (ptca): a report from the ptca registry of the national heart, lung, and
+  blood institute. The American journal of cardiology 53~(12), C77--C81.
+
+\bibitem[{Hooi et~al.(2001)Hooi, Kester, Stoffers, Overdijk, van Ree, and
+  Knottnerus}]{hooi2001incidence}
+Hooi, J.~D., Kester, A.~D., Stoffers, H.~E., Overdijk, M.~M., van Ree, J.~W.,
+  Knottnerus, J.~A., 2001. Incidence of and risk factors for asymptomatic
+  peripheral arterial occlusive disease: a longitudinal study. American journal
+  of epidemiology 153~(7), 666--672.
+
 \bibitem[{Hrennikoff(1941)}]{hrennikoff1941solution}
 Hrennikoff, A., 1941. Solution of problems of elasticity by the framework
   method. Journal of applied mechanics 8~(4), 169--175.
@@ -97,6 +147,10 @@ Hrennikoff, A., 1941. Solution of problems of elasticity by the framework
 \bibitem[{Hughes(2012)}]{hughes2012finite}
 Hughes, T.~J., 2012. The finite element method: linear static and dynamic
   finite element analysis. Courier Corporation.
+
+\bibitem[{Issa(1986)}]{Issa}
+Issa, R.~I., 1986. {Solution of implicitly discretised fluid flow equation by
+  operator-splitting.} Journal of Computational Physics 62, 40--65.
 
 \bibitem[{Jameson(1991)}]{jameson1991time}
 Jameson, A., 1991. Time dependent calculations using multigrid, with
@@ -113,6 +167,13 @@ Klawonn, A., Widlund, O.~B., 2006. Dual-primal feti methods for linear
   elasticity. Communications on pure and applied mathematics 59~(11),
   1523--1572.
 
+\bibitem[{Kornowski et~al.(1998)Kornowski, Hong, Tio, Bramwell, Wu, and
+  Leon}]{kornowski1998stent}
+Kornowski, R., Hong, M.~K., Tio, F.~O., Bramwell, O., Wu, H., Leon, M.~B.,
+  1998. In-stent restenosis: contributions of inflammatory responses and
+  arterial injury to neointimal hyperplasia. Journal of the American College of
+  Cardiology 31~(1), 224--230.
+
 \bibitem[{Li and Widlund(2006)}]{li2006feti}
 Li, J., Widlund, O.~B., 2006. Feti-dp, bddc, and block cholesky methods.
   International journal for numerical methods in engineering 66~(2), 250--271.
@@ -121,6 +182,23 @@ Li, J., Widlund, O.~B., 2006. Feti-dp, bddc, and block cholesky methods.
 Li, Q.~H., Wang, J., 2013. Weak galerkin finite element methods for parabolic
   equations. Numerical Methods for Partial Differential Equations 29~(6),
   2004--2024.
+
+\bibitem[{Liang and Papadakis(2007)}]{LiangFVM}
+Liang, C., Papadakis, G., Feb. 2007. {Large eddy simulation of pulsating flow
+  over a circular cylinder at subcritical Reynolds number.} Comupters \& fluids
+  36~(2).
+
+\bibitem[{Long et~al.(2001)Long, Xu, Ramnarine, and Hoskins}]{Long}
+Long, Q., Xu, X., Ramnarine, K., Hoskins, P., Oct. 2001. {Numerical
+  investigation of physiologically realistic pulsatile flow through arterial
+  stenosis}. Journal of Biomechanics 34~(10).
+
+\bibitem[{Malinow et~al.(1989)Malinow, Kang, Taylor, Wong, Coull, Inahara,
+  Mukerjee, Sexton, and Upson}]{malinow1989prevalence}
+Malinow, M., Kang, S., Taylor, L., Wong, P., Coull, B., Inahara, T., Mukerjee,
+  D., Sexton, G., Upson, B., 1989. Prevalence of hyperhomocyst (e) inemia in
+  patients with peripheral arterial occlusive disease. Circulation 79~(6),
+  1180--1188.
 
 \bibitem[{Mandel(1993)}]{mandel1993balancing}
 Mandel, J., 1993. Balancing domain decomposition. Communications in numerical
@@ -131,6 +209,13 @@ Mandel, J., 1993. Balancing domain decomposition. Communications in numerical
 Mandel, J., Dohrmann, C.~R., Tezaur, R., 2005. An algebraic theory for primal
   and dual substructuring methods by constraints. Applied numerical mathematics
   54~(2), 167--193.
+
+\bibitem[{Meuwissen et~al.(2002)Meuwissen, Siebes, Chamuleau, van Eck-Smit,
+  Koch, de~Winter, Tijssen, Spaan, and Piek}]{meuwissen2002hyperemic}
+Meuwissen, M., Siebes, M., Chamuleau, S.~A., van Eck-Smit, B.~L., Koch, K.~T.,
+  de~Winter, R.~J., Tijssen, J.~G., Spaan, J.~A., Piek, J.~J., 2002. Hyperemic
+  stenosis resistance index for evaluation of functional coronary lesion
+  severity. Circulation 106~(4), 441--446.
 
 \bibitem[{Mu et~al.(2013)Mu, Wang, Wang, and Ye}]{mu2013computational}
 Mu, L., Wang, J., Wang, Y., Ye, X., 2013. A computational study of the weak
@@ -155,9 +240,25 @@ Ng, M.~K., Chan, R.~H., Tang, W.-C., 1999. A fast algorithm for deblurring
   models with neumann boundary conditions. SIAM Journal on Scientific Computing
   21~(3), 851--866.
 
+\bibitem[{Ojha et~al.(1989)Ojha, Cobbold, Johnston, and Hummel}]{Ojha}
+Ojha, M., Cobbold, R.~S., Johnston, K.~W., Hummel, R.~L., 1989. {Pulsatile flow
+  through constricted tubes: an experimental investigation using photochromic
+  tracer methods.} Journal of Fluid Mechanics 203, 173--197.
+
 \bibitem[{Reddy(1993)}]{reddy1993introduction}
 Reddy, J.~N., 1993. An introduction to the finite element method. Vol.~2.
   McGraw-Hill New York.
+
+\bibitem[{Rhie and Chow(1983)}]{Rhie}
+Rhie, C.~M., Chow, W.~L., 1983. {Numerical study of the turbulent flow past an
+  airfoil with trailing edges separation.} AIAA Journal 21, 1525--1532.
+
+\bibitem[{Seeley and Young(1976)}]{Seeley&Young}
+Seeley, B.~D., Young, D.~F., 1976. {Effect of geometry on pressure losses
+  across models of arterial stenoses.} Journal of Biomechanics 9~(7), 439--448.
+
+\bibitem[{Temam(1984)}]{temam1984navier}
+Temam, R., 1984. Navier-stokes equations. Vol.~2. North-Holland Amsterdam.
 
 \bibitem[{Tu(2007{\natexlab{a}})}]{tu2007three3d}
 Tu, X., 2007{\natexlab{a}}. Three-level bddc in three dimensions. SIAM Journal
@@ -166,6 +267,15 @@ Tu, X., 2007{\natexlab{a}}. Three-level bddc in three dimensions. SIAM Journal
 \bibitem[{Tu(2007{\natexlab{b}})}]{tu2007three2d}
 Tu, X., 2007{\natexlab{b}}. Three-level bddc in two dimensions. International
   journal for numerical methods in engineering 69~(1), 33--59.
+
+\bibitem[{Varghese et~al.(2007)Varghese, Frankel, and Fischer}]{Varghese}
+Varghese, S., Frankel, S., Fischer, P., 2007. {Direct numerical simulation of
+  stenotic flows}. Journal of Fluid Mechanics 582, 253--280.
+
+\bibitem[{Varghese and Frankel(2003)}]{Varghese&Frankel}
+Varghese, S.~S., Frankel, S.~H., 2003. {Numerical modeling of pulatile
+  turbulent flow in stenotic vessels.} Journal of Biomechanical engineering
+  125~(4).
 
 \bibitem[{Wang et~al.(2016)Wang, Wang, Wang, and Zhang}]{wang2016locking}
 Wang, C., Wang, J., Wang, R., Zhang, R., 2016. A locking-free weak galerkin
@@ -180,6 +290,15 @@ Wang, J., Ye, X., 2013. A weak galerkin finite element method for second-order
 \bibitem[{Wang and Ye(2014)}]{wang2014weak}
 Wang, J., Ye, X., 2014. A weak galerkin mixed finite element method for second
   order elliptic problems. Mathematics of Computation 83~(289), 2101--2126.
+
+\bibitem[{Young et~al.(735-743)Young, Cholvin, and Roth}]{Young&Cholvin}
+Young, D.~F., Cholvin, N.~R., Roth, A.~C., 1975 735-743. {Pressure drop across
+  artificially induced stenoses in the femoral arteries of dogs.} Circulation
+  research 36~(6).
+
+\bibitem[{Young and Tsai(547-559)}]{Young&Tsai}
+Young, D.~F., Tsai, F.~Y., 1973 547-559. {Flow characteristics in models of
+  arterial stenoses-II. Unsteady flow}. Journal of Biomechanics 62~(5).
 
 \bibitem[{Zienkiewicz et~al.(1977)Zienkiewicz, Taylor, and
   Taylor}]{zienkiewicz1977finite}

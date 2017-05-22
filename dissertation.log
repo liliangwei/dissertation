@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 MAY 2017 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 MAY 2017 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,7 +809,7 @@ LaTeX Warning: Label `Tab:hwgcg l1' multiply defined.
 
 LaTeX Warning: Label `fig6: time' multiply defined.
 
-))
+) (./chapter5.aux))
 \openout1 = `dissertation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -826,7 +826,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
- (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count151
 \scratchdimen=\dimen222
@@ -988,14 +989,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 ] [3] [4]
 [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
-<./pics/triangle.pdf, id=524, 161.8045pt x 161.12596pt>
+<./pics/triangle.pdf, id=606, 161.8045pt x 161.12596pt>
 File: ./pics/triangle.pdf Graphic file (type pdf)
 
 <use ./pics/triangle.pdf>
 Package pdftex.def Info: ./pics/triangle.pdf used on input line 449.
 (pdftex.def)             Requested size: 216.81pt x 215.91011pt.
  [15]
-<./pics/quad.pdf, id=534, 263.38399pt x 134.90399pt>
+<./pics/quad.pdf, id=616, 263.38399pt x 134.90399pt>
 File: ./pics/quad.pdf Graphic file (type pdf)
  <use ./pics/quad.pdf>
 Package pdftex.def Info: ./pics/quad.pdf used on input line 469.
@@ -1012,13 +1013,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-[19] [20] [21] <./pics/oneD.pdf, id=614, 339.62183pt x 149.07495pt>
+[19] [20] [21] <./pics/oneD.pdf, id=695, 339.62183pt x 149.07495pt>
 File: ./pics/oneD.pdf Graphic file (type pdf)
 
 <use ./pics/oneD.pdf>
 Package pdftex.def Info: ./pics/oneD.pdf used on input line 100.
 (pdftex.def)             Requested size: 303.53267pt x 133.24266pt.
- <./pics/hybrid.pdf, id=615, 339.62183pt x 149.07495pt>
+ <./pics/hybrid.pdf, id=696, 339.62183pt x 149.07495pt>
 File: ./pics/hybrid.pdf Graphic file (type pdf)
 
 <use ./pics/hybrid.pdf>
@@ -1029,13 +1030,13 @@ Package pdftex.def Info: ./pics/hybrid.pdf used on input line 110.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <./pics/oneD.pdf>] [23 <./pics/hybrid.pdf>] [24]
-<./pics/matrix1.png, id=661, 215.3646pt x 218.2554pt>
+<./pics/matrix1.png, id=743, 215.3646pt x 218.2554pt>
 File: ./pics/matrix1.png Graphic file (type png)
  <use ./pics/matrix1.png>
 Package pdftex.def Info: ./pics/matrix1.png used on input line 202.
 (pdftex.def)             Requested size: 216.81pt x 219.72351pt.
 
-<./pics/hmatrix1.png, id=663, 212.4738pt x 212.4738pt>
+<./pics/hmatrix1.png, id=745, 212.4738pt x 212.4738pt>
 File: ./pics/hmatrix1.png Graphic file (type png)
 
 <use ./pics/hmatrix1.png>
@@ -1046,7 +1047,7 @@ Package pdftex.def Info: ./pics/hmatrix1.png used on input line 210.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [25 <./pics/matrix1.png>]
-<./pics/flowchart1.png, id=673, 544.9158pt x 359.9046pt>
+<./pics/flowchart1.png, id=755, 544.9158pt x 359.9046pt>
 File: ./pics/flowchart1.png Graphic file (type png)
 
 <use ./pics/flowchart1.png>
@@ -1062,21 +1063,21 @@ Overfull \hbox (18.26839pt too wide) in paragraph at lines 234--235
 -brary such as LA-PACK/BLAS
  []
 
-<./pics/result1d1.png, id=684, 264.5082pt x 152.2488pt>
+<./pics/result1d1.png, id=766, 264.5082pt x 152.2488pt>
 File: ./pics/result1d1.png Graphic file (type png)
 
 <use ./pics/result1d1.png>
 Package pdftex.def Info: ./pics/result1d1.png used on input line 247.
 (pdftex.def)             Requested size: 346.89732pt x 199.67503pt.
  [27 <./pics/flowchart1.png>] [28 <./pics/result1d1.png>] <./pics/result1d2.png
-, id=703, 253.9086pt x 167.1846pt>
+, id=784, 253.9086pt x 167.1846pt>
 File: ./pics/result1d2.png Graphic file (type png)
 
 <use ./pics/result1d2.png>
 Package pdftex.def Info: ./pics/result1d2.png used on input line 285.
 (pdftex.def)             Requested size: 346.89732pt x 228.41394pt.
 
-<./pics/result1d3.png, id=704, 246.1998pt x 168.63pt>
+<./pics/result1d3.png, id=785, 246.1998pt x 168.63pt>
 File: ./pics/result1d3.png Graphic file (type png)
 
 <use ./pics/result1d3.png>
@@ -1089,27 +1090,27 @@ non-lin-ear strain-displacement
  []
 
 [30 <./pics/result1d3.png>]
-<./pics/result1d4.png, id=718, 240.9pt x 219.219pt>
+<./pics/result1d4.png, id=799, 240.9pt x 219.219pt>
 File: ./pics/result1d4.png Graphic file (type png)
  <use ./pics/result1d4.png>
 Package pdftex.def Info: ./pics/result1d4.png used on input line 311.
 (pdftex.def)             Requested size: 346.89732pt x 315.7052pt.
 
-<./pics/result1d5.png, id=719, 239.9364pt x 219.219pt>
+<./pics/result1d5.png, id=800, 239.9364pt x 219.219pt>
 File: ./pics/result1d5.png Graphic file (type png)
 
 <use ./pics/result1d5.png>
 Package pdftex.def Info: ./pics/result1d5.png used on input line 323.
 (pdftex.def)             Requested size: 346.89732pt x 316.98299pt.
  [31 <./pics/result1d4.png>]
-<./pics/lineartime.pdf, id=725, 614.295pt x 794.97pt>
+<./pics/lineartime.pdf, id=806, 614.295pt x 794.97pt>
 File: ./pics/lineartime.pdf Graphic file (type pdf)
 
 <use ./pics/lineartime.pdf>
 Package pdftex.def Info: ./pics/lineartime.pdf used on input line 335.
 (pdftex.def)             Requested size: 303.53267pt x 392.81387pt.
  [32 <./pics/result1d5.png>]
-<./pics/linearSp.pdf, id=731, 614.295pt x 794.97pt>
+<./pics/linearSp.pdf, id=812, 614.295pt x 794.97pt>
 File: ./pics/linearSp.pdf Graphic file (type pdf)
  <use ./pics/linearSp.pdf>
 Package pdftex.def Info: ./pics/linearSp.pdf used on input line 345.
@@ -1135,7 +1136,7 @@ Package epstopdf Info: Source file: <./pics/feti1.eps>
 (epstopdf)             \includegraphics on input line 22.
 Package epstopdf Info: Output file is already uptodate.
 
-<./pics/feti1-eps-converted-to.pdf, id=821, 164.615pt x 130.4875pt>
+<./pics/feti1-eps-converted-to.pdf, id=903, 164.615pt x 130.4875pt>
 File: ./pics/feti1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/feti1-eps-converted-to.pdf>
@@ -1153,7 +1154,7 @@ Package epstopdf Info: Source file: <./pics/feti2.eps>
 -to.pdf ./pics/feti2.eps>
 (epstopdf)             \includegraphics on input line 113.
 Package epstopdf Info: Output file is already uptodate.
- <./pics/feti2-eps-converted-to.pdf, id=846, 167.62625pt x 154.5775pt>
+ <./pics/feti2-eps-converted-to.pdf, id=927, 167.62625pt x 154.5775pt>
 File: ./pics/feti2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/feti2-eps-converted-to.pdf>
@@ -1175,13 +1176,14 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [45] [46] [47] [48]
-[49] <./pics/domain.pdf, id=941, 193.9245pt x 193.9245pt>
+[49] <./pics/domain.pdf, id=1022, 193.9245pt x 193.9245pt>
 File: ./pics/domain.pdf Graphic file (type pdf)
 
 <use ./pics/domain.pdf>
 Package pdftex.def Info: ./pics/domain.pdf used on input line 450.
 (pdftex.def)             Requested size: 216.81pt x 216.81223pt.
- <./pics/domain2.pdf, id=943, 193.9245pt x 194.50667pt>
+
+<./pics/domain2.pdf, id=1024, 193.9245pt x 194.50667pt>
 File: ./pics/domain2.pdf Graphic file (type pdf)
 
 <use ./pics/domain2.pdf>
@@ -1191,7 +1193,7 @@ Package pdftex.def Info: ./pics/domain2.pdf used on input line 465.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./pics/domain3.pdf, id=944, 194.22563pt x 194.22563pt>
+<./pics/domain3.pdf, id=1025, 194.22563pt x 194.22563pt>
 File: ./pics/domain3.pdf Graphic file (type pdf)
 
 <use ./pics/domain3.pdf>
@@ -1231,7 +1233,7 @@ ted-to.pdf ./pics/mpi_flow.eps>
 (epstopdf)             \includegraphics on input line 724.
 Package epstopdf Info: Output file is already uptodate.
 
-<./pics/mpi_flow-eps-converted-to.pdf, id=1042, 797.98125pt x 471.7625pt>
+<./pics/mpi_flow-eps-converted-to.pdf, id=1124, 797.98125pt x 471.7625pt>
 File: ./pics/mpi_flow-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/mpi_flow-eps-converted-to.pdf>
@@ -1271,7 +1273,7 @@ Package epstopdf Info: Source file: <./pics/p1time.eps>
 d-to.pdf ./pics/p1time.eps>
 (epstopdf)             \includegraphics on input line 879.
 Package epstopdf Info: Output file is already uptodate.
-<./pics/p1time-eps-converted-to.pdf, id=1070, 520.94624pt x 408.52625pt>
+<./pics/p1time-eps-converted-to.pdf, id=1151, 520.94624pt x 408.52625pt>
 File: ./pics/p1time-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/p1time-eps-converted-to.pdf>
@@ -1292,7 +1294,7 @@ Package epstopdf Info: Source file: <./pics/p1speed.eps>
 ed-to.pdf ./pics/p1speed.eps>
 (epstopdf)             \includegraphics on input line 888.
 Package epstopdf Info: Output file is already uptodate.
-<./pics/p1speed-eps-converted-to.pdf, id=1071, 487.8225pt x 408.52625pt>
+<./pics/p1speed-eps-converted-to.pdf, id=1152, 487.8225pt x 408.52625pt>
 File: ./pics/p1speed-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./pics/p1speed-eps-converted-to.pdf>
@@ -1304,37 +1306,107 @@ Package pdftex.def Info: ./pics/p1speed-eps-converted-to.pdf used on input line
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [62]) [63] [64 <./pics/p1time-eps-converted-to.pdf>] [65 <./pics/p1speed-eps-co
-nverted-to.pdf>] (./dissertation.bbl [66
+nverted-to.pdf>]
+\openout2 = `chapter5.aux'.
+
+ (./chapter5.tex [66
+
+
+
+]
+<./pics/photo.png, id=1201, 642.4pt x 481.8pt>
+File: ./pics/photo.png Graphic file (type png)
+ <use ./pics/photo.png>
+Package pdftex.def Info: ./pics/photo.png used on input line 12.
+(pdftex.def)             Requested size: 260.17465pt x 195.13527pt.
+ [67 <./pics/photo.png (PNG copy)>] [68]
+<./pics/geom.png, id=1239, 1559.8275pt x 769.87625pt>
+File: ./pics/geom.png Graphic file (type png)
+ <use ./pics/geom.png>
+Package pdftex.def Info: ./pics/geom.png used on input line 51.
+(pdftex.def)             Requested size: 260.17465pt x 128.41028pt.
+
+<./pics/mesh1.png, id=1240, 907.39pt x 816.04875pt>
+File: ./pics/mesh1.png Graphic file (type png)
+ <use ./pics/mesh1.png>
+Package pdftex.def Info: ./pics/mesh1.png used on input line 62.
+(pdftex.def)             Requested size: 130.08733pt x 116.98546pt.
+
+<./pics/mesh7.png, id=1241, 1411.2725pt x 752.8125pt>
+File: ./pics/mesh7.png Graphic file (type png)
+ <use ./pics/mesh7.png>
+Package pdftex.def Info: ./pics/mesh7.png used on input line 62.
+(pdftex.def)             Requested size: 260.17465pt x 138.78568pt.
+
+[69 <./pics/geom.png (PNG copy)>]
+<./pics/refine1.png, id=1249, 1290.8225pt x 755.82375pt>
+File: ./pics/refine1.png Graphic file (type png)
+
+<use ./pics/refine1.png>
+Package pdftex.def Info: ./pics/refine1.png used on input line 72.
+(pdftex.def)             Requested size: 173.44534pt x 101.55894pt.
+
+<./pics/refine2.png, id=1250, 1412.27625pt x 798.985pt>
+File: ./pics/refine2.png Graphic file (type png)
+
+<use ./pics/refine2.png>
+Package pdftex.def Info: ./pics/refine2.png used on input line 72.
+(pdftex.def)             Requested size: 173.44534pt x 98.1173pt.
+ [70 <./pics/mesh1.png (PNG copy)> <./pics/mesh7.png (PNG copy)> <./pics/refine
+1.png (PNG copy)> <./pics/refine2.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./pics/plotbio.png, id=1256, 1232.605pt x 1097.09875pt>
+File: ./pics/plotbio.png Graphic file (type png)
+
+<use ./pics/plotbio.png>
+Package pdftex.def Info: ./pics/plotbio.png used on input line 161.
+(pdftex.def)             Requested size: 173.44534pt x 154.36282pt.
+
+<./pics/resolution.png, id=1257, 1232.605pt x 1097.09875pt>
+File: ./pics/resolution.png Graphic file (type png)
+
+<use ./pics/resolution.png>
+Package pdftex.def Info: ./pics/resolution.png used on input line 161.
+(pdftex.def)             Requested size: 173.44534pt x 154.36282pt.
+ [71]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[72 <./pics/plotbio.png (PNG copy)> <./pics/resolution.png (PNG copy)>]
+[73]) [74] (./dissertation.bbl [75
 
 
 ]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [67] [68] [69]) [70]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+ [76] [77] [78] [79] [80]) [81]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
 
 (./dissertation.aux (./dedication.aux) (./acknowledgements.aux) (./abstract.aux
-) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
+) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
+(./chapter5.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 33EDB85C8D104DE2D08802673209F5CA;3640.
+(rerunfilecheck)             Checksum: 929E6DD5EE4BAB8EBDC187E5CEFEA423;4607.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 22085 strings out of 493117
- 404449 string characters out of 6135433
- 515898 words of memory out of 5000000
- 24678 multiletter control sequences out of 15000+600000
+ 22272 strings out of 493117
+ 407908 string characters out of 6135433
+ 517862 words of memory out of 5000000
+ 24791 multiletter control sequences out of 15000+600000
  13257 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,56p,1503b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,56p,1678b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -1355,10 +1427,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on dissertation.pdf (84 pages, 1689085 bytes).
+Output written on dissertation.pdf (95 pages, 2489240 bytes).
 PDF statistics:
- 1261 PDF objects out of 1440 (max. 8388607)
- 1096 compressed objects within 11 object streams
- 396 named destinations out of 1000 (max. 500000)
- 491 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1462 PDF objects out of 1728 (max. 8388607)
+ 1276 compressed objects within 13 object streams
+ 455 named destinations out of 1000 (max. 500000)
+ 635 words of extra memory for PDF output out of 10000 (max. 10000000)
 
