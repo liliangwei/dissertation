@@ -187,7 +187,17 @@ The reference mesh grids number of case A is 240000. The resolution of case A is
 
 The error of both cases are very low and neglectable. The resolution of case A is same as all the simulations in this paper. From this comparison we can conclude that our resolution is sufficient for pipe-flow study. It is a good compromise on accuracy and efficiency of simulations.
 
-\subsection{Verification Established Empirical Solution}
+%===================================================
+\section{Results}
+
+To analyze the hemodynamic effect caused by variant stenoses, we introduced two key parameters which describe the pressure field through stenotic artery. 
+The first one is the  stream-wise pressure drop which indicates the pressure difference from the inlet to the outflow area through the whole arterial domain.  
+It describes the hemodynamic effect of stenoses among the entire flow domain. The doctors currently are using it as a prime clinical indicator to evaluate blood supplement to downstream bodies. Doctors are using this parameter to make the treatment decision.
+The other one is the absolute pressure drop which means the pressure difference between the maximum pressure value (at the inflow area) and minimum pressure value (at the last post-stenotic area). 
+This parameter demonstrates the stenotic lesion induces a low pressure field concentrated at the post-stenotic area. 
+The certain low pressure flow area is a potential serious damage source to the blood vessels which may leads to restenosis after the treatment. 
+
+\subsection{Verification Empirical Solution}
 
 In Young and Tsai\cite{Young&Tsai} study, the major factors controlling the pressure drop, $\triangle p$, across a single stenosis can be estimated from the following empirical equation:
 
@@ -207,19 +217,49 @@ Another empirical coefficient, $K_u$, gives the best fit of data is 1.2.
 \begin{figure}[H]
 	\centering
 	\begin{tabular}{c}
-		\includegraphics[width=0.6\textwidth]{./pics/photo.png}
+		\includegraphics[width=0.8\textwidth]{./pics/ana3.png}
 	\end{tabular}
-	\caption{\footnotesize Contrast of subcritical and critical stenoses.}
+	\caption{\footnotesize Pressure drop after single stenosis results from analytic equation and simulation.} \label{fig: single verification}
 \end{figure}
-%=========================================
 
-\section{Results}
-
-To analyze the hemodynamic effect caused by variant stenoses, we introduced two key parameters which describe the pressure field through stenotic artery. 
-The first one is the  stream-wise pressure drop which indicates the pressure difference from the inlet to the outflow area through the whole arterial domain.  
-It describes the hemodynamic effect of stenoses among the entire flow domain. The doctors currently are using it as a prime clinical indicator to evaluate blood supplement to downstream bodies. Doctors are using this parameter to make the treatment decision.
-The other one is the absolute pressure drop which means the pressure difference between the maximum pressure value (at the inflow area) and minimum pressure value (at the last post-stenotic area). 
-This parameter demonstrates the stenotic lesion induces a low pressure field concentrated at the post-stenotic area. 
-The certain low pressure flow area is a potential serious damage source to the blood vessels which may leads to restenosis after the treatment. 
+In an effort to obtain the theoretic solution, we calculated the pressure drop introduced by single subcritical and critical stneosis with using equation (4).
+The parameters including diameters, Reynolds number, viscosity, density and reduction area degrees are all identical for both analytical calculations and computational simulations.
+We plot the pressure drop introduced from single stenosis ranges from 40\% to 80\% stenotic narrowing degrees.
+The absolute pressure drop marker from simulations are very close to the theoretic calculations. 
+The average error between two sets of values are less than 20\%. 
 
 
+\subsection{Single stenosis evaluation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim= 1mm 0mm 1mm 0mm,clip,width=0.70\textwidth]{./pics/increase.png}
+	\caption{Mean pressure drop of single stenosis for different blocking ratio}
+	\label{fig:single increase}
+\end{figure}
+
+\begin{table}[h]
+	\caption{Mean pressure drop of single stenosis for different blocking ratio}
+	\vspace{-5pt}
+	\begin{center}
+		%	\scalebox{0.6}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Cases} &\textbf{Degree} & \textbf{Streamwise PD} & \textbf{Absolute PD}\\
+			\hline
+			A & 40\% & 1.080 & 0.622\\
+			\hline
+			B & 50\% & 1.089 & 0.975\\
+			\hline
+			C & 60\% & 1.476 & 2.027\\
+			\hline
+			D & 70\% & 2.437 & 3.897\\
+			\hline
+			E & 78\% & 4.766 & 7.543\\
+			\hline
+			F & 80\% & 5.823 & 9.184\\
+			\hline
+		\end{tabular}
+		%	}
+	\end{center} 
+\end{table}
