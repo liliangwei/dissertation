@@ -6,63 +6,63 @@
 \contentsline {chapter}{{Chapter\nobreakspace {}1: Introduction}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Backgrounds}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Engineering Background}{1}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Numerical Background}{1}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Objectives of this Work}{1}{section.1.2}
-\contentsline {chapter}{{Chapter\nobreakspace {}2: Numerical Method}}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Mathematical Models and Numerical Method}{2}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Linear Elastic Equation and Weak Galerkin Method}{2}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Existing Numerical Methods Review}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Classic Continuous Galerkin Finite Element Method}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Discontinuous Galerkin Finite Element Method}{5}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Mixed Finite Element Method}{7}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Weak Galerkin Finite Element Methods}{10}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Preliminary}{10}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Weak operators}{11}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Second order elliptic equation in WG}{12}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Weak Galerkin triangular meshes}{15}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Weak Galerkin quadrilateral meshes}{16}{subsection.2.3.5}
-\contentsline {chapter}{{Chapter\nobreakspace {}3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}Nonlinear Elasticity Equation}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hybrid WG-CG Element}{22}{section.3.2}
-\contentsline {section}{\numberline {3.3}Generic Stabilizer}{23}{section.3.3}
-\contentsline {section}{\numberline {3.4}Parallel Computing Method}{24}{section.3.4}
-\contentsline {section}{\numberline {3.5}The Parallel Computing Work Flow}{25}{section.3.5}
-\contentsline {section}{\numberline {3.6}Numerical Results}{27}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Geometric linear elastic equation}{27}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Geometric nonlinear elasticity equation}{30}{subsection.3.6.2}
-\contentsline {chapter}{{Chapter\nobreakspace {}4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}Domain Decomposition Scheme}{37}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}FETI-DP Method}{38}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{45}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}WG-BDDC Method}{49}{section.4.2}
-\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{52}{section.4.3}
-\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{54}{section.4.4}
-\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{55}{section.4.5}
-\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{57}{section.4.6}
-\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{59}{section.4.7}
-\contentsline {section}{\numberline {4.8}Numerical Results}{59}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{59}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{62}{subsection.4.8.2}
-\contentsline {chapter}{{Chapter\nobreakspace {}5: Numerical Simulations of Stenotic Flow}}{66}{chapter.5}
-\contentsline {section}{\numberline {5.1}Background}{66}{section.5.1}
-\contentsline {section}{\numberline {5.2}Numerical Method}{68}{section.5.2}
-\contentsline {section}{\numberline {5.3}Geometry and Condition}{69}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Geometry}{69}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Mesh}{69}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Dimensionless wall distance}{70}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Conditions}{71}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Verification}{71}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Straight vessel test}{71}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Resolution independence test}{72}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Results}{73}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Verification Empirical Solution}{73}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Single stenosis evaluation}{75}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Pressure drop between multiple sub-critical stenoses and single critical stneosis}{80}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}Multiple critical stenoses analysis}{82}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}Multiple subcritical stenoses pressure drop}{83}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}Stenosis stretching on streamwise direction}{84}{subsection.5.5.6}
-\contentsline {subsection}{\numberline {5.5.7}Pressure drop and wall shear stress}{87}{subsection.5.5.7}
-\contentsline {subsection}{\numberline {5.5.8}Interval spacing between subcritical stenoses}{88}{subsection.5.5.8}
-\contentsline {section}{\numberline {5.6}Summary and discussion}{89}{section.5.6}
-\contentsline {chapter}{References}{90}{chapter*.67}
+\contentsline {subsection}{\numberline {1.1.2}Numerical Method Review}{2}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Objectives of this Work}{2}{section.1.2}
+\contentsline {chapter}{{Chapter\nobreakspace {}2: Numerical Method}}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Mathematical Models and Numerical Method}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Linear Elastic Equation and Weak Galerkin Method}{3}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Existing Numerical Methods Review}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Classic Continuous Galerkin Finite Element Method}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Discontinuous Galerkin Finite Element Method}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Mixed Finite Element Method}{8}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Weak Galerkin Finite Element Methods}{11}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Preliminary}{11}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Weak operators}{12}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Second order elliptic equation in WG}{13}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Weak Galerkin triangular meshes}{16}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Weak Galerkin quadrilateral meshes}{17}{subsection.2.3.5}
+\contentsline {chapter}{{Chapter\nobreakspace {}3: Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Nonlinear Elasticity Equation}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hybrid WG-CG Element}{23}{section.3.2}
+\contentsline {section}{\numberline {3.3}Generic Stabilizer}{24}{section.3.3}
+\contentsline {section}{\numberline {3.4}Parallel Computing Method}{25}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Parallel Computing Work Flow}{26}{section.3.5}
+\contentsline {section}{\numberline {3.6}Numerical Results}{28}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Geometric linear elastic equation}{28}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Geometric nonlinear elasticity equation}{31}{subsection.3.6.2}
+\contentsline {chapter}{{Chapter\nobreakspace {}4: Weak Galerkin Parallel Solutions of Linear Elasticity on Unstructured Meshes}}{38}{chapter.4}
+\contentsline {section}{\numberline {4.1}Domain Decomposition Scheme}{38}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}FETI-DP Method}{39}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Balancing Domain Decomposition by Constraints}{46}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}WG-BDDC Method}{50}{section.4.2}
+\contentsline {section}{\numberline {4.3}Schur Complement Method for subdomain $ \Omega _{j} $}{53}{section.4.3}
+\contentsline {section}{\numberline {4.4}BDDC Preconditioner}{55}{section.4.4}
+\contentsline {section}{\numberline {4.5}WG-BDDC Method Implementation}{56}{section.4.5}
+\contentsline {section}{\numberline {4.6}Preconditioned Conjugate Gradient Method}{58}{section.4.6}
+\contentsline {section}{\numberline {4.7}Parallel Computing Scheme}{60}{section.4.7}
+\contentsline {section}{\numberline {4.8}Numerical Results}{60}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{60}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{63}{subsection.4.8.2}
+\contentsline {chapter}{{Chapter\nobreakspace {}5: Numerical Simulations of Stenotic Flow}}{67}{chapter.5}
+\contentsline {section}{\numberline {5.1}Background}{67}{section.5.1}
+\contentsline {section}{\numberline {5.2}Numerical Method}{69}{section.5.2}
+\contentsline {section}{\numberline {5.3}Geometry and Condition}{70}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Geometry}{70}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Mesh}{70}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Dimensionless wall distance}{71}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Conditions}{72}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Verification}{72}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Straight vessel test}{72}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Resolution independence test}{73}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Results}{74}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Verification Empirical Solution}{74}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Single stenosis evaluation}{76}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Pressure drop between multiple sub-critical stenoses and single critical stneosis}{81}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Multiple critical stenoses analysis}{83}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}Multiple subcritical stenoses pressure drop}{84}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}Stenosis stretching on streamwise direction}{85}{subsection.5.5.6}
+\contentsline {subsection}{\numberline {5.5.7}Pressure drop and wall shear stress}{88}{subsection.5.5.7}
+\contentsline {subsection}{\numberline {5.5.8}Interval spacing between subcritical stenoses}{89}{subsection.5.5.8}
+\contentsline {section}{\numberline {5.6}Summary and discussion}{90}{section.5.6}
+\contentsline {chapter}{References}{91}{chapter*.68}
 \contentsfinish 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{61}
+\begin{thebibliography}{73}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -15,12 +15,24 @@ Anderson, E., Bai, Z., Bischof, C., Blackford, L.~S., Demmel, J., Dongarra, J.,
   Du~Croz, J., Greenbaum, A., Hammarling, S., McKenney, A., et~al., 1999.
   LAPACK Users' guide. SIAM.
 
+\bibitem[{Barry~Issenberg et~al.(2005)Barry~Issenberg, Mcgaghie, Petrusa,
+  Lee~Gordon, and Scalese}]{barry2005features}
+Barry~Issenberg, S., Mcgaghie, W.~C., Petrusa, E.~R., Lee~Gordon, D., Scalese,
+  R.~J., 2005. Features and uses of high-fidelity medical simulations that lead
+  to effective learning: a beme systematic review. Medical teacher 27~(1),
+  10--28.
+
 \bibitem[{Bertolotti et~al.(2006)Bertolotti, Qin, Lamontagne, Durand, Soulez,
   and Cloutier}]{bertolotti2006influence}
 Bertolotti, C., Qin, Z., Lamontagne, B., Durand, L.-G., Soulez, G., Cloutier,
   G., 2006. Influence of multiple stenoses on echo-doppler functional diagnosis
   of peripheral arterial disease: a numerical and experimental study. Annals of
   biomedical engineering 34~(4), 564.
+
+\bibitem[{Bertram(2010)}]{bertram2010evaluation}
+Bertram, C., 2010. Evaluation by fluid/structure-interaction spinal-cord
+  simulation of the effects of subarachnoid-space stenosis on an adjacent
+  syrinx. Journal of biomechanical engineering 132~(6), 061009.
 
 \bibitem[{B{\"o}ger et~al.(1997)B{\"o}ger, Bode-B{\"o}ger, Thiele, Junker,
   Alexander, and Fr{\"o}lich}]{boger1997biochemical}
@@ -45,6 +57,10 @@ Briley, W., McDonald, H., 1977. Solution of the multidimensional compressible
 
 \bibitem[{Ciarlet(2002)}]{ciarlet2002finite}
 Ciarlet, P.~G., 2002. The finite element method for elliptic problems. SIAM.
+
+\bibitem[{Clark(1976)}]{clark1976fluid}
+Clark, C., 1976. The fluid mechanics of aortic stenosis—i. theory and steady
+  flow experiments. Journal of biomechanics 9~(8), 521--528.
 
 \bibitem[{Courant(1994)}]{courant1994variational}
 Courant, R., 1994. Variational methods for the solution of problems of
@@ -104,6 +120,13 @@ Farhat, C., Mandel, J., Roux, F.~X., 1994. Optimal convergence properties of
 Farhat, C., Roux, F.-X., 1991. A method of finite element tearing and
   interconnecting and its parallel solution algorithm. International Journal
   for Numerical Methods in Engineering 32~(6), 1205--1227.
+
+\bibitem[{Feng et~al.(2012)Feng, Xenos, Girdhar, Kang, Davenport, Deng, and
+  Bluestein}]{feng2012viscous}
+Feng, R., Xenos, M., Girdhar, G., Kang, W., Davenport, J.~W., Deng, Y.,
+  Bluestein, D., 2012. Viscous flow simulation in a stenosis model using
+  discrete particle dynamics: a comparison between dpd and cfd. Biomechanics
+  and modeling in mechanobiology 11~(1-2), 119--129.
 
 \bibitem[{Ferziger et~al.(1997)Ferziger, Peric, and
   Leonard}]{ferziger1997computational}
@@ -183,15 +206,32 @@ Li, Q.~H., Wang, J., 2013. Weak galerkin finite element methods for parabolic
   equations. Numerical Methods for Partial Differential Equations 29~(6),
   2004--2024.
 
-\bibitem[{Liang and Papadakis(2007)}]{LiangFVM}
-Liang, C., Papadakis, G., Feb. 2007. {Large eddy simulation of pulsating flow
-  over a circular cylinder at subcritical Reynolds number.} Comupters \& fluids
-  36~(2).
+\bibitem[{Liang and Papadakis(2007{\natexlab{a}})}]{liang2007large}
+Liang, C., Papadakis, G., 2007{\natexlab{a}}. Large eddy simulation of
+  pulsating flow over a circular cylinder at subcritical reynolds number.
+  Computers \& fluids 36~(2), 299--312.
 
-\bibitem[{Long et~al.(2001)Long, Xu, Ramnarine, and Hoskins}]{Long}
-Long, Q., Xu, X., Ramnarine, K., Hoskins, P., Oct. 2001. {Numerical
+\bibitem[{Liang and Papadakis(2007{\natexlab{b}})}]{LiangFVM}
+Liang, C., Papadakis, G., Feb. 2007{\natexlab{b}}. {Large eddy simulation of
+  pulsating flow over a circular cylinder at subcritical Reynolds number.}
+  Comupters \& fluids 36~(2).
+
+\bibitem[{Liang et~al.(2009)Liang, Papadakis, and Luo}]{liang2009effect}
+Liang, C., Papadakis, G., Luo, X., 2009. Effect of tube spacing on the vortex
+  shedding characteristics of laminar flow past an inline tube array: a
+  numerical study. Computers \& Fluids 38~(4), 950--964.
+
+\bibitem[{Long et~al.(2001{\natexlab{a}})Long, Xu, Ramnarine, and
+  Hoskins}]{long2001numerical}
+Long, Q., Xu, X., Ramnarine, K., Hoskins, P., 2001{\natexlab{a}}. Numerical
   investigation of physiologically realistic pulsatile flow through arterial
-  stenosis}. Journal of Biomechanics 34~(10).
+  stenosis. Journal of biomechanics 34~(10), 1229--1242.
+
+\bibitem[{Long et~al.(2001{\natexlab{b}})Long, Xu, Ramnarine, and
+  Hoskins}]{Long}
+Long, Q., Xu, X., Ramnarine, K., Hoskins, P., Oct. 2001{\natexlab{b}}.
+  {Numerical investigation of physiologically realistic pulsatile flow through
+  arterial stenosis}. Journal of Biomechanics 34~(10).
 
 \bibitem[{Malinow et~al.(1989)Malinow, Kang, Taylor, Wong, Coull, Inahara,
   Mukerjee, Sexton, and Upson}]{malinow1989prevalence}
@@ -235,10 +275,27 @@ Mu, L., Wang, J., Ye, X., 2014. Weak galerkin finite element methods for the
 Mu, L., Wang, J., Ye, X., 2015. A new weak galerkin finite element method for
   the helmholtz equation. IMA Journal of Numerical Analysis 35~(3), 1228--1255.
 
+\bibitem[{Nadeem and Akbar(2010)}]{nadeem2010simulation}
+Nadeem, S., Akbar, N.~S., 2010. Simulation of the second grade fluid model for
+  blood flow through a tapered artery with a stenosis. Chinese Physics Letters
+  27~(6), 068701.
+
+\bibitem[{Nesbitt et~al.(2009)Nesbitt, Westein, Tovar-Lopez, Tolouei, Mitchell,
+  Fu, Carberry, Fouras, and Jackson}]{nesbitt2009shear}
+Nesbitt, W.~S., Westein, E., Tovar-Lopez, F.~J., Tolouei, E., Mitchell, A., Fu,
+  J., Carberry, J., Fouras, A., Jackson, S.~P., 2009. A shear
+  gradient--dependent platelet aggregation mechanism drives thrombus formation.
+  Nature medicine 15~(6), 665--673.
+
 \bibitem[{Ng et~al.(1999)Ng, Chan, and Tang}]{ng1999fast}
 Ng, M.~K., Chan, R.~H., Tang, W.-C., 1999. A fast algorithm for deblurring
   models with neumann boundary conditions. SIAM Journal on Scientific Computing
   21~(3), 851--866.
+
+\bibitem[{Ogulu and Abbey(2005)}]{ogulu2005simulation}
+Ogulu, A., Abbey, T., 2005. Simulation of heat transfer on an oscillatory blood
+  flow in an indented porous artery. International communications in heat and
+  mass transfer 32~(7), 983--989.
 
 \bibitem[{Ojha et~al.(1989)Ojha, Cobbold, Johnston, and Hummel}]{Ojha}
 Ojha, M., Cobbold, R.~S., Johnston, K.~W., Hummel, R.~L., 1989. {Pulsatile flow
@@ -256,6 +313,12 @@ Rhie, C.~M., Chow, W.~L., 1983. {Numerical study of the turbulent flow past an
 \bibitem[{Seeley and Young(1976)}]{Seeley&Young}
 Seeley, B.~D., Young, D.~F., 1976. {Effect of geometry on pressure losses
   across models of arterial stenoses.} Journal of Biomechanics 9~(7), 439--448.
+
+\bibitem[{Stergiopulos et~al.(1992)Stergiopulos, Young, and
+  Rogge}]{stergiopulos1992computer}
+Stergiopulos, N., Young, D., Rogge, T., 1992. Computer simulation of arterial
+  flow with applications to arterial and aortic stenoses. Journal of
+  biomechanics 25~(12), 1477--1488.
 
 \bibitem[{Temam(1984)}]{temam1984navier}
 Temam, R., 1984. Navier-stokes equations. Vol.~2. North-Holland Amsterdam.
@@ -290,6 +353,13 @@ Wang, J., Ye, X., 2013. A weak galerkin finite element method for second-order
 \bibitem[{Wang and Ye(2014)}]{wang2014weak}
 Wang, J., Ye, X., 2014. A weak galerkin mixed finite element method for second
   order elliptic problems. Mathematics of Computation 83~(289), 2101--2126.
+
+\bibitem[{Wardlaw et~al.(2006)Wardlaw, Chappell, Best, Wartolowska, Berry,
+  et~al.}]{wardlaw2006non}
+Wardlaw, J., Chappell, F., Best, J., Wartolowska, K., Berry, E., et~al., 2006.
+  Non-invasive imaging compared with intra-arterial angiography in the
+  diagnosis of symptomatic carotid stenosis: a meta-analysis. The Lancet
+  367~(9521), 1503--1512.
 
 \bibitem[{Young et~al.(735-743)Young, Cholvin, and Roth}]{Young&Cholvin}
 Young, D.~F., Cholvin, N.~R., Roth, A.~C., 1975 735-743. {Pressure drop across

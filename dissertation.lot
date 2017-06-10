@@ -1,20 +1,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Error and accuracy of hybrid WG-CG element for linear elasticity.\relax }}{28}{table.caption.20}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Numerical results for triangular element.\relax }}{35}{table.caption.27}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Numerical results for quadrilateral element.\relax }}{35}{table.caption.28}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Error and accuracy of hybrid WG-CG element for linear elasticity.\relax }}{29}{table.caption.21}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Numerical results for triangular element.\relax }}{36}{table.caption.28}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Numerical results for quadrilateral element.\relax }}{36}{table.caption.29}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Performance with $P_{k}P_{k-1}P_{k-1}^2$.\relax }}{61}{table.caption.35}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Performance with $P_{k}P_{k}P_{k-1}^2$.\relax }}{62}{table.caption.36}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Case 1: Performance with $P_{k}P_{k}P_{k}^2$.\relax }}{63}{table.caption.37}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Case 1: Performance with $P_{1}P_{1}$, $ \lambda = 1, \mu = 0.5 $\relax }}{63}{table.caption.38}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Performance with $P_{k}P_{k-1}P_{k-1}^2$.\relax }}{62}{table.caption.36}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Performance with $P_{k}P_{k}P_{k-1}^2$.\relax }}{63}{table.caption.37}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Case 1: Performance with $P_{k}P_{k}P_{k}^2$.\relax }}{64}{table.caption.38}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Case 1: Performance with $P_{1}P_{1}$, $ \lambda = 1, \mu = 0.5 $\relax }}{64}{table.caption.39}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Simulation condition parameters.\relax }}{71}{table.caption.45}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Straight vessel test results.\relax }}{72}{table.caption.46}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Resolution independence test results.\relax }}{73}{table.caption.48}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Mean pressure drop of single stenosis for different blocking ratio\relax }}{75}{table.caption.51}
-\contentsline {table}{\numberline {5.5}{\ignorespaces Pressure drop among multiple subcritical stenoses\relax }}{81}{table.caption.55}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Pressure drop comparison between original and deformed stenosis.\relax }}{86}{table.caption.62}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Pressure drop of different interval spacing.\relax }}{89}{table.caption.66}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Simulation condition parameters.\relax }}{72}{table.caption.46}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Straight vessel test results.\relax }}{73}{table.caption.47}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Resolution independence test results.\relax }}{74}{table.caption.49}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Mean pressure drop of single stenosis for different blocking ratio\relax }}{76}{table.caption.52}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Pressure drop among multiple subcritical stenoses\relax }}{82}{table.caption.56}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Pressure drop comparison between original and deformed stenosis.\relax }}{87}{table.caption.63}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Pressure drop of different interval spacing.\relax }}{90}{table.caption.67}
 \contentsfinish 

@@ -6,7 +6,7 @@
 \BOOKMARK [0][-]{chapter.1}{Chapter 1: Introduction}{}% 6
 \BOOKMARK [1][-]{section.1.1}{1.1 Backgrounds}{chapter.1}% 7
 \BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Engineering Background}{section.1.1}% 8
-\BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Numerical Background}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Numerical Method Review}{section.1.1}% 9
 \BOOKMARK [1][-]{section.1.2}{1.2 Objectives of this Work}{chapter.1}% 10
 \BOOKMARK [0][-]{chapter.2}{Chapter 2: Numerical Method}{}% 11
 \BOOKMARK [1][-]{section.2.1}{2.1 Mathematical Models and Numerical Method}{chapter.2}% 12
@@ -64,4 +64,4 @@
 \BOOKMARK [2][-]{subsection.5.5.7}{5.5.7 Pressure drop and wall shear stress}{section.5.5}% 64
 \BOOKMARK [2][-]{subsection.5.5.8}{5.5.8 Interval spacing between subcritical stenoses}{section.5.5}% 65
 \BOOKMARK [1][-]{section.5.6}{5.6 Summary and discussion}{chapter.5}% 66
-\BOOKMARK [0][-]{chapter*.67}{References}{}% 67
+\BOOKMARK [0][-]{chapter*.68}{References}{}% 67

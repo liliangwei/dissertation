@@ -31,46 +31,50 @@ Repeated entry---line 787 of file references.bib
  : @article{farhat1994optimal
  :                           ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1691 of file references.bib
+ : @article{liang2007large
+ :                        ,
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in reddy1993introduction
-You've used 61 entries,
+You've used 73 entries,
             2821 wiz_defined-function locations,
-            1010 strings with 15444 characters,
-and the built_in function-call counts, 30864 in all, are:
-= -- 3157
-> -- 1655
-< -- 38
-+ -- 663
-- -- 558
-* -- 2752
-:= -- 5592
-add.period$ -- 187
-call.type$ -- 61
-change.case$ -- 484
-chr.to.int$ -- 59
-cite$ -- 62
-duplicate$ -- 1070
-empty$ -- 2028
-format.name$ -- 743
-if$ -- 6131
-int.to.chr$ -- 3
+            1078 strings with 18053 characters,
+and the built_in function-call counts, 37581 in all, are:
+= -- 3836
+> -- 2049
+< -- 43
++ -- 816
+- -- 693
+* -- 3398
+:= -- 6803
+add.period$ -- 223
+call.type$ -- 73
+change.case$ -- 588
+chr.to.int$ -- 69
+cite$ -- 74
+duplicate$ -- 1282
+empty$ -- 2450
+format.name$ -- 916
+if$ -- 7452
+int.to.chr$ -- 5
 int.to.str$ -- 1
-missing$ -- 67
-newline$ -- 190
-num.names$ -- 244
-pop$ -- 439
+missing$ -- 79
+newline$ -- 226
+num.names$ -- 292
+pop$ -- 525
 preamble$ -- 1
-purify$ -- 428
+purify$ -- 520
 quote$ -- 0
-skip$ -- 840
+skip$ -- 996
 stack$ -- 0
-substring$ -- 1798
-swap$ -- 143
+substring$ -- 2232
+swap$ -- 171
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 525
+type$ -- 633
 warning$ -- 1
-while$ -- 270
+while$ -- 328
 width$ -- 0
-write$ -- 669
-(There were 5 error messages)
+write$ -- 801
+(There were 6 error messages)
