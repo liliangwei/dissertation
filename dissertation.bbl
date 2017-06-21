@@ -1,4 +1,4 @@
-\begin{thebibliography}{73}
+\begin{thebibliography}{78}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -21,6 +21,9 @@ Barry~Issenberg, S., Mcgaghie, W.~C., Petrusa, E.~R., Lee~Gordon, D., Scalese,
   R.~J., 2005. Features and uses of high-fidelity medical simulations that lead
   to effective learning: a beme systematic review. Medical teacher 27~(1),
   10--28.
+
+\bibitem[{Bathe(2008)}]{bathe2008finite}
+Bathe, K.-J., 2008. Finite element method. Wiley Online Library.
 
 \bibitem[{Bertolotti et~al.(2006)Bertolotti, Qin, Lamontagne, Durand, Soulez,
   and Cloutier}]{bertolotti2006influence}
@@ -54,6 +57,11 @@ Brenner, S., Scott, R., 2007. The mathematical theory of finite element
 Briley, W., McDonald, H., 1977. Solution of the multidimensional compressible
   navier-stokes equations by a generalized implicit method. Journal of
   Computational Physics 24~(4), 372--397.
+
+\bibitem[{Brussino and Sonnad(1989)}]{brussino1989comparison}
+Brussino, G., Sonnad, V., 1989. A comparison of direct and preconditioned
+  iterative techniques for sparse, unsymmetric systems of linear equations.
+  International journal for numerical methods in engineering 28~(4), 801--815.
 
 \bibitem[{Ciarlet(2002)}]{ciarlet2002finite}
 Ciarlet, P.~G., 2002. The finite element method for elliptic problems. SIAM.
@@ -257,10 +265,17 @@ Meuwissen, M., Siebes, M., Chamuleau, S.~A., van Eck-Smit, B.~L., Koch, K.~T.,
   stenosis resistance index for evaluation of functional coronary lesion
   severity. Circulation 106~(4), 441--446.
 
-\bibitem[{Mu et~al.(2013)Mu, Wang, Wang, and Ye}]{mu2013computational}
-Mu, L., Wang, J., Wang, Y., Ye, X., 2013. A computational study of the weak
-  galerkin method for second-order elliptic equations. Numerical Algorithms
-  63~(4), 753--777.
+\bibitem[{Mu et~al.(2013{\natexlab{a}})Mu, Wang, Wang, and
+  Ye}]{mu2013computational}
+Mu, L., Wang, J., Wang, Y., Ye, X., 2013{\natexlab{a}}. A computational study
+  of the weak galerkin method for second-order elliptic equations. Numerical
+  Algorithms 63~(4), 753--777.
+
+\bibitem[{Mu et~al.(2013{\natexlab{b}})Mu, Wang, Wang, and Ye}]{mu2013weak}
+Mu, L., Wang, J., Wang, Y., Ye, X., 2013{\natexlab{b}}. A weak galerkin mixed
+  finite element method for biharmonic equations. In: Numerical Solution of
+  Partial Differential Equations: Theory, Algorithms, and Their Applications.
+  Springer, pp. 247--277.
 
 \bibitem[{Mu et~al.(2012)Mu, Wang, and Ye}]{mu2012weak}
 Mu, L., Wang, J., Ye, X., 2012. Weak galerkin finite element methods on
@@ -354,6 +369,10 @@ Wang, J., Ye, X., 2013. A weak galerkin finite element method for second-order
 Wang, J., Ye, X., 2014. A weak galerkin mixed finite element method for second
   order elliptic problems. Mathematics of Computation 83~(289), 2101--2126.
 
+\bibitem[{Wang and Ye(2016)}]{wang2016weak}
+Wang, J., Ye, X., 2016. A weak galerkin finite element method for the stokes
+  equations. Advances in Computational Mathematics 42~(1), 155--174.
+
 \bibitem[{Wardlaw et~al.(2006)Wardlaw, Chappell, Best, Wartolowska, Berry,
   et~al.}]{wardlaw2006non}
 Wardlaw, J., Chappell, F., Best, J., Wartolowska, K., Berry, E., et~al., 2006.
@@ -369,6 +388,11 @@ Young, D.~F., Cholvin, N.~R., Roth, A.~C., 1975 735-743. {Pressure drop across
 \bibitem[{Young and Tsai(547-559)}]{Young&Tsai}
 Young, D.~F., Tsai, F.~Y., 1973 547-559. {Flow characteristics in models of
   arterial stenoses-II. Unsteady flow}. Journal of Biomechanics 62~(5).
+
+\bibitem[{Zhang et~al.(2016)Zhang, Liang, Li, Zhang, and Lee}]{zhang2016high}
+Zhang, X., Liang, C., Li, L., Zhang, Z., Lee, J., 2016. A high order spectral
+  difference method for fluid-structure interaction using an implicit-explicit
+  rk coupling scheme. In: 46th AIAA Fluid Dynamics Conference. p. 3354.
 
 \bibitem[{Zienkiewicz et~al.(1977)Zienkiewicz, Taylor, and
   Taylor}]{zienkiewicz1977finite}
