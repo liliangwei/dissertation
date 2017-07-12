@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 JUL 2017 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  12 JUL 2017 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,7 +998,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 14--17
 
 
 ] [2 <./pics/computer_simulation.pdf>]
-<./pics/construct_matrix.pdf, id=637, 963.6pt x 542.025pt>
+<./pics/construct_matrix.pdf, id=636, 963.6pt x 542.025pt>
 File: ./pics/construct_matrix.pdf Graphic file (type pdf)
 
 <use ./pics/construct_matrix.pdf>
@@ -1009,7 +1009,8 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 26--29
  [][] 
  []
 
-<./pics/fem.pdf, id=639, 963.6pt x 542.025pt>
+[3 <./pics/construct_matrix.pdf>]
+<./pics/fem.pdf, id=667, 963.6pt x 542.025pt>
 File: ./pics/fem.pdf Graphic file (type pdf)
  <use ./pics/fem.pdf>
 Package pdftex.def Info: ./pics/fem.pdf used on input line 37.
@@ -1019,10 +1020,10 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 36--39
  [][] 
  []
 
-[3 <./pics/construct_matrix.pdf>] [4 <./pics/fem.pdf>] [5] [6]
-<./pics/ch1p4.pdf, id=717, 963.6pt x 542.025pt>
+[4 <./pics/fem.pdf>] [5] [6] <./pics/ch1p4.pdf, id=717, 963.6pt x 542.025pt>
 File: ./pics/ch1p4.pdf Graphic file (type pdf)
- <use ./pics/ch1p4.pdf>
+
+<use ./pics/ch1p4.pdf>
 Package pdftex.def Info: ./pics/ch1p4.pdf used on input line 67.
 (pdftex.def)             Requested size: 433.62001pt x 243.90898pt.
 
@@ -1601,7 +1602,7 @@ Here is how much of TeX's memory you used:
  24960 multiletter control sequences out of 15000+600000
  13257 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,56p,1701b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,56p,1712b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -1622,7 +1623,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on dissertation.pdf (123 pages, 8156273 bytes).
+Output written on dissertation.pdf (123 pages, 8156931 bytes).
 PDF statistics:
  1946 PDF objects out of 2073 (max. 8388607)
  1654 compressed objects within 17 object streams
