@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.7">
-<info created="D:20170202123802" modified="D:20170202141123"/>
+<info created="D:20170202123802" modified="D:20171015212649"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -709,5 +709,20 @@ h
 <use name="mark/fsquare(sfx)" pos="315.814 597.774" size="normal" stroke="black" fill="white"/>
 <use name="mark/fsquare(sfx)" pos="317.52 613.353" size="normal" stroke="black" fill="white"/>
 <use name="mark/fsquare(sfx)" pos="322.775 613.387" size="normal" stroke="black" fill="white"/>
+<text transformations="translations" pos="320.5 776" stroke="black" type="label" width="9.541" height="4.294" depth="1.49" valign="baseline">$e_{k}$</text>
+<text matrix="1 0 0 1 19.0581 -8.94962" transformations="translations" pos="258.5 784" stroke="black" type="label" width="13.297" height="6.812" depth="1.49" valign="baseline">$\Lambda_{\Pi}$</text>
+<text matrix="1 0 0 1 -6 -4.6977" transformations="translations" pos="396.5 715" stroke="black" type="label" width="13.962" height="6.812" depth="1.49" valign="baseline">$\Lambda_{\Delta}$</text>
+<path stroke="black" arrow="normal/normal">
+366.236 708.378 m
+389.695 715.38 l
+</path>
+<path stroke="black" arrow="normal/normal">
+256.646 763.348 m
+273.802 774.202 l
+</path>
+<path stroke="black" arrow="normal/normal">
+320.019 762.647 m
+297.611 773.851 l
+</path>
 </page>
 </ipe>

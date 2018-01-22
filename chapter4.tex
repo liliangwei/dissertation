@@ -293,6 +293,68 @@ A Dirichlet preconditioner is applied in FETI-DP method for solving above equati
 
 Based on above linear system, we can find out that the Lagrange multiplier is an external unknown vector and requires lots of computational effort to assemble the matrix. When we solve the such a linear system, it's common to obtain the result along the dual space that $ u_{\Delta}^{(1)} \neq  u_{\Delta}^{(2)}$. To maintain the continuity, we shall restore the computing a weighted average of the vectors. Therefore, an assembled residual of resulting vector needs to be compute. The residue is mapped into the appropriate space of enforced vector on the right-hand side of the equation. Then we can use the residue vector to correct the solution and gradually obtain the final results. An improved algorithm, BDDC method, will be discussed in the following section.
 
+\subsection{Block Cholesky elimination}
+
+First, we consider how to represent the inverse of a matrix $ M $, which is symmetric and positive definite block matrix as
+
+\begin{equation}\label{eq:linearSys}
+M = \begin{bmatrix}
+A & B^{T} \\
+B & C\\
+\end{bmatrix}
+\end{equation}
+where $ M $ is the global stiffness matrix, $ A $ is the square matrix represents the interior values of each subdomain, $ C $ is the values on the interface and $ B $ represents the connectivity between $ A $ and $ C $.
+
+We employ the block Cholesky elimination and obtain the following equation that
+\begin{equation}\label{eq:schur1}
+\begin{bmatrix}
+A & B^{T} \\ B & C \\
+\end{bmatrix} = 
+\begin{bmatrix}
+I_{A} & 0 \\ BA^{-1} & I_{C}\\
+\end{bmatrix} \begin{bmatrix}
+A & 0 \\ 0 & C - BA^{-1} B^{T}
+\end{bmatrix}
+\begin{bmatrix}
+I_{A} & A^{-1} B^{T} \\ 0 & I_{C} \\
+\end{bmatrix}
+\end{equation}
+the $ S $ can be seen as a smaller global matrix containing the information among $ A $, $ B $ and $ C $. A Schur complement matrix $ S $ ,in Eq \eqref{eq:schur1}, represents a smaller global stiffness matrix partially assembled by each individual subdomains. However, after the decomposition, the size of $ S $ is still too large to be directly inversed. Consequently, we introduce the primal and dual spaces to calculate a preconditioner in parallel fashion to distribute the computational load and accelerate the overall speed. We redefine the Schur complement matrix $ S $ and compute the preconditioner $ S_{BDDC} $ by a parallel fashion. The number of primal variables, the constraints through the interface, is much less than the size of Schur complement matrix.
+
+Both $ I_{A} $ and $ I_{C} $ are identity matrices. The Schur complement is represented as
+\begin{equation}
+\mathit{S} = C - BA^{-1} B^{T}
+\end{equation}
+
+The inverse of original matrix $ M $ is 
+\begin{eqnarray} \label{eq:schur}
+M^{-1} &=& \begin{bmatrix}
+A & B^{T} \\
+B & C\\
+\end{bmatrix}^{-1} =
+\begin{bmatrix}
+I_{A} &  -A^{-1}B^{T} \\ 0 & I_{C}\\
+\end{bmatrix} \begin{bmatrix}
+A^{-1}& 0 \\ 0 & S^{-1}
+\end{bmatrix}
+\begin{bmatrix}
+I_{A} & 0 \\ -BA^{-1} & I_{C} \\
+\end{bmatrix}\\
+&=& \begin{bmatrix}
+A^{-1} & 0 \\ 0 & 0 \\
+\end{bmatrix} + \Phi S^{-1} \Phi^{T}
+\end{eqnarray}
+where $ \Phi =\begin{bmatrix}
+-A^{-1}B^{T} \\ I_{C}
+\end{bmatrix} $
+
+The original inverse global matrix  is partitioned into one matrix containing $ A^{-1} $ and the other matrix associated with the $ S^{-1} $. The interface matrix $ S $ takes from adjacent local subdomains, corresponding to the degrees of freedom on the solid squares shown in Figure \ref{fig4: BDDC2}. 
+
+After decompose the original computational domain into subdomains, we demonstrate the BDDC method to solve the matrix of the governing equation 
+\begin{equation}
+{M}\mathbf{u} = \mathbf{f}
+\end{equation}
+
 
 \subsection{Balancing Domain Decomposition by Constraints}
 
@@ -733,108 +795,221 @@ The software has been tested on the George Washington University cluster, Coloni
 \subsection{Poisson Equation}
 The WG element can choose different order of basis function in weak gradient equation. Hence, we test the combination order of interior, boundary and weak gradient shape functions. 
 
+The WG element can choose different order of basis function in weak gradient equation among gradient, interior and boundary basis functions. Hence, we test the different combination orders of interior, boundary and weak gradient shape functions. 
+
 The Poisson equation $ -\nabla \cdot (\nabla \mathbf{u}) = \mathbf{f} $ is considered in the test. Let $ \Omega = (0, 1) \times (0, 1) $, $ a = I $, and $ f $ are chosen such that the exact solution is $ u = sin(\pi x) sin(\pi y) $
 
-We choose different weak Galerkin elements for validating our WG-BDDC numerical scheme. The unit square is firstly decomposed into $ N \times N $ subdomains as the coarse mesh with length $ H = 1 / N $. In every subdomain, all elements are further triangulated into a $ 2 n \times n $ triangles, and the finite mesh has the size $ h = 1/(N\times n) $. The preconditioned system is solved by the PCG solver. In every iteration, the $ L^2- $norm of the residual is reduced by a factor of $ 10^{-6} $. The $ L^{2} $ error is calculated by using the equation $ e_{L^{2}} = \sqrt{\sum_{k = 1}^{n} (u - u_{t})^{2} } $
+We choose different weak Galerkin elements for validating our WG-BDDC numerical scheme. The unit square is firstly decomposed into $ N \times N $ subdomains as the coarse mesh with length $ H = 1 / N $. In every subdomain, all elements are further triangulated into a $ 2 n \times n $ triangles, and the finite mesh has the size $ h = 1/(N\times n) $. The preconditioned system is solved by the PCG solver. In every iteration, the $ L^2- $norm of the residual is reduced by a factor of $ 10^{-6} $.
 
-\begin{table}[h]
+%\begin{table}[H]
+%	\setlength{\tabcolsep}{2pt} {
+%		\caption{ Performance with $P_{k}P_{k-1}P_{k-1}^2$.}
+%		\label{Tab:case1_PkPk-1Pk-1}
+%		\vspace{-5pt}
+%		\begin{center}
+%		%	\scalebox{0.6}{
+%				\begin{tabular}{c|cccc|c|cccc}
+%					\hline
+%					\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=1$ and \#sub=64}\\ 
+%					& Cond.   & Iter. &$L^2$-error & $ O $ & & Cond.   & Iter. &$L^2$-error &$ O $ \\
+%					\hline
+%					$4\times 4$     &2.217 &5 &1.6013e-3 &- &4   &1.722 &7   &1.6013e-3 & -\\
+%					$8\times 8$     &2.390 &9 &3.9939e-4 & 2.0 &8   &2.390 &9   &3.9939e-4& 2.0\\
+%					$16\times 16$ &2.335 &8 &9.9789e-5 & 2.0 &16 &3.245 &10 &9.9789e-5 & 2.0\\
+%					$32\times 32$ &2.325 &8 &2.4944e-5 & 2.0 &32 &4.239 &11 &2.4944e-5 & 2.0 \\
+%					\hline
+%					\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=2$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=2$ and \#sub=64}\\ 
+%					& Cond.   & Iter. &$L^2$-error & $ O $ & & Cond.   & Iter. &$L^2$-error & $ O $  \\
+%					\hline
+%					$4\times 4$    &3.528 & 8  &7.1456e-5 & -  &4   &2.900 &10 &7.1456e-5 & - \\
+%					$8\times 8$    &3.803 &10 &8.9214e-6 & 3.0 &8   &3.803 &10 &8.9214e-6 & 3.0 \\
+%					$16\times 16$&3.768 &10 &1.1150e-6 & 3.0 &16 &4.957 &12 &1.1150e-6 & 3.0 \\
+%					$32\times 32$&3.758 &10 &1.3938e-7 & 3.0 &32 &6.218 &13 &1.3938e-7 & 3.0\\
+%					\hline
+%				\end{tabular}
+%		%	}
+%		\end{center} }
+%	\end{table}
+
+
+\begin{table}[H]
 	\setlength{\tabcolsep}{2pt} {
-		\caption{ Performance with $P_{k}P_{k-1}P_{k-1}^2$.}
-		\label{Tab:case1_PkPk-1Pk-1}
 		\vspace{-5pt}
 		\begin{center}
 			%	\scalebox{0.6}{
-			\begin{tabular}{c|cccc|c|cccc}
+			\begin{tabular}{c|cccc|cccc}
 				\hline
-				\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=1$ and \#sub=64}\\ 
-				& Cond.   & Iter. &$L^2$-error & $ O $ & & Cond.   & Iter. &$L^2$-error &$ O $ \\
+				\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$} &\multicolumn{4}{c}{$k=2$}\\ 
+				& Cond.   & Iter. &$L^2$-error & $ O $ & Cond.   & Iter. &$L^2$-error &$ O $ \\
 				\hline
-				$4\times 4$     &2.217 &5 &1.6013e-3 &- &4   &1.722 &7   &1.6013e-3 & -\\
-				$8\times 8$     &2.390 &9 &3.9939e-4 & 2.0 &8   &2.390 &9   &3.9939e-4& 2.0\\
-				$16\times 16$ &2.335 &8 &9.9789e-5 & 2.0 &16 &3.245 &10 &9.9789e-5 & 2.0\\
-				$32\times 32$ &2.325 &8 &2.4944e-5 & 2.0 &32 &4.239 &11 &2.4944e-5 & 2.0 \\
-				\hline
-				\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=2$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=2$ and \#sub=64}\\ 
-				& Cond.   & Iter. &$L^2$-error & $ O $ & & Cond.   & Iter. &$L^2$-error & $ O $  \\
-				\hline
-				$4\times 4$    &3.528 & 8  &7.1456e-5 & -  &4   &2.900 &10 &7.1456e-5 & - \\
-				$8\times 8$    &3.803 &10 &8.9214e-6 & 3.0 &8   &3.803 &10 &8.9214e-6 & 3.0 \\
-				$16\times 16$&3.768 &10 &1.1150e-6 & 3.0 &16 &4.957 &12 &1.1150e-6 & 3.0 \\
-				$32\times 32$&3.758 &10 &1.3938e-7 & 3.0 &32 &6.218 &13 &1.3938e-7 & 3.0\\
+				$4\times 4$     &2.217 &5 &1.6013e-3 &-  &3.528 & 8  &7.1456e-5 & - \\
+				$8\times 8$     &2.390 &9 &3.9939e-4 & 2.0 &3.803 &10 &8.9214e-6 & 3.0\\
+				$16\times 16$ &2.335 &8 &9.9789e-5 & 2.0 &3.768 &10 &1.1150e-6 & 3.0\\
+				$32\times 32$ &2.325 &8 &2.4944e-5 & 2.0 &3.758 &10 &1.3938e-7 & 3.0\\
 				\hline
 			\end{tabular}
 			%	}
 		\end{center} }
+		\caption{The accuracy and convergence properties of the $P_{k}P_{k-1}P_{k-1}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements.}
+		\label{Tab:case1_PkPk-1Pk-1Row1}
 	\end{table}
 	
-	The first test is implemented for weak Galerkin element $ u_0 \in P_k, u_b \in P_{k - 1} $, and $ \nabla_w u \in P_{k - 1} $. \ref{Tab:case1_PkPk-1Pk-1} shows the condition number of lanczos matrix and the iteration number in PCG solver. From the \ref{Tab:case1_PkPk-1Pk-1}, we can see that the condition number is independent of the number of subdomain, while it depends on $ H/h $ as $ (1 + log(\frac{H}{h}))^{2} $. Meanwhile, the communication between each adjacent subdomain does not introduce any error to the results. With the increasing of number of subdomains, we obtain stable second and third order of results. The iteration number of global matrix increases slowly to the number of subdomains.
 	
-	
-	\begin{table}[h]
-		\small
-		\setlength{\tabcolsep}{1pt} {
-			\caption{ Performance with $P_{k}P_{k}P_{k-1}^2$.}
-			\label{Tab:case1_PkPkPk-1}
+	\begin{table}[H]
+		\setlength{\tabcolsep}{2pt} {
+			\vspace{-5pt}
 			\begin{center}
-				%\scalebox{0.8}{
-				\begin{tabular}{c|cccc|c|cccc}
+				%	\scalebox{0.6}{
+				\begin{tabular}{c|cccc|cccc}
 					\hline
-					\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=1$ and \#sub=64}\\ 
-					& Cond.   & Iter. &$L^2$-error & $O1$ & & Cond.   & Iter. &$L^2$-error & $O$\\
+					\multirow{2}{*}{$ H/h $} &\multicolumn{4}{c|}{$k=1$}  &\multicolumn{4}{c}{$k=2$}\\ 
+					& Cond.   & Iter. &$L^2$-error & $ O $ & Cond.   & Iter. &$L^2$-error &$ O $ \\
 					\hline
-					$4\times 4$ & 2.451 & 7 & 1.0109e-3 & - &$4$ &1.968 &8 &1.0109e-3 &-\\
-					$8\times 8$ &2.648 &9 &2.5117e-4 &	2.0  &8 &2.648 &9 &2.5117e-4 &2.0 \\
-					$16\times 16$ &2.629 &9 &	6.2696e-5 &2.0  &16 &3.529 &10 &6.2696e-5 &2.0\\
-					$32\times 32$ &2.617 &9 &1.5668e-5 &2.0  &32 &4.619 &12 &1.5668e-5 &2.0\\
-					\hline
-					\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=2$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=2$ and \#sub=64}\\ 
-					& Cond.   & Iter. &$L^2$-error &  $\lambda_1$ & & Cond.   & Iter. &$L^2$-error & $\lambda_1$\\
-					\hline
-					$4\times 4$ & 3.805 &8 &6.6333e-5  &- &4 &3.926 &11 &6.6333e-5  &-\\
-					$8\times 8$ & 4.003 &12 &8.2709e-6  & 3.0 &8 &4.003 &12 &8.2709e-6  &3.0 \\
-					$16\times 16$ &3.943 &12 &1.0334e-6  &3.0 &16 &5.084 &13 &1.0334e-6  &3.0\\
-					$32\times 32$ &3.917 &12 &1.2917e-7  &3.0 &32 &6.329 &13 &1.2918e-7  &3.0\\
+					4   &1.722 &7   &1.6013e-3 & - &2.900 &10 &7.1456e-5 & - \\
+					8   &2.390 &9   &3.9939e-4& 2.0 &3.803 &10 &8.9214e-6 & 3.0\\
+					16 &3.245 &10 &9.9789e-5 & 2.0 &4.957 &12 &1.1150e-6 & 3.0\\
+					32 &4.239 &11 &2.4944e-5 & 2.0 &6.218 &13 &1.3938e-7 & 3.0\\
 					\hline
 				\end{tabular}
 				%	}
 			\end{center} }
+			\caption{The accuracy and convergence  $P_{k}P_{k-1}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.}
+			\label{Tab:case1_PkPk-1Pk-1Row2}
 		\end{table}
 		
-		The second test is the weak Galerkin element with order $ u_{0} \in P_{k} $, $ u_{b} \in P_{k} $ and $ \nabla_{w} \in P_{k - 1} $. The condition number has the identical pattern of the theoretical convergence rate. Comparing with the first example, we can find the convergence rates and accuracy have optimal agreement to the degree of polynomial in $ u_{0} $. The parallel scalability is up to 1,000 processors.
+		The first test is implemented for weak Galerkin element with $ u_0 \in P_k, u_b \in P_{k - 1} $, and $ \nabla_w u \in P_{k - 1} $. The Tables \ref{Tab:case1_PkPk-1Pk-1Row1} and \ref{Tab:case1_PkPk-1Pk-1Row2} show the condition number of Lanczos matrix and the iteration number in thes PCG solver. From the Table \ref{Tab:case1_PkPk-1Pk-1Row1} and Table \ref{Tab:case1_PkPk-1Pk-1Row2}, we can see that the condition number is independent of the number of subdomain, while it depends on the resolution of mesh, $ H/h $, as $ (1 + log(\frac{H}{h}))^{2} $. In the mean time, the communication overhead between each adjacent subdomain does not introduce any error to the results. With the increasing of number of subdomains, we obtain stable second and third order accuracy results. The iteration number indicates that the increasing of parallel computing expense is much lower than the gain from domain decomposition. It comes from that the size of global matrix grows slower than the DOFs in primal space.
 		
-		\begin{table}[h]
-			\small
-			\vspace{-10pt}
+		
+		%	\begin{table}[H]
+		%		\small
+		%		\setlength{\tabcolsep}{1pt} {
+		%			\caption{ Performance with $P_{k}P_{k}P_{k-1}^2$.}
+		%			\label{Tab:case1_PkPkPk-1}
+		%			\begin{center}
+		%				%\scalebox{0.8}{
+		%					\begin{tabular}{c|cccc|c|cccc}
+		%						\hline
+		%						\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=1$ and \#sub=64}\\ 
+		%						& Cond.   & Iter. &$L^2$-error & $O1$ & & Cond.   & Iter. &$L^2$-error & $O$\\
+		%						\hline
+		%						$4\times 4$ & 2.451 & 7 & 1.0109e-3 & - &$4$ &1.968 &8 &1.0109e-3 &-\\
+		%						$8\times 8$ &2.648 &9 &2.5117e-4 &	2.0  &8 &2.648 &9 &2.5117e-4 &2.0 \\
+		%						$16\times 16$ &2.629 &9 &	6.2696e-5 &2.0  &16 &3.529 &10 &6.2696e-5 &2.0\\
+		%						$32\times 32$ &2.617 &9 &1.5668e-5 &2.0  &32 &4.619 &12 &1.5668e-5 &2.0\\
+		%						\hline
+		%						\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=2$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=2$ and \#sub=64}\\ 
+		%						& Cond.   & Iter. &$L^2$-error &  $\lambda_1$ & & Cond.   & Iter. &$L^2$-error & $\lambda_1$\\
+		%						\hline
+		%						$4\times 4$ & 3.805 &8 &6.6333e-5  &- &4 &3.926 &11 &6.6333e-5  &-\\
+		%						$8\times 8$ & 4.003 &12 &8.2709e-6  & 3.0 &8 &4.003 &12 &8.2709e-6  &3.0 \\
+		%						$16\times 16$ &3.943 &12 &1.0334e-6  &3.0 &16 &5.084 &13 &1.0334e-6  &3.0\\
+		%						$32\times 32$ &3.917 &12 &1.2917e-7  &3.0 &32 &6.329 &13 &1.2918e-7  &3.0\\
+		%						\hline
+		%					\end{tabular}
+		%			%	}
+		%			\end{center} }
+		%		\end{table}
+		
+		
+		\begin{table}[H]
+			%						\small
 			\setlength{\tabcolsep}{1pt} {
-				\caption{Case 1: Performance with $P_{k}P_{k}P_{k}^2$.}
-				\label{Tab:case1_PkPkPk}
-				\vspace{-5pt}
 				\begin{center}
 					%\scalebox{0.8}{
-					\begin{tabular}{c|cccc|c|cccc}
+					\begin{tabular}{c|cccc|cccc}
 						\hline
-						\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=1$ and \#sub=64}\\ 
-						& Cond.   & Iter. &$L^2$-error & $O$  & & Cond.   & Iter. &$L^2$-error & $O$ \\
+						\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$} &\multicolumn{4}{c}{$k=2$}\\ 
+						& Cond.   & Iter. &$L^2$-error & $O1$ & Cond.   & Iter. &$L^2$-error & $O$\\
 						\hline
-						$4\times 4$     &3.671 & 8  &2.1451e-4 &- &4   &3.024 &10 &2.1451e-4 &- \\
-						$8\times 8$     &3.965 &10 &5.2129e-5 &2.0  &8   &3.965 &10 &5.2129e-5 &2.0 \\
-						$16\times 16$ &3.934 &10 &1.2937e-5 &2.0  &16 &5.153 &12 &1.2937e-5 &2.0 \\
-						$32\times 32$ &3.922 &10 &3.2281e-6 &2.0  &32 &6.472 &14 &3.2281e-6 &2.0 \\
-						\hline	
-						\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=2$ and $H/h=8$} &\multirow{2}{*}{$H/h$} &\multicolumn{4}{c}{$k=2$ and \#sub=64}\\ 
-						& Cond.   & Iter. &$L^2$-error & $O$ & & Cond.   & Iter. &$L^2$-error & $O$ \\
-						\hline
-						$4\times 4$     &4.620 &8   &6.7627e-6 &-  & 4  &3.859 &11 &6.7628e-6 &- \\
-						$8\times 8$     &4.987 &12 &7.8998e-7 &3.0  &8   &4.987 &12 &7.8998e-7 &3.0 \\
-						$16\times 16$ &4.921 &12 &9.6925e-8 &3.0  &16 &6.235 &13 &9.6931e-8 &3.0 \\
-						$32\times 32$ &4.901 &12 &1.2058e-8 &3.0  &32 &7.673 &15 &1.2060e-8 &3.0 \\
+						$4\times 4$ & 2.451 & 7 & 1.0109e-3 & - &3.805 &8 &6.6333e-5  &- \\
+						$8\times 8$ &2.648 &9 &2.5117e-4 &	2.0  &4.003 &12 &8.2709e-6  & 3.0 \\
+						$16\times 16$ &2.629 &9 &	6.2696e-5 &2.0  &3.943 &12 &1.0334e-6  &3.0\\
+						$32\times 32$ &2.617 &9 &1.5668e-5 &2.0  &3.917 &12 &1.2917e-7  &3.0\\
 						\hline
 					\end{tabular}
-					%}
+					%	}
+					\caption{The accuracy and convergence properties of the $P_{k}P_{k}P_{k-1}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements.}
+					\label{Tab:case1_PkPkPk-1 Row1}
 				\end{center} }
 			\end{table}
 			
-			In the third test, we implement the weak Galerkin element $ u_{0} \in P_{k} $, $ u_{b} \in P_{k} $ and $ \nabla_{w} u \in P_{k} $. The $ P_k P_k P_k^2 $ element deliveries the most accurate result among all three types of element. The reason is that all three shape functions of interior variable, boundary variable and weak gradient have the same order. 
+			
+			\begin{table}[H]
+				%						\small
+				\setlength{\tabcolsep}{1pt} {
+					\begin{center}
+						%\scalebox{0.8}{
+						\begin{tabular}{c|cccc|cccc}
+							\hline
+							\multirow{2}{*}{$H/h$} &\multicolumn{4}{c|}{$k=1$ and \#sub=64}  &\multicolumn{4}{c}{$k=2$ and \#sub=64}\\ 
+							& Cond.   & Iter. &$L^2$-error & $O1$ & Cond.   & Iter. &$L^2$-error & $O$\\
+							\hline
+							$4$ &1.968 &8 &1.0109e-3 &-&3.926 &11 &6.6333e-5  &-\\
+							8 &2.648 &9 &2.5117e-4 &2.0 &4.003 &12 &8.2709e-6  &3.0 \\
+							16 &3.529 &10 &6.2696e-5 &2.0  &5.084 &13 &1.0334e-6  &3.0\\
+							32 &4.619 &12 &1.5668e-5 &2.0  &6.329 &13 &1.2918e-7  &3.0\\
+							\hline
+						\end{tabular}
+						%	}
+					\end{center} }
+					\caption{The accuracy and convergence  $P_{k}P_{k}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.}
+					\label{Tab:case1_PkPkPk-1Row2}
+				\end{table}						
+				
+				
+				
+				The second test is the weak Galerkin element with order $ u_{0} \in P_{k} $, $ u_{b} \in P_{k} $ and $ \nabla_{w}u \in P_{k - 1} $. In Table \ref{Tab:case1_PkPkPk-1 Row1} and Table \ref{Tab:case1_PkPkPk-1Row2} the condition number has the identical pattern of the theoretical convergence rate. Comparing with the first example, we can find the convergence rates and the orders of accuracy have optimal agreement to the degree of polynomial in $ u_{0} $. We also measure the scalability of this solver can be applied on the number of processors are used is up to 1,024.
+				\vspace{1cm}
+				
+				\begin{table}[H]
+					%	\small
+					\vspace{-10pt}
+					\setlength{\tabcolsep}{1pt} {
+						\vspace{-5pt}
+						\begin{center}
+							%\scalebox{0.8}{
+							\begin{tabular}{c|cccc|cccc}
+								\hline
+								\multirow{2}{*}{\#sub} &\multicolumn{4}{c|}{$k=1$} &\multicolumn{4}{c}{$k=2$}\\ 
+								& Cond.   & Iter. &$L^2$-error & $O$  &  Cond.   & Iter. &$L^2$-error & $O$ \\
+								\hline
+								$4\times 4$     &3.671 & 8  &2.1451e-4 &- &4.620 &8   &6.7627e-6 &- \\
+								$8\times 8$     &3.965 &10 &5.2129e-5 &2.0  &4.987 &12 &7.8998e-7 &3.0 \\
+								$16\times 16$ &3.934 &10 &1.2937e-5 &2.0  &4.921 &12 &9.6925e-8 &3.0  \\
+								$32\times 32$ &3.922 &10 &3.2281e-6 &2.0  &4.901 &12 &1.2058e-8 &3.0\\
+								\hline	
+							\end{tabular}
+							%}
+						\end{center} }
+						\caption{The accuracy and convergence properties of the $P_{k}P_{k}P_{k}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements. }
+						\label{Tab:case1_PkPkPk Row1}
+					\end{table}
+					
+					\begin{table}[H]
+						%	\small
+						\vspace{-10pt}
+						\setlength{\tabcolsep}{1pt} {
+							\vspace{-5pt}
+							\begin{center}
+								%\scalebox{0.8}{
+								\begin{tabular}{c|cccc|cccc}
+									\hline
+									\multirow{2}{*}{$H/h$} &\multicolumn{4}{c|}{$k=1$} &\multicolumn{4}{c}{$k=2$}\\ 
+									& Cond.   & Iter. &$L^2$-error & $O$  & Cond.   & Iter. &$L^2$-error & $O$ \\
+									\hline
+									4   &3.024 &10 &2.1451e-4 &-  &3.859 &11 &6.7628e-6 &- \\
+									8   &3.965 &10 &5.2129e-5 &2.0  &4.987 &12 &7.8998e-7 &3.0 \\
+									16 &5.153 &12 &1.2937e-5 &2.0 &6.235 &13 &9.6931e-8 &3.0 \\
+									32 &6.472 &14 &3.2281e-6 &2.0  &7.673 &15 &1.2060e-8 &3.0 \\
+									\hline	
+								\end{tabular}
+								%}
+							\end{center} }
+							\caption{The accuracy and convergence  $P_{k}P_{k}P_{k}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.}
+							\label{Tab:case1_PkPkPk Row2}
+						\end{table}
+						
+						In Tables \ref{Tab:case1_PkPkPk Row1} and \ref{Tab:case1_PkPkPk Row2}, we implement the weak Galerkin element $ u_{0} \in P_{k} $, $ u_{b} \in P_{k} $ and $ \nabla_{w} u \in P_{k} $. The $ P_k P_k P_k^2 $ element deliveries the most accurate result among all three types of element. The reason is that all three shape functions of interior variable, boundary variable and weak gradient have the same order. 
 			
 			
 			\subsection{Linear Elastic Equation}

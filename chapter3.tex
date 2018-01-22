@@ -5,9 +5,9 @@ In this chapter, we present a novel parallel computing method to effectively sol
 
 The objective of this chapter is to explore a new efficient path to the massively parallel computing method with domain decomposition scheme. Specifically, this combination involves a discontinuous weak Galerkin finite element method\cite{wang2013weak, li2013weak, wang2014weak} and implement a hybrid element which enable multiple continuous Galerkin finite elements inserted into the WG element. The WG method is considered as a newly developed robust numerical method and inherits the locking-free feature for the linear elastic equation\cite{wang2016locking}.
 
-Like the standard FEM, the WG method can be used to solve generic partial differential equations. An advanced feature of the WG finite element method is that the entire problem can be decomposed into multiple local problems. In these local problems, the differential operators are approximated and reconstructed by small-size matrices. The WG method is proven robust and has optimal orders of accuracy in spatial discretization for even difficult problems on serial computers. However, the performance of the WG method on parallel computers has not yet been examined.
+Like the standard FEM, the WG method can be used to solve generic partial differential equations. An advanced feature of the WG finite element method is that the entire problem can be decomposed into multiple local problems. In these local problems, the differential operators are approximated and reconstructed by small-size matrices. The WG method is proven robust and has optimal orders of accuracy in spatial discretization for difficult problems on serial computers. However, the performance of the WG method on parallel computers has not yet been examined.
 
-This chapter is organized as follows. We introduce the weak Galerkin method and the derivations of the bilinear form of nonlinear elasticity equation. Then we discuss the details of matrix construction and a generic stabilizer. For the numerical method, we present the details of the parallel scheme which including the implicit time marching scheme, namely, the Newmark-Beta method\cite{adeli1978algorithms}. At the end of this chapter, we show the numerical results of one-dimensional linear and nonlinear elastic equation. The second and third order accuracy achieved with observed superlinear speedup.
+This chapter is organized as following. We introduce the weak Galerkin method and the derivations of the bilinear form of nonlinear elasticity equation. Then we discuss the details of matrix construction and a generic stabilizer. For the numerical method, we present the details of the parallel scheme which including the implicit time marching scheme, namely, the Newmark-Beta method\cite{adeli1978algorithms}. At the end of this chapter, we show the numerical results of one-dimensional linear and nonlinear elastic equation. The second and third order accuracy achieved with observed superlinear speedup.
 
 \section{Nonlinear Elasticity Equation}
 
@@ -76,7 +76,7 @@ the term $ s(\mathbf{u}, \mathbf{v}) $ is a stabilizer enforcing a weak continui
 \begin{equation}
 s(\mathbf{u}, \mathbf{v}) = \sum_{T\in \Omega}^{N} h_{T}^{-1} \langle Q_{b} u_{0} - u_{b}, Q_{b} v_{0} - b_{b} \rangle_{\partial T}
 \end{equation}
-where $ Q_{b} $ the projection parameter bound by the interior and boundary value. It is a constant number which usually is taken as 1.
+where $ Q_{b} $ the projection parameter defined by the interior and boundary value. $ h_{T} $ is the characteristic length of mesh element. It is a constant number which usually is taken as 1.
 
 The governing equation has the weak form as
 \begin{equation}
@@ -102,7 +102,7 @@ In this section, we introduce the design of hybrid element, the construction of 
 	\caption{\footnotesize Basis function of one dimensional weak Galerkin element}
 \end{figure}
 
-Based on the weak gradient function, the boundary basis functions are independent with the interior basis functions, Therefore, we can insert an arbitrary number of CG elements into the WG element. Each weak Galerkin element is treated as one subarea that neighbored with adjacent elements. The interior CG elements are found mesh level with are corrected by the coarse mesh. The boundary basis function of WG element is shared by adjacent elements and constitute the coarse mesh. The newly designed basis function of hybrid element can be illustrated as
+Based on the weak gradient function, the boundary basis functions are independent with the interior basis functions, Therefore, we can insert an arbitrary number of CG elements into the WG element. Each weak Galerkin element is considered as one sub-element that neighbored with adjacent elements. The interior CG elements are found mesh level with are corrected by the coarse mesh. The boundary basis function of WG element is shared by adjacent elements and constitute the coarse mesh. The newly designed basis function of hybrid element can be illustrated as
 
 \begin{figure}[h]
 	\centering
@@ -126,12 +126,14 @@ M_{00} & 0 \\0 & 0 \\
 \ddot{u}_{0} \\ \ddot{u}_{b} \\
 \end{bmatrix} + \begin{bmatrix}
 K_{00} & K_{0b} \\ K_{b0} & K_{bb} \\
+\end{bmatrix} \begin{bmatrix}
+u_{0} \\ u_{b} \\
 \end{bmatrix} = \begin{bmatrix}
 f_{0} \\ 0 \\
 \end{bmatrix}
 \end{equation}
 
-from upper equation we can find that the mass matrix for $ \ddot{u}_{b} $ is not complete. The information of mass is missing on the boundary basis functions. Under this circumstance, the explicit time marching scheme is unable to initiate. To avoid the deficit of time marching scheme, we introduce a newly designed stabilizer, namely, the generic stabilizer.
+from above equation we can find that the mass matrix for $ \ddot{u}_{b} $ is not complete. The information of mass is missing on the boundary basis functions. Under this circumstance, the explicit time marching scheme is unable to initiate. To avoid the deficit of time marching scheme, we introduce a newly designed stabilizer, namely, the generic stabilizer.
 \begin{equation}
 s(\mathbf{u}, \mathbf{v}) = \sum_{T \in \Omega}^{N} h_{T}^{-1} \langle Q_{b} \ddot{u}_{0} - \ddot{u}_{b}, Q_{b} v_{0} - v_{b} \rangle_{\partial T}
 \end{equation}
@@ -176,7 +178,7 @@ The $ \tilde{u} $ represents the intermediate step, then we can use it to calcul
 \tilde{u}_{b} = u_{b}^{n} + \dot{u}_{b}^{n} \Delta t + \frac{1}{2} \Delta t^{2} \ddot{u}_{b}^{n} (1 - 2 \beta)
 \end{equation}
 
-To reduce the local unknown variable $ u_{0} $ into a global smaller size unknown variable $ u_{b} $, we apply the Schur complement method. The correlation between interior unknown variables and boundary variables is following
+To reduce the local unknown variable $ u_{0} $ into a smaller size global matrix of unknown variable $ u_{b} $, we apply the Schur complement method. The correlation between interior unknown variables and boundary variables is following equation
 
 \begin{equation}
 u_{0}^{n+1} = -G_{00}^{-1} G_{0b} u_{b}^{n+1} + G_{00}^{-1} g_{1}
@@ -212,7 +214,7 @@ For one-dimensional elastic equation, the original governing equation can be con
   	\caption{\footnotesize Blocked stiffness matrix after domain decomposition}
   \end{figure}
   
-  The original large sparse stiffness matrix is compressed in a very small matrix on the right bottom corner. Consequently, the main computational load is split into the calculation of square matrices. Each square matrix represents one single hybrid element. The size of hybrid element is determined by the number of CG elements which inserted into one WG element. We can compare the WG element as the ship and CG elements are the cargo on the board. The entire computational domain is decomposed into multiple subdomains naturally since the discontinuous feature of hybrid WG-CG element.
+  The original large sparse stiffness matrix is compressed in a very small matrix on the right bottom corner. In another word, the main computational load is split into the calculation of square matrices. Each square matrix represents one single hybrid element. The size of hybrid element is determined by the number of CG elements which inserted into one WG element. We can compare the WG element as the cargo ship and CG elements are the container on the board. The entire computational domain is decomposed into multiple subdomains naturally since the discontinuous feature of hybrid WG-CG element.
   
   The parallel computing work flow chart is described as following
   
@@ -231,9 +233,9 @@ For one-dimensional elastic equation, the original governing equation can be con
    	\item Once the global residual is less than the tolerant value, current Newmark-Beta time iteration complete and move to the next time step.
    \end{enumerate}
    
-   To accelerate the performance, we use the open source library such as LAPACK/BLAS to calculate the very expensive operators including Cholesky transportation, matrix multiplication and vector operations. This implementation largely benefits the programming process and works very well among different high performance computing platforms.
+   To accelerate the performance, we use the open source library such as LAPACK/BLAS to calculate the computationally expensive operators in terms of the Cholesky transportation, matrix multiplication and vector operations. This implementation largely benefits the programming process and works very well among different high performance computing platforms.
    
-   The software has been tested on the George Washington University cluster, ColonialOne, with Xeon E5-2650v2 2.6GHz 8-core processors with 128 GB of RAM each.
+   The software has been tested on the George Washington University super computing cluster, ColonialOne, with Xeon E5-2650v2 2.6GHz 8-core processors with 128 GB of RAM each.
    
    \section{Numerical Results}
    
@@ -295,13 +297,13 @@ For one-dimensional elastic equation, the original governing equation can be con
       	       	\caption{\footnotesize The results comparison between CG only and hybrid WG-CG element for implicit scheme}
       	       \end{figure}
       	       
-      	       We compare the solutions between our hybrid WG-CG element and classic CG element. In both implicit and explicit time marching scheme, the average difference between two methods is less than $ 1e-5 $. We can safely draw the conclusion that hybrid element achieves an optimal accuracy for not only static case, by also dynamic problems.
+      	       We compare the solutions between our hybrid WG-CG element and classic CG element. In both implicit and explicit time marching scheme, the average difference between two methods is less than $ 1e^{-5} $. We can safely draw the conclusion that hybrid element achieves an optimal accuracy for not only static case, by also dynamic problems.
       	       
  \subsection{Geometric nonlinear elasticity equation}
  
  Both the large deflection and body rotation require the nonlinear strain-displacement relation. We test the performance of accuracy and efficiency of hybrid WG-CG element. We continue using the classic CG element solver as the reference and compare our new method to the reliable existing solutions.
  
- Following the linear elastic equation test cases, we load constant force as the boundary condition and compare the solutions between the serial CG solver and parallel implicit hybrid WG-CG solver. We divide the entire computational domain into 20 subdomains. In another word, each subdomain corresponds to an individual hybrid WG-CG element. In each hybrid element, we insert 20 standard CG elements. Each processor operates one hybrid element and the communicates with each other through MPI library. 
+ By following the linear elastic equation test cases, we load constant force as the boundary condition and compare the solutions between the serial CG solver and parallel implicit hybrid WG-CG solver. We divide the entire computational domain into 20 subdomains. In another word, each subdomain corresponds to an individual hybrid WG-CG element. In each hybrid element, we insert 20 standard CG elements. Each processor handles one hybrid element and the communicates with each other through MPI library. 
  
  The CG solver choose 400 standard linear CG elements to maintain the same resolution. We track the deflection on the right tip of the domain and plot the two sets of solutions in the same figure to compare the difference as following
  
@@ -313,7 +315,7 @@ For one-dimensional elastic equation, the original governing equation can be con
   	\caption{\footnotesize The results comparison between CG only and hybrid WG-CG element by using parallel implicit scheme with constant boundary condition}
   \end{figure}
   
-  An optimal convergence of the two independent solutions shows an excellent accuracy of the parallel hybrid solver. The average difference is less than $ 1e-4 $, which is same as the previous linear test.
+  An optimal convergence of the two independent solutions shows an excellent accuracy of the parallel hybrid solver. The average difference is less than $ 1e^{-4} $, which is same as the previous linear test.
   
   To verify the the robustness of the new solver, a periodic boundary condition is enforced to substitute the constant variable where $ f = sin (2 \pi t) $. The comparing results is as following chart
   
