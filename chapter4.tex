@@ -319,7 +319,7 @@ A & 0 \\ 0 & C - BA^{-1} B^{T}
 I_{A} & A^{-1} B^{T} \\ 0 & I_{C} \\
 \end{bmatrix}
 \end{equation}
-the $ S $ can be seen as a smaller global matrix containing the information among $ A $, $ B $ and $ C $. A Schur complement matrix $ S $ ,in Eq \eqref{eq:schur1}, represents a smaller global stiffness matrix partially assembled by each individual subdomains. However, after the decomposition, the size of $ S $ is still too large to be directly inversed. Consequently, we introduce the primal and dual spaces to calculate a preconditioner in parallel fashion to distribute the computational load and accelerate the overall speed. We redefine the Schur complement matrix $ S $ and compute the preconditioner $ S_{BDDC} $ by a parallel fashion. The number of primal variables, the constraints through the interface, is much less than the size of Schur complement matrix.
+the $ S $ can be seen as a smaller global matrix containing the information among $ A $, $ B $ and $ C $. A Schur complement matrix $ S $ , represents a smaller global stiffness matrix partially assembled by each individual subdomains. However, after the decomposition, the size of $ S $ is still too large to be directly inversed. Consequently, we introduce the primal and dual spaces to calculate a preconditioner in parallel fashion to distribute the computational load and accelerate the overall speed. We redefine the Schur complement matrix $ S $ and compute the preconditioner $ S_{BDDC} $ by a parallel fashion. The number of primal variables, the constraints through the interface, is much less than the size of Schur complement matrix.
 
 Both $ I_{A} $ and $ I_{C} $ are identity matrices. The Schur complement is represented as
 \begin{equation}
@@ -348,7 +348,7 @@ where $ \Phi =\begin{bmatrix}
 -A^{-1}B^{T} \\ I_{C}
 \end{bmatrix} $
 
-The original inverse global matrix  is partitioned into one matrix containing $ A^{-1} $ and the other matrix associated with the $ S^{-1} $. The interface matrix $ S $ takes from adjacent local subdomains, corresponding to the degrees of freedom on the solid squares shown in Figure \ref{fig4: BDDC2}. 
+The original inverse global matrix  is partitioned into one matrix containing $ A^{-1} $ and the other matrix associated with the $ S^{-1} $. The interface matrix $ S $ takes from adjacent local subdomains, corresponding to the degrees of freedom on the solid squares shown in Figure 4.5. 
 
 After decompose the original computational domain into subdomains, we demonstrate the BDDC method to solve the matrix of the governing equation 
 \begin{equation}
