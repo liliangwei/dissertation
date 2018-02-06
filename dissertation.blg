@@ -9,6 +9,7 @@ A level-1 auxiliary file: chapter2.aux
 A level-1 auxiliary file: chapter3.aux
 A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
+A level-1 auxiliary file: chapter6.aux
 The style file: elsarticle.bst
 Database file #1: references.bib
 Repeated entry---line 621 of file references.bib
@@ -36,45 +37,45 @@ Repeated entry---line 1691 of file references.bib
  :                        ,
 I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in reddy1993introduction
-You've used 78 entries,
+You've used 82 entries,
             2821 wiz_defined-function locations,
-            1101 strings with 18852 characters,
-and the built_in function-call counts, 40320 in all, are:
-= -- 4119
-> -- 2175
-< -- 48
-+ -- 872
-- -- 735
-* -- 3620
-:= -- 7262
-add.period$ -- 240
-call.type$ -- 78
-change.case$ -- 630
-chr.to.int$ -- 73
-cite$ -- 79
-duplicate$ -- 1397
-empty$ -- 2649
-format.name$ -- 975
-if$ -- 8030
+            1129 strings with 19673 characters,
+and the built_in function-call counts, 42444 in all, are:
+= -- 4344
+> -- 2283
+< -- 49
++ -- 914
+- -- 771
+* -- 3820
+:= -- 7638
+add.period$ -- 252
+call.type$ -- 82
+change.case$ -- 662
+chr.to.int$ -- 77
+cite$ -- 83
+duplicate$ -- 1469
+empty$ -- 2789
+format.name$ -- 1025
+if$ -- 8452
 int.to.chr$ -- 6
 int.to.str$ -- 1
-missing$ -- 85
-newline$ -- 241
-num.names$ -- 312
-pop$ -- 574
+missing$ -- 89
+newline$ -- 253
+num.names$ -- 328
+pop$ -- 602
 preamble$ -- 1
-purify$ -- 554
+purify$ -- 582
 quote$ -- 0
-skip$ -- 1087
+skip$ -- 1140
 stack$ -- 0
-substring$ -- 2385
-swap$ -- 202
+substring$ -- 2531
+swap$ -- 211
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 675
+type$ -- 711
 warning$ -- 1
-while$ -- 351
+while$ -- 371
 width$ -- 0
-write$ -- 856
+write$ -- 900
 (There were 6 error messages)

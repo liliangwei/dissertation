@@ -6,7 +6,7 @@
 \contentsline {chapter}{{Chapter\nobreakspace {}1: Introduction}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Backgrounds}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Engineering Background}{1}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Numerical Method Review}{6}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}Overview of Related Numerical Methods}{6}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}Objective}{7}{section.1.2}
 \contentsline {chapter}{{Chapter\nobreakspace {}2: Numerical Method}}{10}{chapter.2}
 \contentsline {section}{\numberline {2.1}Mathematical Models and Numerical Method}{10}{section.2.1}
@@ -44,29 +44,29 @@
 \contentsline {section}{\numberline {4.8}Numerical Results}{69}{section.4.8}
 \contentsline {subsection}{\numberline {4.8.1}Poisson Equation}{69}{subsection.4.8.1}
 \contentsline {subsection}{\numberline {4.8.2}Linear Elastic Equation}{75}{subsection.4.8.2}
-\contentsline {chapter}{{Chapter\nobreakspace {}5: Numerical Simulations of Stenotic Flow}}{78}{chapter.5}
-\contentsline {section}{\numberline {5.1}Background}{78}{section.5.1}
-\contentsline {section}{\numberline {5.2}Numerical Method}{80}{section.5.2}
-\contentsline {section}{\numberline {5.3}Geometry and Condition}{81}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Geometry}{81}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Mesh}{81}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Dimensionless wall distance}{82}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Conditions}{83}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Verification}{83}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Straight vessel test}{83}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Resolution independence test}{84}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Results}{85}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Verification Empirical Solution}{85}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Single stenosis evaluation}{87}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Pressure drop between multiple sub-critical stenoses and single critical stneosis}{92}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}Multiple critical stenoses analysis}{94}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}Multiple subcritical stenoses pressure drop}{95}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}Stenosis stretching on streamwise direction}{96}{subsection.5.5.6}
-\contentsline {subsection}{\numberline {5.5.7}Pressure drop and wall shear stress}{99}{subsection.5.5.7}
-\contentsline {subsection}{\numberline {5.5.8}Interval spacing between subcritical stenoses}{100}{subsection.5.5.8}
-\contentsline {section}{\numberline {5.6}Summary and discussion}{101}{section.5.6}
-\contentsline {chapter}{{Chapter\nobreakspace {}6: Conclusions and Future Work}}{102}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{102}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{102}{section.6.2}
-\contentsline {chapter}{References}{104}{chapter*.75}
+\contentsline {chapter}{{Appendix\nobreakspace {}A: Numerical Simulations of Stenotic Flow}}{78}{appendix.A}
+\contentsline {section}{\numberline {A.1}Background}{78}{section.A.1}
+\contentsline {section}{\numberline {A.2}Numerical Method}{80}{section.A.2}
+\contentsline {section}{\numberline {A.3}Geometry and Condition}{81}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Geometry}{81}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Mesh}{81}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Dimensionless wall distance}{82}{subsection.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Conditions}{83}{subsection.A.3.4}
+\contentsline {section}{\numberline {A.4}Verification}{83}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Straight vessel test}{83}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Resolution independence test}{84}{subsection.A.4.2}
+\contentsline {section}{\numberline {A.5}Results}{85}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Verification Empirical Solution}{85}{subsection.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Single stenosis evaluation}{87}{subsection.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}Pressure drop between multiple sub-critical stenoses and single critical stneosis}{92}{subsection.A.5.3}
+\contentsline {subsection}{\numberline {A.5.4}Multiple critical stenoses analysis}{94}{subsection.A.5.4}
+\contentsline {subsection}{\numberline {A.5.5}Multiple subcritical stenoses pressure drop}{95}{subsection.A.5.5}
+\contentsline {subsection}{\numberline {A.5.6}Stenosis stretching on streamwise direction}{96}{subsection.A.5.6}
+\contentsline {subsection}{\numberline {A.5.7}Pressure drop and wall shear stress}{99}{subsection.A.5.7}
+\contentsline {subsection}{\numberline {A.5.8}Interval spacing between subcritical stenoses}{100}{subsection.A.5.8}
+\contentsline {section}{\numberline {A.6}Summary and discussion}{101}{section.A.6}
+\contentsline {chapter}{{Appendix\nobreakspace {}B: Conclusions and Future Work}}{102}{appendix.B}
+\contentsline {section}{\numberline {B.1}Conclusion}{102}{section.B.1}
+\contentsline {section}{\numberline {B.2}Future Work}{102}{section.B.2}
+\contentsline {chapter}{References}{104}{appendix*.75}
 \contentsfinish 

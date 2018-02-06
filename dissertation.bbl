@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{82}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -82,6 +82,12 @@ Cundall, P.~A., Strack, O.~D., 1979. A discrete numerical model for granular
 \bibitem[{Davio(1981)}]{davio1981kronecker}
 Davio, M., 1981. Kronecker products and shuffle algebra. IEEE Transactions on
   Computers 100~(2), 116--125.
+
+\bibitem[{Degroote et~al.(2009)Degroote, Bathe, and
+  Vierendeels}]{degroote2009performance}
+Degroote, J., Bathe, K.-J., Vierendeels, J., 2009. Performance of a new
+  partitioned procedure versus a monolithic procedure in fluid--structure
+  interaction. Computers \& Structures 87~(11-12), 793--801.
 
 \bibitem[{Dohrmann(2003{\natexlab{a}})}]{dohrmann2003preconditioner}
 Dohrmann, C.~R., 2003{\natexlab{a}}. A preconditioner for substructuring based
@@ -175,6 +181,12 @@ Hooi, J.~D., Kester, A.~D., Stoffers, H.~E., Overdijk, M.~M., van Ree, J.~W.,
 Hrennikoff, A., 1941. Solution of problems of elasticity by the framework
   method. Journal of applied mechanics 8~(4), 169--175.
 
+\bibitem[{H{\"u}bner et~al.(2004)H{\"u}bner, Walhorn, and
+  Dinkler}]{hubner2004monolithic}
+H{\"u}bner, B., Walhorn, E., Dinkler, D., 2004. A monolithic approach to
+  fluid--structure interaction using space--time finite elements. Computer
+  methods in applied mechanics and engineering 193~(23-26), 2087--2104.
+
 \bibitem[{Hughes(2012)}]{hughes2012finite}
 Hughes, T.~J., 2012. The finite element method: linear static and dynamic
   finite element analysis. Courier Corporation.
@@ -204,6 +216,10 @@ Kornowski, R., Hong, M.~K., Tio, F.~O., Bramwell, O., Wu, H., Leon, M.~B.,
   1998. In-stent restenosis: contributions of inflammatory responses and
   arterial injury to neointimal hyperplasia. Journal of the American College of
   Cardiology 31~(1), 224--230.
+
+\bibitem[{K{\"u}ttler and Wall(2008)}]{kuttler2008fixed}
+K{\"u}ttler, U., Wall, W.~A., 2008. Fixed-point fluid--structure interaction
+  solvers with dynamic relaxation. Computational Mechanics 43~(1), 61--72.
 
 \bibitem[{Li and Widlund(2006)}]{li2006feti}
 Li, J., Widlund, O.~B., 2006. Feti-dp, bddc, and block cholesky methods.
@@ -354,6 +370,12 @@ Varghese, S., Frankel, S., Fischer, P., 2007. {Direct numerical simulation of
 Varghese, S.~S., Frankel, S.~H., 2003. {Numerical modeling of pulatile
   turbulent flow in stenotic vessels.} Journal of Biomechanical engineering
   125~(4).
+
+\bibitem[{Vierendeels et~al.(2007)Vierendeels, Lanoye, Degroote, and
+  Verdonck}]{vierendeels2007implicit}
+Vierendeels, J., Lanoye, L., Degroote, J., Verdonck, P., 2007. Implicit
+  coupling of partitioned fluid--structure interaction problems with reduced
+  order models. Computers \& structures 85~(11-14), 970--976.
 
 \bibitem[{Wang et~al.(2016)Wang, Wang, Wang, and Zhang}]{wang2016locking}
 Wang, C., Wang, J., Wang, R., Zhang, R., 2016. A locking-free weak galerkin

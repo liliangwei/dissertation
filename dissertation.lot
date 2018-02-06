@@ -11,14 +11,14 @@
 \contentsline {table}{\numberline {4.4}{\ignorespaces The accuracy and convergence $P_{k}P_{k}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{73}{table.caption.43}
 \contentsline {table}{\numberline {4.5}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k}P_{k}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements. \relax }}{74}{table.caption.44}
 \contentsline {table}{\numberline {4.6}{\ignorespaces The accuracy and convergence $P_{k}P_{k}P_{k}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{74}{table.caption.45}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Case 1: Performance with $P_{1}P_{1}$, $ \lambda = 1, \mu = 0.5 $\relax }}{75}{table.caption.46}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Case 1: Performance with $P_{1}P_{1} P_{1}^{2}$, $ \lambda = 1, \mu = 0.5 $\relax }}{75}{table.caption.46}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Simulation condition parameters.\relax }}{83}{table.caption.53}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Straight vessel test results.\relax }}{84}{table.caption.54}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Resolution independence test results.\relax }}{85}{table.caption.56}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Mean pressure drop of single stenosis for different blocking ratio\relax }}{87}{table.caption.59}
-\contentsline {table}{\numberline {5.5}{\ignorespaces Pressure drop among multiple subcritical stenoses\relax }}{93}{table.caption.63}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Pressure drop comparison between original and deformed stenosis.\relax }}{98}{table.caption.70}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Pressure drop of different interval spacing.\relax }}{101}{table.caption.74}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Simulation condition parameters.\relax }}{83}{table.caption.53}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Straight vessel test results.\relax }}{84}{table.caption.54}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Resolution independence test results.\relax }}{85}{table.caption.56}
+\contentsline {table}{\numberline {A.4}{\ignorespaces Mean pressure drop of single stenosis for different blocking ratio\relax }}{87}{table.caption.59}
+\contentsline {table}{\numberline {A.5}{\ignorespaces Pressure drop among multiple subcritical stenoses\relax }}{93}{table.caption.63}
+\contentsline {table}{\numberline {A.6}{\ignorespaces Pressure drop comparison between original and deformed stenosis.\relax }}{98}{table.caption.70}
+\contentsline {table}{\numberline {A.7}{\ignorespaces Pressure drop of different interval spacing.\relax }}{101}{table.caption.74}
 \addvspace {10\p@ }
 \contentsfinish 
