@@ -55,11 +55,11 @@ The Weak Galerkin Finite Element Method (WG-FEM)is a novel developed, effective 
 
 The CG FEM analysis of continuum mechanics is widely used to study and predict material deformations. The results are generally accurate and reliable for analyzing the relationship between load and deformation. However, the computational complexity and cost prevents its the application to large-scale FSI problems. Massive parallel computing is required for obtaining large linear system. In this work, we investigate the methods for efficient parallel scheme which enables high-order novel finite element method for solving large scale elasticity equation.
 
-We employ the WG-FEM to convert the bilinear form equations into a positive definite linear system. The WG method can use various types of different elements. The selection of polynomials on interior or boundary region is flexible which enhances the freedom of computational simulation for dealing with complex geometries. Moreover, the discontinuous features in the WG method which empowers the parallel computation capability.
+We employ the WG-FEM to convert the bilinear form equations into a positive definite linear system. The WG method can use various types of different elements. The selection of polynomials on interior or boundary region is flexible which enhances the freedom of computational simulation for dealing with complex geometries. Moreover, the discontinuous features in the WG method facilitate implementations for parallel computations.
 
-The Balancing Domain Decomposition by Constraints (BDDC) method is an ideal candidate for enabling the massive parallel capacity to WG-FEM. BDDC identifies the two spaces (primal and dual) and apply the divide and conquer strategy to the original computational domain. By minimizing the global communication and synchronization overhead,  WG-BDDC empowers the scalability of elasticity equations as a superlinear speedup curve.
+The Balancing Domain Decomposition by Constraints (BDDC) method is a new approach for the WG-FEM to achieve parallelism on distributed-memory computers. BDDC identifies the two spaces (primal and dual) and apply the divide and conquer strategy to the original computational domain. By minimizing the global communication and synchronization overhead,  WG-BDDC can often effectively solve equations with superlinear scalability on parallel computers.
 
-The main objective of this dissertation is to deliver high speed, accuracy and scalability in WG-BDDC based analysis. Fig \ref{fig: ch1p4} shows the paths to accomplish the objectives in this work. The results of the research significantly improves the computation of the elastic material response, including in clinic judgment and other medical applications.
+The main objective of this dissertation research is to develop a high-order accurate, efficient and high-scalable FEM solver by using unstructured grids by using novel WG-BDDC technique. Fig \ref{fig: ch1p4} shows the paths to accomplish the objectives in this work. The results of this research aims to significantly improve the computation of the elastic material response, including in clinic judgment and other medical applications.
 
 \begin{figure}[H]
 	\centering
@@ -69,14 +69,14 @@ The main objective of this dissertation is to deliver high speed, accuracy and s
 	\caption{\footnotesize Objectives and methodology.} \label{fig: ch1p4}
 \end{figure}
 
-To validate the WG-BDDC scheme and develop the software, we first design the hybrid WG-CG element. The results are consistent with the benchmark of CG only element so the fidelity is proved. Then we extend the WG element to BDDC method and verify the properties of convergence and the order of accuracy with parallel fashion. Finally, the scalability is discussed under the parallel computing framework.
+To validate the WG-BDDC scheme and develop a powerful software, we first design a hybrid WG-CG element. The results are consistent with the benchmark of CG only element. Therefore the fidelity of the WG method is proved. Subsequently, we extend the WG elements to have BDDC features  and verify the properties of convergence and the order of accuracy of the WG-BDDC scheme on parallel computers. Finally, the scalability is discussed under the parallel computing framework.
 
 The rest of this dissertation is organized as :
 
 \begin{itemize}
-	\item Chapter 2 presents the background and basics of WG method.
-	\item Chapter 3 discusses the hybrid WG-CG element the performance on nonlinear elasticity equation.
+	\item Chapter 2 presents the background and basics of the WG method.
+	\item Chapter 3 discusses the hybrid WG-CG finite element method. We also tested the performance of the hybrid method for nonlinear elasticity equation.
 	\item Chapter 4 introduces the WG-BDDC method for second order elliptic and elasticity equation.
-	\item Chapter 5 shows the study of effect multiple stenoses on the peripheral artery diseases.
-	\item Chapter 6 concludes this work and outlook the future work.
+	\item Chapter 5 concludes this work and directions for future works.
+	\item Appendix A summarizes my study of the effect of multiple sequential stenoses on peripheral artery disease.
 \end{itemize}

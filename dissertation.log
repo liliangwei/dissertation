@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  6 FEB 2018 01:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 FEB 2018 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,7 +809,7 @@ LaTeX Warning: Label `Tab:hwgcg l1' multiply defined.
 
 LaTeX Warning: Label `fig6: time' multiply defined.
 
-) (./chapter5.aux) (./chapter6.aux))
+) (./chapter6.aux) (./chapter5.aux))
 \openout1 = `dissertation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -963,7 +963,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 
 ]
-Overfull \hbox (3.22133pt too wide) in paragraph at lines 38--38
+Overfull \hbox (3.22133pt too wide) in paragraph at lines 39--39
  []|[]\OT1/cmr/m/n/10 Pressure drop af-ter sin-gle steno-sis re-sults from an-a
 -lytic equa-tion and simulation.| 
  []
@@ -1350,120 +1350,127 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [75 <./pics/p1time-eps-converted-to.pdf>]) [76 <./pics/p1speed-eps-converted-to
 .pdf>] [77]
-\openout2 = `chapter5.aux'.
+\openout2 = `chapter6.aux'.
 
- (./chapter5.tex [78
+ (./chapter6.tex) [78
 
 
 
 ]
-<./pics/photo.png, id=1598, 642.4pt x 481.8pt>
+\openout2 = `chapter5.aux'.
+
+ (./chapter5.tex [79
+
+
+
+]
+<./pics/photo.png, id=1602, 642.4pt x 481.8pt>
 File: ./pics/photo.png Graphic file (type png)
  <use ./pics/photo.png>
 Package pdftex.def Info: ./pics/photo.png used on input line 13.
 (pdftex.def)             Requested size: 260.17465pt x 195.13527pt.
- [79 <./pics/photo.png (PNG copy)>] [80]
-<./pics/geom.png, id=1636, 1559.8275pt x 769.87625pt>
+ [80 <./pics/photo.png (PNG copy)>] [81]
+<./pics/geom.png, id=1640, 1559.8275pt x 769.87625pt>
 File: ./pics/geom.png Graphic file (type png)
  <use ./pics/geom.png>
 Package pdftex.def Info: ./pics/geom.png used on input line 53.
 (pdftex.def)             Requested size: 260.17465pt x 128.41028pt.
 
-<./pics/mesh1.png, id=1637, 907.39pt x 816.04875pt>
+<./pics/mesh1.png, id=1641, 907.39pt x 816.04875pt>
 File: ./pics/mesh1.png Graphic file (type png)
  <use ./pics/mesh1.png>
 Package pdftex.def Info: ./pics/mesh1.png used on input line 64.
 (pdftex.def)             Requested size: 130.08733pt x 116.98546pt.
 
-<./pics/mesh7.png, id=1638, 1411.2725pt x 752.8125pt>
+<./pics/mesh7.png, id=1642, 1411.2725pt x 752.8125pt>
 File: ./pics/mesh7.png Graphic file (type png)
  <use ./pics/mesh7.png>
 Package pdftex.def Info: ./pics/mesh7.png used on input line 64.
 (pdftex.def)             Requested size: 260.17465pt x 138.78568pt.
 
-[81 <./pics/geom.png (PNG copy)>]
-<./pics/refine1.png, id=1646, 1290.8225pt x 755.82375pt>
+[82 <./pics/geom.png (PNG copy)>]
+<./pics/refine1.png, id=1650, 1290.8225pt x 755.82375pt>
 File: ./pics/refine1.png Graphic file (type png)
 
 <use ./pics/refine1.png>
 Package pdftex.def Info: ./pics/refine1.png used on input line 74.
 (pdftex.def)             Requested size: 173.44534pt x 101.55894pt.
 
-<./pics/refine2.png, id=1647, 1412.27625pt x 798.985pt>
+<./pics/refine2.png, id=1651, 1412.27625pt x 798.985pt>
 File: ./pics/refine2.png Graphic file (type png)
 
 <use ./pics/refine2.png>
 Package pdftex.def Info: ./pics/refine2.png used on input line 74.
 (pdftex.def)             Requested size: 173.44534pt x 98.1173pt.
- [82 <./pics/mesh1.png (PNG copy)> <./pics/mesh7.png (PNG copy)> <./pics/refine
+ [83 <./pics/mesh1.png (PNG copy)> <./pics/mesh7.png (PNG copy)> <./pics/refine
 1.png (PNG copy)> <./pics/refine2.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./pics/plotbio.png, id=1653, 1232.605pt x 1097.09875pt>
+<./pics/plotbio.png, id=1658, 1232.605pt x 1097.09875pt>
 File: ./pics/plotbio.png Graphic file (type png)
 
 <use ./pics/plotbio.png>
 Package pdftex.def Info: ./pics/plotbio.png used on input line 163.
 (pdftex.def)             Requested size: 173.44534pt x 154.36282pt.
 
-<./pics/resolution.png, id=1654, 1232.605pt x 1097.09875pt>
+<./pics/resolution.png, id=1659, 1232.605pt x 1097.09875pt>
 File: ./pics/resolution.png Graphic file (type png)
 
 <use ./pics/resolution.png>
 Package pdftex.def Info: ./pics/resolution.png used on input line 163.
 (pdftex.def)             Requested size: 173.44534pt x 154.36282pt.
- [83]
+ [84]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[84 <./pics/plotbio.png (PNG copy)> <./pics/resolution.png (PNG copy)>]
-[85] <./pics/ana3.png, id=1672, 1340.6085pt x 779.7933pt>
+[85 <./pics/plotbio.png (PNG copy)> <./pics/resolution.png (PNG copy)>]
+[86] <./pics/ana3.png, id=1677, 1340.6085pt x 779.7933pt>
 File: ./pics/ana3.png Graphic file (type png)
 
 <use ./pics/ana3.png>
 Package pdftex.def Info: ./pics/ana3.png used on input line 222.
 (pdftex.def)             Requested size: 346.89732pt x 201.77768pt.
- [86 <./pics/ana3.png>]
-<./pics/increase.png, id=1678, 1232.605pt x 1097.09875pt>
+ [87 <./pics/ana3.png>]
+<./pics/increase.png, id=1682, 1232.605pt x 1097.09875pt>
 File: ./pics/increase.png Graphic file (type png)
 
 <use ./pics/increase.png>
 Package pdftex.def Info: ./pics/increase.png used on input line 238.
 (pdftex.def)             Requested size: 303.53267pt x 271.4114pt.
- <./pics/4to6.png, id=1680, 1304.875pt x 967.615pt>
+ <./pics/4to6.png, id=1684, 1304.875pt x 967.615pt>
 File: ./pics/4to6.png Graphic file (type png)
 
 <use ./pics/4to6.png>
 Package pdftex.def Info: ./pics/4to6.png used on input line 271.
 (pdftex.def)             Requested size: 346.89732pt x 257.60597pt.
- <./pics/7to8.png, id=1682, 1283.79625pt x 1132.23pt>
+ <./pics/7to8.png, id=1686, 1283.79625pt x 1132.23pt>
 File: ./pics/7to8.png Graphic file (type png)
 
 <use ./pics/7to8.png>
 Package pdftex.def Info: ./pics/7to8.png used on input line 272.
 (pdftex.def)             Requested size: 346.89732pt x 307.29561pt.
- [87 <./pics/increase.png (PNG copy)>] [88 <./pics/4to6.png (PNG copy)> <./pics
+ [88 <./pics/increase.png (PNG copy)>] [89 <./pics/4to6.png (PNG copy)> <./pics
 /7to8.png (PNG copy)>]
-<./pics/trans.png, id=1700, 907.39pt x 1075.01625pt>
+<./pics/trans.png, id=1704, 907.39pt x 1075.01625pt>
 File: ./pics/trans.png Graphic file (type png)
  <use ./pics/trans.png>
 Package pdftex.def Info: ./pics/trans.png used on input line 293.
 (pdftex.def)             Requested size: 260.17465pt x 308.53014pt.
 
-<./pics/trans2.png, id=1702, 956.57375pt x 1131.22626pt>
+<./pics/trans2.png, id=1706, 956.57375pt x 1131.22626pt>
 File: ./pics/trans2.png Graphic file (type png)
 
 <use ./pics/trans2.png>
 Package pdftex.def Info: ./pics/trans2.png used on input line 294.
 (pdftex.def)             Requested size: 260.17465pt x 307.17337pt.
- [89]
+ [90]
 Underfull \hbox (badness 10000) in paragraph at lines 299--304
 
  []
 
-[90 <./pics/trans.png (PNG copy)> <./pics/trans2.png (PNG copy)>] [91]
-<./pics/newcomp.png, id=1722, 1232.605pt x 1097.09875pt>
+[91 <./pics/trans.png (PNG copy)> <./pics/trans2.png (PNG copy)>] [92]
+<./pics/newcomp.png, id=1727, 1232.605pt x 1097.09875pt>
 File: ./pics/newcomp.png Graphic file (type png)
 
 <use ./pics/newcomp.png>
@@ -1473,48 +1480,48 @@ Package pdftex.def Info: ./pics/newcomp.png used on input line 332.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[92 <./pics/newcomp.png (PNG copy)>]
-<./pics/exper.png, id=1732, 1232.605pt x 1097.09875pt>
+[93 <./pics/newcomp.png (PNG copy)>]
+<./pics/exper.png, id=1736, 1232.605pt x 1097.09875pt>
 File: ./pics/exper.png Graphic file (type png)
  <use ./pics/exper.png>
 Package pdftex.def Info: ./pics/exper.png used on input line 371.
 (pdftex.def)             Requested size: 260.17465pt x 232.64075pt.
 
-<./pics/Graph1.png, id=1734, 1340.6085pt x 779.7933pt>
+<./pics/Graph1.png, id=1738, 1340.6085pt x 779.7933pt>
 File: ./pics/Graph1.png Graphic file (type png)
  <use ./pics/Graph1.png>
 Package pdftex.def Info: ./pics/Graph1.png used on input line 372.
 (pdftex.def)             Requested size: 260.17465pt x 151.98174pt.
 
-[93] <./pics/m50.png, id=1741, 1232.605pt x 1097.09875pt>
+[94] <./pics/m50.png, id=1745, 1232.605pt x 1097.09875pt>
 File: ./pics/m50.png Graphic file (type png)
  <use ./pics/m50.png>
 Package pdftex.def Info: ./pics/m50.png used on input line 385.
 (pdftex.def)             Requested size: 260.17465pt x 232.64075pt.
 
-[94 <./pics/exper.png (PNG copy)> <./pics/Graph1.png>]
-<./pics/multi50.png, id=1749, 1340.6085pt x 779.7933pt>
+[95 <./pics/exper.png (PNG copy)> <./pics/Graph1.png>]
+<./pics/multi50.png, id=1753, 1340.6085pt x 779.7933pt>
 File: ./pics/multi50.png Graphic file (type png)
 
 <use ./pics/multi50.png>
 Package pdftex.def Info: ./pics/multi50.png used on input line 392.
 (pdftex.def)             Requested size: 260.17465pt x 151.3273pt.
- [95 <./pics/m50.png (PNG copy)> <./pics/multi50.png>]
-<./pics/meshes.png, id=1756, 1232.605pt x 1099.10625pt>
+ [96 <./pics/m50.png (PNG copy)> <./pics/multi50.png>]
+<./pics/meshes.png, id=1760, 1232.605pt x 1099.10625pt>
 File: ./pics/meshes.png Graphic file (type png)
 
 <use ./pics/meshes.png>
 Package pdftex.def Info: ./pics/meshes.png used on input line 411.
 (pdftex.def)             Requested size: 260.17465pt x 232.52975pt.
 
-<./pics/deform.png, id=1758, 1232.605pt x 1097.09875pt>
+<./pics/deform.png, id=1762, 1232.605pt x 1097.09875pt>
 File: ./pics/deform.png Graphic file (type png)
 
 <use ./pics/deform.png>
 Package pdftex.def Info: ./pics/deform.png used on input line 418.
 (pdftex.def)             Requested size: 260.17465pt x 232.64075pt.
- [96 <./pics/meshes.png (PNG copy)>]
-<./pics/deform2.png, id=1765, 1234.6125pt x 1120.185pt>
+ [97 <./pics/meshes.png (PNG copy)>]
+<./pics/deform2.png, id=1770, 1234.6125pt x 1120.185pt>
 File: ./pics/deform2.png Graphic file (type png)
 
 <use ./pics/deform2.png>
@@ -1524,22 +1531,22 @@ Package pdftex.def Info: ./pics/deform2.png used on input line 425.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[97 <./pics/deform.png (PNG copy)> <./pics/deform2.png (PNG copy)>]
-<./pics/pandws.png, id=1777, 1233.60875pt x 1089.06876pt>
+[98 <./pics/deform.png (PNG copy)> <./pics/deform2.png (PNG copy)>]
+<./pics/pandws.png, id=1782, 1233.60875pt x 1089.06876pt>
 File: ./pics/pandws.png Graphic file (type png)
 
 <use ./pics/pandws.png>
 Package pdftex.def Info: ./pics/pandws.png used on input line 465.
 (pdftex.def)             Requested size: 260.17465pt x 230.75517pt.
- [98]
-<./pics/interval.png, id=1785, 1232.605pt x 1097.09875pt>
+ [99]
+<./pics/interval.png, id=1789, 1232.605pt x 1097.09875pt>
 File: ./pics/interval.png Graphic file (type png)
 
 <use ./pics/interval.png>
 Package pdftex.def Info: ./pics/interval.png used on input line 482.
 (pdftex.def)             Requested size: 260.17465pt x 232.64075pt.
- [99 <./pics/pandws.png (PNG copy)>]
-<./pics/pvsinterval.png, id=1792, 1340.6085pt x 779.7933pt>
+ [100 <./pics/pandws.png (PNG copy)>]
+<./pics/pvsinterval.png, id=1796, 1340.6085pt x 779.7933pt>
 File: ./pics/pvsinterval.png Graphic file (type png)
 
 <use ./pics/pvsinterval.png>
@@ -1549,27 +1556,20 @@ Package pdftex.def Info: ./pics/pvsinterval.png used on input line 489.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[100 <./pics/interval.png (PNG copy)> <./pics/pvsinterval.png>]) [101]
-\openout2 = `chapter6.aux'.
-
-
-(./chapter6.tex) [102
-
-
-
-] [103] (./dissertation.bbl [104
+[101 <./pics/interval.png (PNG copy)> <./pics/pvsinterval.png>]) [102]
+(./dissertation.bbl [103
 
 
 ]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [105]
+ [104]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [106] [107]
-[108] [109] [110] [111] [112]) [113]
+ [105] [106] [107] [108] [109] [110] [111])
+[112]
 
 ! LaTeX Error: \begin{table} on input line 988 ended by \end{document}.
 
@@ -1587,11 +1587,11 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
 (./dissertation.aux (./dedication.aux) (./acknowledgements.aux) (./abstract.aux
 ) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
-(./chapter5.aux) (./chapter6.aux))
+(./chapter6.aux) (./chapter5.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 8DB11AC0067FAD1E6F1326A0EC9D9E6C;5695.
+(rerunfilecheck)             Checksum: 3830E8964DC58B99EC354FE19CE18C7C;5691.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1608,9 +1608,9 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
 ### semi simple group (level 1) entered at line 835 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 22602 strings out of 493117
- 414558 string characters out of 6135433
- 518793 words of memory out of 5000000
+ 22601 strings out of 493117
+ 414548 string characters out of 6135433
+ 518792 words of memory out of 5000000
  24989 multiletter control sequences out of 15000+600000
  14304 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1635,10 +1635,10 @@ texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on dissertation.pdf (130 pages, 8171331 bytes).
+Output written on dissertation.pdf (129 pages, 8267848 bytes).
 PDF statistics:
- 2031 PDF objects out of 2073 (max. 8388607)
- 1728 compressed objects within 18 object streams
- 555 named destinations out of 1000 (max. 500000)
+ 2027 PDF objects out of 2073 (max. 8388607)
+ 1725 compressed objects within 18 object streams
+ 554 named destinations out of 1000 (max. 500000)
  925 words of extra memory for PDF output out of 10000 (max. 10000000)
 
