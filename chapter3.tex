@@ -1,13 +1,13 @@
-\chapter{Hybrid Weak Galerkin and Continuous Galerkin Finite Element Method}
+\chapter{Hybrid Weak Galerkin - Continuous Galerkin Finite Element Method}
 \label{chapter3}
 
-In this chapter, we present a novel parallel computing method to effectively solve linear and nonlinear elasticity equations. The WG finite element method is newly developed by Junping Wang and Xiu Ye \cite{wang2013weak}. The core idea of the WG method for solving linear elastic equation is to replace its gradients after the integration by parts by discrete weak strain and stress tensors. We develop a novel hybrid element which combines th elements of both WG and CG finite element. The new hybrid element inherits the discontinuous feature of the WG method. To create a hybrid element, we insert an arbitrary number of CG elements in one single WG element. The hybrid element provides a second order of accuracy for both linear and nonlinear elastic equation. The superlinear speedup is observed.
+In this chapter, we present a novel parallel computing method to effectively solve linear and nonlinear elasticity equations. The WG finite element method is newly developed by Dr. Junping Wang and Dr. Xiu Ye  \cite{wang2013weak}. We develop a novel hybrid element which combines the elements of both WG and CG finite element. The new hybrid element inherits the discontinuous feature of the WG method. To create a hybrid element, we treat the WG element as cargo ship and the CG element as the container. We insert multiple CG elements in one single WG element. 
 
-The objective of this chapter is to explore a new efficient path to the massively parallel computing method with domain decomposition scheme. Specifically, this combination involves a discontinuous weak Galerkin finite element method\cite{wang2013weak, li2013weak, wang2014weak} and implement a hybrid element which enable multiple continuous Galerkin finite elements inserted into the WG element. The WG method is considered as a newly developed robust numerical method and inherits the locking-free feature for the linear elastic equation\cite{wang2016locking}.
+The hybrid element takes advantages from both the WG and the CG element. For the WG element, it is discontinuous and can be calculated as a non-overlapping subdomain without extra unknown variables, such as Lagrangian multiplier. For the CG element, it's simple to construct and compute. The hybrid element use WG element as the subdomain boundary interface and CG and interior refine elements.
 
-Like the standard FEM, the WG method can be used to solve generic partial differential equations. An advanced feature of the WG finite element method is that the entire problem can be decomposed into multiple local problems. In these local problems, the differential operators are approximated and reconstructed by small-size matrices. The WG method is proven robust and has optimal orders of accuracy in spatial discretization for difficult problems on serial computers. However, the performance of the WG method on parallel computers has not yet been examined.
+Like the standard FEM, the WG method can be used to solve generic partial differential equations. An advanced feature of the WG finite element method is that the entire problem can be decomposed into multiple local problems. In these local problems, the differential operators are approximated and reconstructed by small-size matrices. The WG method provides optimal orders of accuracy in spatial discretization for difficult problems on serial computers. However, the performance of the WG method on parallel computers has not yet been examined.
 
-This chapter is organized as following. We introduce the weak Galerkin method and the derivations of the bilinear form of nonlinear elasticity equation. Then we discuss the details of matrix construction and a generic stabilizer. For the numerical method, we present the details of the parallel scheme which including the implicit time marching scheme, namely, the Newmark-Beta method\cite{adeli1978algorithms}. At the end of this chapter, we show the numerical results of one-dimensional linear and nonlinear elastic equation. The second and third order accuracy achieved with observed superlinear speedup.
+This chapter is organized as following. We first introduce the weak Galerkin method and the derivations of the bilinear form of nonlinear elasticity equation. Then we discuss the details of matrix construction. An improved stabilizer is designed for implementing time marching schemes. For the numerical method, we present the details of the parallel scheme including the explicit Central Difference method and the implicit time marching scheme, the Newmark-Beta method \cite{adeli1978algorithms}. At the end of this chapter, we present the numerical results of one-dimensional linear and nonlinear elastic equation. The second order accuracy are achieved with observed superlinear speedup.
 
 \section{Nonlinear Elasticity Equation}
 
@@ -30,7 +30,7 @@ where $ E $ is the elasticity modulus and $ \nu $ is Poisson's ratio.
 
 The geometric nonlinear strain-displacement relation can be written as following format
 \begin{equation}
-\boldsymbol{\varepsilon(u)}= \frac{1}{2} (\nabla u + \nabla u^{T} + (\nabla u^{T}) \cdot \nabla u)
+\boldsymbol{\varepsilon(u)}= \frac{1}{2} (\nabla u + \nabla u^{T} - (\nabla u^{T}) \cdot \nabla u)
 \end{equation}
 
 The weak function on domain is $ u = \{u_0, u_b\} $, $ u_{0} \in L^{2} (T)$. The first function $ u_0 $ represents the interior domain of the function $ u $. The second function $ u_{b} $ represents the boundary value of function $ u $. The key notion is that for two functions $ u_0 $ and $ u_{b} $ are independent with each other. The weak function is defined as 
@@ -49,7 +49,7 @@ for the discrete weak divergence, $ \nabla_{w} \cdot \mathbf{u} in [P_{r} (T)]^{
 (\nabla_w \cdot u, q)_{T} = -(u_{0}, \nabla q)_{T} + \langle u_{b} \cdot \mathbf{n}, q \rangle_{\partial T}
 \end{equation}
 
-The we may define the weak linear strain tensor by using the weak gradient
+Then we can define the weak linear strain tensor by using the weak gradient
 \begin{equation}
 \varepsilon_{w} (u) = \frac{1}{2} (\nabla_{w} u + \nabla_{w} u^{T})
 \end{equation}
@@ -64,7 +64,7 @@ The weak stress can be defined as
 \sigma_{w} (u) = 2 \mu \epsilon_{w}(u) + \lambda(\nabla_{w} \cdot u) \mathbf{I}
 \end{equation}
 
-The weak form of governing equation of continuous Galerkin method as the form as 
+The weak form of governing equation of continuous Galerkin method as
 \begin{equation}
 a(\mathbf{u}, \mathbf{v}) = (\mathbf{f}, \mathbf{v})
 \end{equation}
@@ -76,7 +76,7 @@ the term $ s(\mathbf{u}, \mathbf{v}) $ is a stabilizer enforcing a weak continui
 \begin{equation}
 s(\mathbf{u}, \mathbf{v}) = \sum_{T\in \Omega}^{N} h_{T}^{-1} \langle Q_{b} u_{0} - u_{b}, Q_{b} v_{0} - b_{b} \rangle_{\partial T}
 \end{equation}
-where $ Q_{b} $ the projection parameter defined by the interior and boundary value. $ h_{T} $ is the characteristic length of mesh element. It is a constant number which usually is taken as 1.
+where $ Q_{b} $ is the projection parameter defined by the interior and boundary value. $ h_{T} $ is the characteristic length of mesh element. It is a constant number which usually is taken as 1.
 
 The governing equation has the weak form as
 \begin{equation}
@@ -102,7 +102,7 @@ In this section, we introduce the design of hybrid element, the construction of 
 	\caption{\footnotesize Basis function of one dimensional weak Galerkin element}
 \end{figure}
 
-Based on the weak gradient function, the boundary basis functions are independent with the interior basis functions, Therefore, we can insert an arbitrary number of CG elements into the WG element. Each weak Galerkin element is considered as one sub-element that neighbored with adjacent elements. The interior CG elements are found mesh level with are corrected by the coarse mesh. The boundary basis function of WG element is shared by adjacent elements and constitute the coarse mesh. The newly designed basis function of hybrid element can be illustrated as
+Based on the weak gradient function, the boundary basis functions are independent of the interior basis functions, Therefore, we can insert an arbitrary number of CG element basis functions into the WG element. Each weak Galerkin element is considered as one sub-element that neighbored with adjacent elements. The interior CG elements are corrected by the coarse mesh which is the WG element. The boundary basis function of WG element is shared by adjacent elements and constitute the coarse mesh. The newly designed basis function of hybrid element can be illustrated as
 
 \begin{figure}[h]
 	\centering
@@ -112,14 +112,19 @@ Based on the weak gradient function, the boundary basis functions are independen
 	\caption{\footnotesize Basis function of hybrid WG-CG element, an arbitrary number of CG elements are inserted into WG element}
 \end{figure}
 
-\section{Generic Stabilizer}
+As above figure, in one WG element, there are multiple CG element basis functions. All the interior basis functions are linear and shared the same boundary basis functions of WG element. This is the illustration of the hybrid element basis functions.
+
+\section{The Improved Stabilizer}
+
+\subsection{Deficiency of Original Stabilizer}
+
 Here we present the parallel computing scheme for one dimensional linear and nonlinear elastic equations. The governing equation for dynamic equation is 
 \begin{equation}
 M\ddot{u} + Ku = f
 \end{equation}
 
 In the hybrid elements, the information of mass is missing for the corresponding boundary values. The original governing equation in matrix form is
-\begin{equation}
+\begin{equation} \label{eq:incomp}
 \begin{bmatrix}
 M_{00} & 0 \\0 & 0 \\
 \end{bmatrix}\begin{bmatrix}
@@ -133,10 +138,82 @@ f_{0} \\ 0 \\
 \end{bmatrix}
 \end{equation}
 
-from above equation we can find that the mass matrix for $ \ddot{u}_{b} $ is not complete. The information of mass is missing on the boundary basis functions. Under this circumstance, the explicit time marching scheme is unable to initiate. To avoid the deficit of time marching scheme, we introduce a newly designed stabilizer, namely, the generic stabilizer.
+from above equation we can find that the mass matrix for $ \ddot{u}_{b} $ is not complete. The information of mass is missing on the boundary basis functions. Under this circumstance, the explicit time marching scheme is unable to initiate. 
+
+
+\subsection{Improvement}
+To avoid the deficit of time marching scheme, we introduce a newly designed stabilizer, namely, the generic stabilizer.
 \begin{equation}
 s(\mathbf{u}, \mathbf{v}) = \sum_{T \in \Omega}^{N} h_{T}^{-1} \langle Q_{b} \ddot{u}_{0} - \ddot{u}_{b}, Q_{b} v_{0} - v_{b} \rangle_{\partial T}
 \end{equation}
+
+Consider the Central difference method as 
+\begin{equation} \label{eq:cd}
+\frac{\partial^{2} u}{\partial^{2} t} = \frac{u^{n + 1} - 2 u ^{n} + u^{n - 1}}{(\Delta t)^{2}}
+\end{equation}
+
+For one stabilizer matrix $ h^{-1} \langle Q_{b} \ddot{u} - \ddot{u}_{b}, Q_{b} v_{0} - v_{b} \rangle $, we apply Eq. \eqref{eq:cd} on it and rewrite it as
+\begin{equation}
+\langle  h^{-1} \frac{Q_{b} (u^{n + 1}_{0} - 2 u ^{n}_{0} + u_{0}^{n - 1})}{(\Delta t)^{2}}, Q_{b} v_{0} - v_{b} \rangle - h^{-1} \langle \frac{u_{b}^{n + 1} - 2u_{b}^{n} + u_{b}^{n - 1}}{(\Delta t)^{2}} , Q_{b} v_{0} - v_{b} \rangle
+\end{equation}
+
+Then we calculate the boundary integral and write the result in matrix form $ S $. The stabilizer is written in
+\begin{equation}
+\frac{h^{-1}}{(\Delta t)^{2}} \langle Q_{b} u_{0}^{n + 1} - u_{b}^{n + 1} , Q_{b} v_{0}- v_{b} \rangle - \frac{2h^{-1}}{(\Delta t)^{2}} \langle Q_{b} u_{0}^{n} - u_{b}^{n} , Q_{b} v_{0}- v_{b} \rangle + \frac{h^{-1}}{(\Delta t)^{2}} \langle Q_{b} u_{0}^{n - 1} - u_{b}^{n - 1} , Q_{b} v_{0}- v_{b} \rangle 
+\end{equation}
+
+
+\begin{equation}
+\frac{h^{-1}}{(\Delta t)^{2}} \begin{pmatrix}
+\begin{bmatrix}
+S_{00} & S_{0b} \\ S_{b0} & S_{bb} 
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+u_{0}^{n + 1} \\ u_{b}^{n + 1}
+\end{bmatrix}
+ - 2\begin{bmatrix}
+S_{00} & S_{0b} \\ S_{b0} & S_{bb}
+\end{bmatrix} \cdot
+\begin{bmatrix}
+u_{0}^{n} \\ u_{b}^{n}
+\end{bmatrix} + 
+\begin{bmatrix}
+S_{00} & S_{0b} \\ S_{b0} & S_{bb} 
+\end{bmatrix} \cdot
+\begin{bmatrix}
+u_{0}^{n - 1} \\ u_{b}^{n - 1}
+\end{bmatrix}
+\end{pmatrix}
+\end{equation}
+
+We combine the discretized stabilizer with the incomplete equation Eq. \eqref{eq:incomp}, we can construct the governing equation in a new matrix form
+\begin{eqnarray} \label{eq:newForm}
+&& h^{-1}\begin{bmatrix}
+M_{00} + S_{00} & S_{0b} \\ S_{b0} & S_{bb}
+\end{bmatrix} \cdot \begin{bmatrix}
+u_{0}^{n + 1} \\ u_{b}^{n + 1}
+\end{bmatrix} + (\Delta t)^{2} 
+\begin{bmatrix}
+K_{00} & K_{0b} \\ K_{b0} & K_{bb}
+\end{bmatrix} \cdot \begin{bmatrix}
+u_{0}^{n + 1} \\ u_{b}^{n + 1}
+\end{bmatrix}\\
+& =& 2 h^{-1} \begin{bmatrix}
+S_{00} & S_{0b} \\ S_{b0} & S_{bb}
+\end{bmatrix} \cdot
+\begin{bmatrix}
+u_{0}^{n} \\ u_{b}^{n}
+\end{bmatrix} - h^{-1}\begin{bmatrix}
+S_{00} & S_{0b} \\ S_{b0} & S_{bb}
+\end{bmatrix} \cdot
+\begin{bmatrix}
+u_{0}^{n - 1} \\ u_{b}^{n - 1}
+\end{bmatrix} + (\Delta t)^{2} \begin{bmatrix}
+f_{0} \\ 0
+\end{bmatrix}
+\end{eqnarray}
+
+In Eq. \eqref{eq:newForm}, the mass matrix has completed with $ M_{bb} = S_{bb} $ information for boundary unknown variables. In the time marching scheme, the $ M_{bb}^{-1} $ produces valid result.
 
 The original stabilizer requires that the values in the equation must be the same category. We extend the rule to all the unknown variables in the bilinear form. After the injection of the new stabilizer, the above equation becomes
 
@@ -155,9 +232,9 @@ f_{0} \\ 0
 \end{bmatrix}
 \end{equation}
 
-Consequently, both explicit and implicit time marching scheme can be performed on above matrices.
+Consequently, both explicit and implicit time marching scheme can be implemented on above matrices.
 
-\section{Parallel Computing Method}
+\subsection{Parallel Computing Method}
 
 For both linear and nonlinear equations, we implement the implicit time marching scheme, the Newmark-Beta method. It has the following steps
 
@@ -181,24 +258,26 @@ The $ \tilde{u} $ represents the intermediate step, then we can use it to calcul
 To reduce the local unknown variable $ u_{0} $ into a smaller size global matrix of unknown variable $ u_{b} $, we apply the Schur complement method. The correlation between interior unknown variables and boundary variables is following equation
 
 \begin{equation}
-u_{0}^{n+1} = -G_{00}^{-1} G_{0b} u_{b}^{n+1} + G_{00}^{-1} g_{1}
+u_{0}^{n+1} = -K_{00}^{-1} K_{0b} u_{b}^{n+1} + K_{00}^{-1} g_{1}
 \end{equation}
 
 Therefore, the original large sparse global matrix is transformed into a small condensed global matrix with the only one set of unknown variables, $ u_{b} $. The governing equation has the new form
 \begin{equation}
-u_{b}^{n+1} = [G_{b0}(-G_{00}^{-1}G_{0b}) + G_{bb}]^{-1} (g_{2} - G_{b0} (G_{00}^{-1} g_{1}))
+u_{b}^{n+1} = [K_{b0}(-K_{00}^{-1}K_{0b}) + K_{bb}]^{-1} (g_{2} - K_{b0} (K_{00}^{-1} g_{1}))
 \end{equation}
 
 Then we can simplify the above equation into
 \begin{equation}
-u_{b}^{n+1} = G^{'} f^{'}
+u_{b}^{n+1} = K^{'} f^{'}
 \end{equation}
 
-\section{The Parallel Computing Work Flow}
+From above equations, the boundary unknown variable $ u_{b} $ is updated. In each time step, we convert local unknown variable $ u_{0} $ to $ u_{b} $ through local Schur complement method to reduce the computational cost. After condensing the matrix, we can calculate the solution by matrix inversion. 
+
+\subsection{The Parallel Computing Work Flow}
 
 For one-dimensional elastic equation, the original governing equation can be converted to a sparse tri-diagonal stiffness matrix to a blocked decomposed submatrices
 
- \begin{figure}[h]
+ \begin{figure}[H]
  	\centering
  	\begin{tabular}{c}
  		\includegraphics[width=0.5\textwidth]{./pics/matrix1.png}
@@ -206,7 +285,9 @@ For one-dimensional elastic equation, the original governing equation can be con
  	\caption{\footnotesize Global sparse tri-diagonal stiffness matrix}
  \end{figure}
  
-  \begin{figure}[h]
+ For the WG element, the global matrix is constructed as above figure. The elements are continuously arranged. The parallel computing scheme such as Schur complement method cannot be directly applied. An external loading vector like Lagrangian multiplier is required. Our hybrid WG-CG element method is discontinuous, it will provide a discontinuous matrix form as below figure. 
+ 
+  \begin{figure}[H]
   	\centering
   	\begin{tabular}{c}
   		\includegraphics[width=0.5\textwidth]{./pics/hmatrix1.png}
@@ -214,7 +295,7 @@ For one-dimensional elastic equation, the original governing equation can be con
   	\caption{\footnotesize Blocked stiffness matrix after domain decomposition}
   \end{figure}
   
-  The original large sparse stiffness matrix is compressed in a very small matrix on the right bottom corner. In another word, the main computational load is split into the calculation of square matrices. Each square matrix represents one single hybrid element. The size of hybrid element is determined by the number of CG elements which inserted into one WG element. We can compare the WG element as the cargo ship and CG elements are the container on the board. The entire computational domain is decomposed into multiple subdomains naturally since the discontinuous feature of hybrid WG-CG element.
+  The original large sparse stiffness matrix is compressed in a very small matrix on the right bottom corner by using Schur complement method. In another word, the main computational load is split into the calculation of square matrices. Each square matrix represents the interior unknown variables in one single hybrid element. The size of hybrid element is determined by the number of interior CG elements since the boundary basis function remains the same. The entire computational domain is decomposed into multiple subdomains and each subdomain corresponds to one single processor. After the global calculation, the interior unknown variables can be recovered through local computing.
   
   The parallel computing work flow chart is described as following
   
@@ -233,7 +314,7 @@ For one-dimensional elastic equation, the original governing equation can be con
    	\item Once the global residual is less than the tolerant value, current Newmark-Beta time iteration complete and move to the next time step.
    \end{enumerate}
    
-   To accelerate the performance, we use the open source library such as LAPACK/BLAS to calculate the computationally expensive operators in terms of the Cholesky transportation, matrix multiplication and vector operations. This implementation largely benefits the programming process and works very well among different high performance computing platforms.
+   To accelerate the performance, we use the open source library such as LAPACK/BLAS to calculate the computationally expensive operators in terms of the block Cholesky elimination, matrix multiplication and vector operations. This implementation largely benefits the programming process and works very well among different high performance computing platforms.
    
    The software has been tested on the George Washington University super computing cluster, ColonialOne, with Xeon E5-2650v2 2.6GHz 8-core processors with 128 GB of RAM each.
    
@@ -241,7 +322,7 @@ For one-dimensional elastic equation, the original governing equation can be con
    
    \subsection{Geometric linear elastic equation}
    
-   We design a numerical test to verify the hybrid element with analytical solution $ u = sin (2 \pi x) $. In each WG element, we insert 20 CG elements and then observe the accuracy of $ u_0 $, $ u_b $ and the effect of stabilizer.
+   We design a numerical test to verify the hybrid element with analytical solution $ u = sin (2 \pi x) $. In each WG element, we set 20 CG elements and then observe the accuracy of $ u_0 $, $ u_b $ and the effect of stabilizer.
    
       \begin{figure}[H]
       	\centering
@@ -277,9 +358,10 @@ For one-dimensional elastic equation, the original governing equation can be con
       		\end{center} }
       	\end{table}
       	
-      	With the increasing of the number of hybrid WG-CG elements, we observed a second order accuracy of both interior and boundary unknown variables. This test probes that the hybrid element has the excellent compatibility for linear elastic equation.
+      	The above table demonstrates the accuracy of the hybrid element on linear elasticity equation by using central difference time marching scheme.
+      	With the increasing of the number of hybrid WG-CG elements, we observed a second order accuracy of both interior and boundary unknown variables. This test shows that the hybrid element has the excellent compatibility for linear elastic equation.
       	
-      	To explore the capability in dynamic problem, we extend the test case with the same analytic solution. By implementing the generic stabilizer above, both explicit and implicit time marching scheme are ready to test. For explicit time marching scheme, we choose the forward Euler method\cite{jameson1991time} and define the relative small time step to fit the critical time marching step\cite{cundall1979discrete}. For the implicit scheme, we choose the Newmark-Beta method\cite{hahn1991modified}. For every test case, a constant loading force is applied on the right-hand side as a Neumann boundary condition\cite{ng1999fast}. Meanwhile, we fix the left-hand side as Dirichlet boundary condition. The results are shown as following charts
+      	To explore the capability in dynamic problem using time marching schemes, we extend the test case with the same analytic solution. By implementing the generic stabilizer above, both explicit and implicit time marching scheme are ready to test. For explicit time marching scheme, we choose the forward Euler method \cite{jameson1991time} and define the relative small time step to fit the critical time marching step \cite{cundall1979discrete}. For the implicit scheme, we choose the Newmark-Beta method \cite{hahn1991modified}. For every test case, a constant loading force is applied on the right-hand side as a Neumann boundary condition \cite{ng1999fast}. Meanwhile, we fix the left-hand side as Dirichlet boundary condition. The results are shown as following charts
       	
       	      \begin{figure}[H]
       	      	\centering
@@ -297,7 +379,7 @@ For one-dimensional elastic equation, the original governing equation can be con
       	       	\caption{\footnotesize The results comparison between CG only and hybrid WG-CG element for implicit scheme}
       	       \end{figure}
       	       
-      	       We compare the solutions between our hybrid WG-CG element and classic CG element. In both implicit and explicit time marching scheme, the average difference between two methods is less than $ 1e^{-5} $. We can safely draw the conclusion that hybrid element achieves an optimal accuracy for not only static case, by also dynamic problems.
+      	       The above two figures illustrates the comparison of deflections. We compare the solutions between our hybrid WG-CG element and classic CG element. In both implicit and explicit time marching scheme, the average difference between two methods is less than $ 10^{-5} $. Based on the results, our hybrid WG-CG solver shows optimal convergence to the established CG solver. The lower error value encouraged us to extend the hybrid element to handle geometric nonlinear problems.
       	       
  \subsection{Geometric nonlinear elasticity equation}
  
@@ -315,7 +397,7 @@ For one-dimensional elastic equation, the original governing equation can be con
   	\caption{\footnotesize The results comparison between CG only and hybrid WG-CG element by using parallel implicit scheme with constant boundary condition}
   \end{figure}
   
-  An optimal convergence of the two independent solutions shows an excellent accuracy of the parallel hybrid solver. The average difference is less than $ 1e^{-4} $, which is same as the previous linear test.
+  An optimal convergence of the two independent solutions shows an excellent accuracy of the parallel hybrid solver. The average difference is less than $ 10^{-4} $, which is same as the previous linear test.
   
   To verify the the robustness of the new solver, a periodic boundary condition is enforced to substitute the constant variable where $ f = sin (2 \pi t) $. The comparing results is as following chart
   
@@ -329,7 +411,7 @@ For one-dimensional elastic equation, the original governing equation can be con
     
     Analogously, an optimal convergence is also observed from this test case. We have a strong confidence on the accuracy of our nonlinear parallel computing solver. 
     
-    After the verification of accuracy and precision, we want to test the performance and parallel computing scalability on high performance clusters. We increase the size of the problem to a higher level, 20 times larger than the original test case. Meanwhile, we gradually increase the number of processor applied for the problem from 10 to 60. The time using graph is plotted as following
+    After the verification of accuracy and precision, we want to test the performance and parallel computing scalability on high performance clusters. We increase the size of the problem to a higher level, 20 times larger than the original test case, up to 100,000 unknown variables. Meanwhile, we gradually increase the number of processor applied for the problem from 10 to 60. The time using graph is plotted as following
     
   \begin{figure}[H]
   	\centering
@@ -349,75 +431,13 @@ For one-dimensional elastic equation, the original governing equation can be con
    	\caption{\footnotesize Speedup .vs. number of processors increasing}
    \end{figure}
    
-   A superlinear speedup is observed from the above test cases. The reason is that the computational effort to solve local matrices decreases nonlienarly when the local problem is divided into a series of small subdomains. The computational expense for converting stiffness matrix decreased cubics to the size of matrix. Meanwhile, the communication overhead growing relatively slow. The time complexity is $ O(n^{3}) $ reducing ans $ O(n) $ increasing. Overall, the trade-off benefit for domain decomposition is larger than MPI communication which leads to the superlinear results.
+   A superlinear speedup is observed from the above test cases. The reason is that the computational effort to solve local matrices decreases faster than communication overhead. The computational cost for stiffness matrix inverion is $ O(n^{3}) $, where $ n $ is the size of stiffness matrix. Meanwhile, the communication overhead grows linearly with time complexity $ O(n) $.  Overall, the trade-off benefit for domain decomposition is larger than MPI communication which leads to the superlinear results. 
    
-   We also consider the linear elasticity Equation in the square domain $ \Omega = (0, 1)^2 $. For each subdomain, it is partitioned into uniform triangular and quadrilateral mesh wish mesh size $ h $. The right-hand side function $ f $ is chosen. The exact solution is given by
    
-  \begin{equation}
-  u = \begin{pmatrix}
-  sin(2 \pi x) sin(2\pi y) \\ 1\\
-  \end{pmatrix}
-  \end{equation}
-  
-  the solution is shown as below
-  
-   \begin{table}[h]
-   	\setlength{\tabcolsep}{2pt} {
-   		\caption{ Numerical results for triangular element.}
-   		\label{Tab:hwgcg l1}
-   		\vspace{-5pt}
-   		\begin{center}
-   			%	\scalebox{0.6}{
-   			\begin{tabular}{c|c|c|c|c}
-   				\hline
-   				\multicolumn{5}{c}{\# CG = 20} \\
-   				\hline
-   				\#WG & $ E (u_{0}) $ & $ O(u_{0}) $ & $ E(u_{b})  $& $ O(u_{b})  $\\
-   				\hline
-   				$ 4 $ & $ 9.484e-2 $ & - & $ 8.484e-2 $ & - \\
-   				\hline
-   				$ 16 $ & $ 2.678e-3 $ & $ 1.9 $& $ 2.178e-3 $ & $ 1.9 $ \\
-   				\hline
-   				$ 64 $ & $ 5.570e-4 $ & $ 2.0 $ & $ 5.470e-4 $ & $ 1.9 $ \\
-   				\hline
-   				$ 256 $ & $ 1.437e-4 $ & $ 2.0 $ & $ 1.367e-4 $ & $ 2.0 $\\
-   				\hline
-   			\end{tabular}
-   			%	}
-   		\end{center} }
-   	\end{table}
-   	
-   	
-   	\begin{table}[h]
-   		\setlength{\tabcolsep}{2pt} {
-   			\caption{ Numerical results for quadrilateral element.}
-   			\label{Tab:hwgcg l1}
-   			\vspace{-5pt}
-   			\begin{center}
-   				%	\scalebox{0.6}{
-   				\begin{tabular}{c|c|c|c|c}
-   					\hline
-   					\multicolumn{5}{c}{\# CG = 20} \\
-   					\hline
-   					\#WG & $ E (u_{0}) $ & $ O(u_{0}) $ & $ E(u_{b})  $& $ O(u_{b})  $\\
-   					\hline
-   					$ 4 $ & $ 8.368e-2 $ & - & $ 9.103e-2 $ & - \\
-   					\hline
-   					$ 16 $ & $ 1.944e-3 $ & $ 1.9 $& $ 2.058e-3 $ & $ 1.9 $ \\
-   					\hline
-   					$ 64 $ & $ 5.337e-4 $ & $ 2.0 $ & $ 5.280e-4 $ & $ 2.0 $ \\
-   					\hline
-   					$ 256 $ & $ 1.086e-4 $ & $ 2.0 $ & $ 1.451e-4 $ & $ 2.0 $\\
-   					\hline
-   				\end{tabular}
-   				%	}
-   			\end{center} }
-   		\end{table}
+   		\section{Summary}
    		
-   		\vspace{5mm}
+   		In summary, we present a newly developed hybrid element combining the weak Galerkin finite element and continuous Galerkin finite element. It inherits the discontinuous feature from WG method and the computational simplicity from CG method. The implementation of hybrid element for parallel computing is through Schur complement method. The second order of accuracy and superlinear speedup are observed for the hybrid element. 
    		
-   		In summary, we present a newly developed hybrid element combine the weak Galerkin finite element and continuous Galerkin finite element. It inherits the discontinuity from WG method and the convenience on implementation from CG method. The implementation of hybrid element for parallel computing is compatible for MPI library platform. The second order accuracy and superlinear speedup are observed for the hybrid element. 
+   		We test the hybrid WG-CG element for linear and nonlinear elasticity equations. We implement explicit (Central Difference) and implicit (Newmark-Beta) methods to obtain the results. Comparing with analytical solution and published results, the error is lower than $ 10^{-5} $ for both Dirichlet and Neumann boundary condition.
    		
-   		Both geometric linear and nonlinear test cases are studied. The results of new hybrid element provides and optimal convergence which is accordance with WG and CG elements. The hybrid elements proved a strong robustness for Dirichlet and Neumann boundary condition.
-   		
-   		We present the unstructured mesh results of two-dimensional solution for linear elasticity equation. We will extend the parallel computing to two dimensional with more advanced technicals. More details of parallel computing for larger problem will be discussed in the following chapter.
+   		After the one dimensional examples, we present the test cases of the WG method for solving two dimensional problems.We obtain expected order of accuracy. The next step is to implement parallel computing scheme on it. The details of parallel computing for larger problem will be discussed in the next chapter.

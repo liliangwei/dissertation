@@ -6,10 +6,13 @@
 \label{sec:equations}
 
 \subsection{Linear Elastic Equation and Weak Galerkin Method}
-Consider an elastic body subject to an exterior force $ \mathbf{f} $, we denote the computational domain as $ \Omega $ and its continuous boundary as $ \Gamma = \partial \Omega $. The governing equation for linear elasticity can be written as
+Consider an elastic body subject to an exterior force $ \mathbf{f} $, and denote the computational domain as $ \Omega $ and its continuous boundary as $ \Gamma = \partial \Omega $. The governing elasticity equation can be written as
 
 \begin{equation}
 \nabla \cdot \sigma(\mathbf{u}) = \mathbf{f}, \qquad in \quad \Omega 
+\end{equation}
+\begin{equation}
+\mathbf{f} = \hat{\mathbf{f}}, \qquad in \quad \Omega
 \end{equation}
 \begin{equation}
 \mathbf{u} = \hat{\mathbf{u}}, \qquad on \quad \Gamma
@@ -29,7 +32,7 @@ where $ E $ is the elasticity modulus and $ \mu $ is the Poisson's ratio.
 
 
 
-The weak function on the domain is $ \mathbf{u} = \{\mathbf{u}_0, \mathbf{u}_b \}, \quad \mathbf{u}_0 \in L^{2} (T) $. The first function $ \mathbf{u}_0 $  represents the interior domain of the function $ \mathbf{u} $ . The second function $ \mathbf{u}_b $ represents the value of function $ \mathbf{u} $ on the boundary of domain $ T $ . The key notion is that for two function $ \mathbf{u}_0 $  and $ \mathbf{u}_b $  are independent with each other along . The weak function is defined as
+The weak function on the domain is $ \mathbf{u} = \{\mathbf{u}_0, \mathbf{u}_b \}, \quad \mathbf{u}_0 \in L^{2} (T) $. The first function $ \mathbf{u}_0 $  represents the interior domain of the function $ \mathbf{u} $ . The second function $ \mathbf{u}_b $ represents the value of function $ \mathbf{u} $ on the boundary of domain $ T $ . The key notion is that the basis functions of $ \mathbf{u}_0 $  and $ \mathbf{u}_b $  are independent with each other . The weak function is defined as
 \begin{equation}
 V_{h} = \{ \mathbf{v} = \{ \mathbf{v}_0, \mathbf{v}_b \} : \mathbf{v}_0 \in P_{j} (T^0), \mathbf{v}_b \in P_{l}(e), e \subset \partial T\}
 \end{equation}
@@ -59,7 +62,7 @@ The bilinear form of governing equation of continuous Galerkin method is followi
 a( \mathbf{u},  \mathbf{v}) = ( \mathbf{f},  \mathbf{v})
 \end{equation}
 
-The above approximation function $  \mathbf{u} $ and gradient $ \nabla \mathbf{u} $ is not well defined for the discontinuous feature of weak Galerkin method, the new form is 
+In WG method, to complete the elemental stiffness matrix, we need the stabilizer to connect the interior and boundary unknown variables. The matrix form of governing equation is
 \begin{equation}
 a( \mathbf{u}_w,  \mathbf{v}_w) + s( \mathbf{u},  \mathbf{v}) = ( \mathbf{f},  \mathbf{u})
 \end{equation}
@@ -67,7 +70,7 @@ the term $ s( \mathbf{u},  \mathbf{v}) $ is a stabilizer enforcing a weak contin
 \begin{equation}
 s( \mathbf{u},  \mathbf{u}) = \sum_{T\in \Omega}^{N} h_{T}^{-1} \langle Q_{b}  \mathbf{u}_0 -  \mathbf{u}_b, Q_b  \mathbf{v}_0 -  \mathbf{v}_b \rangle_{\partial T}
 \end{equation}
-where $ Q_b $ is the projection from the interior unknown variables to boundary unknown variables. Commonly it is taken as $ 1 $. The discrete bilinear equation has the assemblage form
+where $ Q_b $ is the projection from the interior unknown variables to boundary unknown variables. Commonly it is taken as $ 1 $. The matrix form of governing equation is assembled as
 \begin{equation}
 a( \mathbf{u}_w,  \mathbf{u}_w) = \sum_{T \in \Omega}^{N} 2(\mu \varepsilon_w ( \mathbf{u}), \varepsilon_w ( \mathbf{v}))_T + \sum_{T \in \Omega}^{N}(\lambda \nabla \cdot \mathbf{u}, \nabla_w \cdot \mathbf{v})_T
 \end{equation}
@@ -75,13 +78,14 @@ a( \mathbf{u}_w,  \mathbf{u}_w) = \sum_{T \in \Omega}^{N} 2(\mu \varepsilon_w ( 
 
 %--------------------------------------
 \section{Existing Numerical Methods Review}
-In this section, we present and analyze several most widely used numerical method to solve finite element problems. The details of each method are presented in the following subsections. 
+In this section, we present and analyze several most widely used numerical method for solving finite element problems. The details of each method are presented in the following subsections.
+ 
 \subsection{Classic Continuous Galerkin Finite Element Method}
-Back to 1950s and 1960s, finite element method is arised to solve complex elasticity and structural analysis engineering problems in mechanical and aeronautical field. A. Hrennikoff\cite{hrennikoff1941solution}, R. Courant\cite{courant1994variational} and K.Feng are the earliest pioneers who established this subject. FEM is then proposed as a systematic numerical method to solve variety of partial differential equations. The core characteristic of FEM is that it employs mesh discretization to divide a continuous computational domain so that a big problem is then converted to a set of discrete small problems. That is the source of finite element. Each element represents a small piece of computational sub-domain.
+Back to 1950s and 1960s, finite element method is invented to solve complex elasticity and structural analysis engineering problems in mechanical and aeronautical field. A. Hrennikoff \cite{hrennikoff1941solution}, R. Courant \cite{courant1994variational} and K.Feng \cite{babuvska2001finite} are the earliest pioneers who established this subject. FEM is then proposed as a systematic numerical method to solve variety of partial differential equations. The core characteristic of FEM is that it employs mesh discretization to divide a continuous computational domain. Therefore, a big problem is then converted to a set of discrete small problems. That is the source of finite element. Each element represents a small piece of computational sub-domain.
 
-Finite element method is an efficient solution to solve partial differential equations. The core idea is to convert the original partial differential equation to a equivalent bilinear form weak function. Then we partition the computational domain into polygon meshes. In each mesh element, we construct the finite element space. The bilinear form is discretized into a summation of finite elemental spaces. The solution is approximated based on the calculation of assembled matrix. More details can be found in \cite{zienkiewicz1977finite, ciarlet2002finite, hughes2012finite, reddy1993introduction}.
+FEM is an efficient solution to solve partial differential equations. It converts the original partial differential equation to an equivalent bilinear form as the weak function. Then we partition the computational domain into polygon meshes. In each mesh element, we construct the finite element space. The bilinear form is discretized into a summation of finite elemental matrices. The solution is approximated based on the calculation of assembled matrix. More details can be found in \cite{zienkiewicz1977finite, ciarlet2002finite, hughes2012finite, reddy1993introduction}.
 
-The variational formulation which generated by the governing equation determines the characteristic of the finite element method. To obtain the variational form, mathematicians derived several different paths such as Galerkin method, the discontinuous Galerkin method, mixed method, etc. In this chapter, we introduce two most popular method, DG and MFEM. The WG method is inspired from these two method and shares many similarities with them. 
+The variational formulation is derived from the governing equation. It determines the characteristic of the finite element method. To obtain the variational form, mathematicians derived several different paths such as Galerkin method, the discontinuous Galerkin method, mixed method, etc. In this chapter, we introduce two most popular method, DG and MFEM. The WG methods is inspired from these two method and shares many similarities with them. 
 
 \subsection{Discontinuous Galerkin Finite Element Method}
 
@@ -97,10 +101,9 @@ the exact solution is
 \begin{equation}
 u = \frac{sin(x)}{a}
 \end{equation}
+where the Dirichlet boundary condition is applied on both end.
 
-Dirichlet boundary condition is applied on both end.
-
-For the standard continuous Galerkin FEM, we shall first apply the basis function $ \phi_{i} $ on each element. The solution becomes as
+For the classic CG FEM, we shall first apply the basis function $ \phi_{i} $ on each element. The solution becomes as
 \begin{equation}
 u(x) = \sum_{i = 1}^{N} \phi_{i} (x) U_{i}
 \end{equation}
@@ -111,12 +114,11 @@ We integrate the governing equation and obtain the weak form
 \end{equation}
 
 Then we apply integration by parts
-
 \begin{equation}
 -\int_{\Omega} a u \phi_{i, x} dx + [a u \phi_{i}]^{right}_{left} = \int_{\Omega} cos(x) \phi_{i} dx
 \end{equation}
 
-we can substitute the continuous unknown variable equation by 
+Discrete form of the continuous unknown function is
 \begin{equation}
 u(x) = \sum_{i = 1}^{N} \phi_{i}(x) U_{i}
 \end{equation}
@@ -126,43 +128,41 @@ So we obtain the new governing equation in matrix form
 -\sum_{i = 1}^{N} U_{i} a \int_{\Omega} \phi_{i}\phi_{j,x} dx + BC = \int_{\Omega} cos(x) \phi_{j} dx
 \end{equation}
 
-the linear system is simplified as
+The linear system is simplified as
 \begin{equation}
 \mathbf{A} \mathbf{x} = \mathbf{b}
 \end{equation}
 
-The main distinct feature of DG-FEM is that there is no continuity constraint between element. In another word, the basis functions along the computational domain is discontinuous.
+In DG-FEM, there is no continuity constraint between element. In another word, the basis functions in the computational domain is discontinuous.
 
-If we apply the original governing equation that
+The discretized governing equation in matrix form is
 \begin{equation}
 a \int_{\Omega} \frac{du}{dx} \phi_{i}  dx = \int_{\Omega} cos(x) \phi_{i} dx
 \end{equation}
 
-after the discretization, we have the assemble form that
+For the integration by parts, the equation is written in
 \begin{equation}
 \sum_{j} \int_{j} a \frac{du}{dx} \phi_{i} dx = \sum_{j} \int_{j} cos(x) \phi_{i} dx
 \end{equation}
 
-then we apply the integration by parts
+Then we apply the integration by parts
 \begin{equation}
 \sum_{j} \{ -\int_{j} a u \phi_{i, x} dx + [(a u)\phi_{i}]^{j + \frac{1}{2}}_{j - \frac{1}{2}} \} = \sum_{j} \int_{j} cos(x) \phi_{i} dx
 \end{equation}
 
-for every element, we have the elemental form 
+For every element, we have the elemental matrix form 
 \begin{equation}
 -\int_{j} au\phi_{j,x} dx + [(au)\phi_{i}]^{j + \frac{1}{2}}_{j - \frac{1}{2}} = \int_{j} cos(x) \phi_{j} dx
 \end{equation}
 
-We can find that a penalty term is applied on the matrix form. We have several methods to calculate it. Upwinding method is a common useful tool to calculate the $ u $ value on the interface.
+A penalty term is required in the above equation representing a jump of the interface value. There are several methods to calculate it. Upwinding method is a common useful tool to calculate the $ u $ value on the interface. Comparing to the CG method, the DG method introduces additional DOFs to maintain the continuity as jump penalty term. 
 
-Comparing to CG, DG method introduces additional DOFs to maintain the continuity. The main advantage of DG method is that we can easily introduce higher order interpolation to obtain higher order accuracy.
-
-There are several good iterative schemes such as blocak Jacobi, Conjugate Gradient method are stable for higher order. Meanwhile, it's easy to parallelize the computational domain with domain decomposition scheme.
+There are several widely applied iterative schemes such as block Jacobi, Conjugate Gradient method are stable for elements with high order polynomials. Domain decomposition is compatible with the DG method as parallel computing scheme.
 
 
 \subsection{Mixed Finite Element Method}
 
-The mixed finite element method is a new type of FEM in which an extra independent variables are introduced which discretization of a partial differential equation. In another word, it is characterized by a variational equation. Usually, the extra variables are constrained by an external vector, Lagrange multiplier. The major difference between FEM and mixed FEM is that the extra independent variables. The mixed finite element method has an advantage on computing the elasticity equation and the stress and strain field. 
+The mixed finite element method is a new type of the FEM in which an extra independent variable is introduced which discretization of a partial differential equation. It is characterized by a variational equation. Usually, the extra variables are constrained by an external vector, Lagrange multiplier. The main difference between FEM and mixed FEM is that the changing of bilinear form of governing equation. The mixed FEM has an advantage on computing the elasticity equation and the stress and strain field. 
 
 To illustrate the mixed FEM, a simple elliptic equation is
 \begin{equation}
@@ -201,6 +201,7 @@ then we apply the integration by parts
 \begin{equation}
 \int_{\Omega} a^{-1} \mathbf{G} \cdot \mathbf{v} d\Omega - \int_{\Omega} c \nabla \cdot \mathbf{v} d\Omega = 0 \quad \mathbf{v} \in H(div, \Omega)
 \end{equation}
+$ H(div, \Omega) $ represents the integral function is defined in Hilbert space as $ \Omega $.
 
 \begin{equation}
 \int_{\Omega} \psi \nabla \cdot \mathbf{G} d\Omega = \int_{\Omega} f \psi d\Omega 
@@ -217,7 +218,7 @@ RT_{k} = (P_{k})^{d} + xP_{k}
 \end{equation}
 where $ k  $ is the order of polynomials degrees.
 
-the variational function $ \mathbf{G} $ and $ u $ can be approximated by 
+the variational function $ \tilde{G} $ and $ \mathbf{u} $ can be approximated by 
 \begin{equation}
 \tilde{G} = \sum_{i = 1}^{N}g_{i} \mathbf{v}_{i}
 \end{equation}
@@ -305,7 +306,7 @@ Now we define some commonly used weak operators
 
 The weak gradient operator, for any $ v \in S(T) $, the weak gradient of $ v $ is $ \nabla_{w} v $
 \begin{equation}
-\langle \nabla_{w} v, \mathbf{q} \rangle_{T} = -(v_{0}, \nabla \cdot \mathbf{q})_{T} + \langle v_{b}, \mathbf{q} \cdot \mathbf{n} \rangle_{\partial T}
+( \nabla_{w} v, \mathbf{q} )_{T} = -(v_{0}, \nabla \cdot \mathbf{q})_{T} + \langle v_{b}, \mathbf{q} \cdot \mathbf{n} \rangle_{\partial T}
 \end{equation}
 
 the discrete weak gradient operator is $ \nabla_{w, r} v $
@@ -337,7 +338,7 @@ the discrete weak divergence operator is
 (\nabla_{w, r, T} \times \mathbf{v}, \varphi)_{T} = (\mathbf{v}_{0}, \nabla \times \varphi)_{T} - \langle \mathbf{v}_{b} \times \mathbf{n}, \varphi \rangle_{\partial K}
 \end{equation}
 
-\subsection{Second order elliptic equation in WG}
+\subsection{Weak Galerkin method for second order elliptic equation}
 In this section, we use the weak operators to solve second order elliptic equation. In domain $ \Omega $, we have the equation in form
 \begin{equation}
 - \nabla \cdot (a \nabla u) = f
@@ -358,7 +359,7 @@ The primal formulation for Dirichlet boundary condition is
 (a \nabla u, \nabla v) = (f, v)
 \end{equation}
 
-for Neumann boundary condition
+For Neumann boundary condition
 \begin{equation}
 (a \nabla u, \nabla v) = (f, v) - \langle g, v \rangle_{\partial \Omega}
 \end{equation}
@@ -421,7 +422,7 @@ in space $ S_{h} $ we have the bilinear form
 a(u, v) = \sum (a \nabla_{w} u, \nabla_{w} v)_{T}
 \end{equation}
 
-To ensure the continuity between each WG element, a stabilizer is introduced. The stabilizer describes the difference of boundary values and the interior value which projected on boundary. Since the interior space and boundary space is independent and the basis functions are different so that the result values are different. 
+To connect the two independent spaces, interior and boundary, a stabilizer is introduced. The stabilizer describes the difference of boundary values and the projected interior value to the boundary. Since the interior space and boundary space is independent, two sets of basis functions are applied independently. When we project the value from interior basis function to boundary basis function, the two values are different even though they share the same location. The stabilizer is a boundary integral which measure the difference and connect the spaces.
 
 \begin{figure}[h]
 	\centering
@@ -431,7 +432,7 @@ To ensure the continuity between each WG element, a stabilizer is introduced. Th
 	\caption{\footnotesize 1-D interior basis functions of two adjcent elements.}\label{fig1: stabilierFig}
 \end{figure}
 
-% However, if the difference is beyond certain threshold, the result value is not continuous across the boundary which leads to break of bilinear form. To solve this inconsistency and give maximum freedom to the polynomial combination, we use a stabilizer to control the difference and lock to solution in each element. So that the interior value and boundary value are hinged through stabilizer. The equation of stabilizer form is
+The above figure shows the adjacent elements using identical interior basis functions. The curves in two neighbor elements are interior basis functions. The boundary basis function are constant locates on the boundary edge. However, the projection values, $ u_{0}^{L} $ and $ u_{0}^{R} $, from interior to boundary are different. The following equation is the stabilizer to measure the difference and connect the interior values to the boundary value.
 
 \begin{equation}
 s(u, v) = \rho \sum h_{T}^{-1} \langle Q_{b} u_{0} - u_{b}, Q_{b} v_{0} - v_{b} \rangle_{\partial T}
@@ -442,7 +443,9 @@ where $ \rho $ is commonly set as $ 1 $, and $ h $ is the characteristic length 
 a_{s} (u, v) = a(u, v) + s(u, v)
 \end{equation}
 
-\subsection{Weak Galerkin triangular meshes}
+The above equation is the final elemental stiffness matrix. It consists elemental matrix from bilinear form and the stabilizer. After the superposition with connectivity, we construct the global stiffness matrix.
+
+\subsection{Weak Galerkin Triangular Meshes}
 
 Consider triangular element linear type basis function for both interior and boundary subspaces $ P_{1}(T) / P_{1} (\partial T) $
 \begin{equation}
@@ -453,17 +456,19 @@ Consider triangular element linear type basis function for both interior and bou
 \end{equation}
 where N is the number of element boundaries.
 
-\begin{figure}[h]
+\begin{figure}[H] \label{fig:tri2D}
 	\centering
 	\begin{tabular}{c}
-		\includegraphics[width=0.5\textwidth]{./pics/triangle.pdf}
+		\includegraphics[width=0.4\textwidth]{./pics/triangle.pdf}
 	\end{tabular}
 	\caption{\footnotesize Weak Galerkin triangular elements and solution points.}\label{fig1: triangle}
 \end{figure}
 
-In this section, we present a triangular WG element with linear interior and boundary space. There are three interior basis functions represent the $ x, y $ and $ xy $ respectively.
+For Fig. \ref{fig:tri2D}, we set linear basis functions, two unknown variables, on each edge. The dash line represents the fictitious boundary of interior space. We can apply different order of polynomials on it. The two spaces are independent of each other.  
 
-\subsection{Weak Galerkin quadrilateral meshes}
+In this section, we present a triangular WG element with linear interior and boundary space. There are three interior basis functions representing the $ x, y $ and $ xy $ respectively.
+
+\subsection{Weak Galerkin Quadrilateral Meshes}
 
 Consider triangular element linear type basis function for both interior and boundary subspaces $ Q_{1}(T) / Q_{1} (\partial T) $
 \begin{equation}
@@ -473,7 +478,7 @@ Consider triangular element linear type basis function for both interior and bou
 \phi_{3 + l} = \{ 0, \mu_{l} \}, \qquad l = 1, 2, \cdots , 2N
 \end{equation}
 where N is the number of element boundaries.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{tabular}{c}
 		\includegraphics[width=0.8\textwidth]{./pics/quad.pdf}
@@ -481,6 +486,91 @@ where N is the number of element boundaries.
 	\caption{\footnotesize Weak Galerkin quadrilateral elements and solution points.}\label{fig2: quad}
 \end{figure}
 
-In this section, we present a quadrilateral WG element with linear interior and boundary space. There are three interior basis functions represent the $ x, y $ and $ xy $ respectively. Meanwhile, there are eight boundary basis functions represents six solution points based on the location of Gaussian points.
+In above figure, we present a quadrilateral WG element with linear interior and boundary space. There are three interior basis functions representing the $ x, y $ and $ xy $ respectively. Meanwhile, there are eight boundary basis functions represents six solution points based on the location of Gaussian points.
 
 %---------------------------------------------------------------------------
+\subsection{Numerical Examples}
+
+We also consider the linear elasticity Equation in the square domain $ \Omega = (0, 1)^2 $. For each subdomain, it is partitioned into uniform triangular and quadrilateral mesh wish mesh size $ h $. The right-hand side function $ f $ is chosen. The exact solution is given by
+
+\begin{equation}
+u = \begin{pmatrix}
+sin(2 \pi x) sin(2\pi y) \\ 1\\
+\end{pmatrix}
+\end{equation}
+
+the solution is shown as below
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c}
+		\includegraphics[width=0.4\textwidth]{./pics/triangleMesh}
+	\end{tabular}
+	\caption{\footnotesize Triangle mesh elements}
+\end{figure}
+
+\begin{table}[h]
+	\setlength{\tabcolsep}{2pt} {
+		\caption{ Numerical results for triangular element.}
+		\label{Tab:hwgcg l1}
+		\vspace{-5pt}
+		\begin{center}
+			%	\scalebox{0.6}{
+			\begin{tabular}{c|c|c|c|c}
+				\hline
+				\multicolumn{5}{c}{\# CG = 20} \\
+				\hline
+				\#WG & $ E (u_{0}) $ & $ O(u_{0}) $ & $ E(u_{b})  $& $ O(u_{b})  $\\
+				\hline
+				$ 4 $ & $ 9.484e-2 $ & - & $ 8.484e-2 $ & - \\
+				\hline
+				$ 16 $ & $ 2.678e-3 $ & $ 1.9 $& $ 2.178e-3 $ & $ 1.9 $ \\
+				\hline
+				$ 64 $ & $ 5.570e-4 $ & $ 2.0 $ & $ 5.470e-4 $ & $ 1.9 $ \\
+				\hline
+				$ 256 $ & $ 1.437e-4 $ & $ 2.0 $ & $ 1.367e-4 $ & $ 2.0 $\\
+				\hline
+			\end{tabular}
+			%	}
+		\end{center} }
+	\end{table}
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{c}
+			\includegraphics[width=0.4\textwidth]{./pics/quadMesh}
+		\end{tabular}
+		\caption{\footnotesize Quadrilateral mesh elements}
+	\end{figure}
+	
+	
+	\begin{table}[h]
+		\setlength{\tabcolsep}{2pt} {
+			\caption{ Numerical results for quadrilateral element.}
+			\label{Tab:hwgcg l1}
+			\vspace{-5pt}
+			\begin{center}
+				%	\scalebox{0.6}{
+				\begin{tabular}{c|c|c|c|c}
+					\hline
+					\multicolumn{5}{c}{\# CG = 20} \\
+					\hline
+					\#WG & $ E (u_{0}) $ & $ O(u_{0}) $ & $ E(u_{b})  $& $ O(u_{b})  $\\
+					\hline
+					$ 4 $ & $ 8.368e-2 $ & - & $ 9.103e-2 $ & - \\
+					\hline
+					$ 16 $ & $ 1.944e-3 $ & $ 1.9 $& $ 2.058e-3 $ & $ 1.9 $ \\
+					\hline
+					$ 64 $ & $ 5.337e-4 $ & $ 2.0 $ & $ 5.280e-4 $ & $ 2.0 $ \\
+					\hline
+					$ 256 $ & $ 1.086e-4 $ & $ 2.0 $ & $ 1.451e-4 $ & $ 2.0 $\\
+					\hline
+				\end{tabular}
+				%	}
+			\end{center} }
+		\end{table}
+		
+		\vspace{5mm}
+		
+		We tested the WG method for solving elasticity equation. Second order of accuracy is achieved for interior unknown variables $ u_0 $ and boundary unknown variables $ u_b $ in the triangular and quadrilateral elements.
+

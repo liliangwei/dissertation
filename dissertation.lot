@@ -1,24 +1,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Numerical results for triangular element.\relax }}{27}{table.caption.21}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Numerical results for quadrilateral element.\relax }}{28}{table.caption.23}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Error and accuracy of hybrid WG-CG element for linear elasticity.\relax }}{36}{table.caption.25}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Numerical results for triangular element.\relax }}{43}{table.caption.32}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Numerical results for quadrilateral element.\relax }}{43}{table.caption.33}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Error and accuracy of hybrid WG-CG element for linear elasticity.\relax }}{41}{table.caption.30}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k-1}P_{k-1}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements.\relax }}{71}{table.caption.40}
-\contentsline {table}{\numberline {4.2}{\ignorespaces The accuracy and convergence $P_{k}P_{k-1}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{71}{table.caption.41}
-\contentsline {table}{\numberline {4.3}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k}P_{k-1}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements.\relax }}{72}{table.caption.42}
-\contentsline {table}{\numberline {4.4}{\ignorespaces The accuracy and convergence $P_{k}P_{k}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{73}{table.caption.43}
-\contentsline {table}{\numberline {4.5}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k}P_{k}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements. \relax }}{74}{table.caption.44}
-\contentsline {table}{\numberline {4.6}{\ignorespaces The accuracy and convergence $P_{k}P_{k}P_{k}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{74}{table.caption.45}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Case 1: Performance with $P_{1}P_{1} P_{1}^{2}$, $ \lambda = 1, \mu = 0.5 $\relax }}{75}{table.caption.46}
+\contentsline {table}{\numberline {4.1}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k-1}P_{k-1}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements.\relax }}{76}{table.caption.43}
+\contentsline {table}{\numberline {4.2}{\ignorespaces The accuracy and convergence $P_{k}P_{k-1}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{76}{table.caption.44}
+\contentsline {table}{\numberline {4.3}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k}P_{k-1}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements.\relax }}{77}{table.caption.45}
+\contentsline {table}{\numberline {4.4}{\ignorespaces The accuracy and convergence $P_{k}P_{k}P_{k-1}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{78}{table.caption.46}
+\contentsline {table}{\numberline {4.5}{\ignorespaces The accuracy and convergence properties of the $P_{k}P_{k}P_{k}^2$ element on different numbers of subdomains where each subdomain has 128 triangular elements. \relax }}{79}{table.caption.47}
+\contentsline {table}{\numberline {4.6}{\ignorespaces The accuracy and convergence $P_{k}P_{k}P_{k}^2$ scheme on different number of fine element in each subdomain. The entire computational domain is partitioned into 64 non-overlapping subdomains.\relax }}{79}{table.caption.48}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Numerical results and accuracy of triangular elements.\relax }}{80}{table.caption.49}
+\contentsline {table}{\numberline {4.8}{\ignorespaces Numerical results and accuracy of quadrilateral elements.\relax }}{81}{table.caption.51}
+\contentsline {table}{\numberline {4.9}{\ignorespaces The accuracy and convergence properties with $ \lambda = 1, \mu = 0.5 $ on quadrilateral linear elements.\relax }}{81}{table.caption.53}
+\contentsline {table}{\numberline {4.10}{\ignorespaces The accuracy and convergence properties of quadrilateral linear element, $ \lambda = 1, \mu = 0.5 $\relax }}{84}{table.caption.56}
+\contentsline {table}{\numberline {4.11}{\ignorespaces The accuracy and convergence properties of quadrilateral linear element, $ \lambda = 1,000, \mu = 0.5 $\relax }}{84}{table.caption.57}
+\contentsline {table}{\numberline {4.12}{\ignorespaces The accuracy and convergence properties of quadrilateral linear element, $ \lambda = 1,000,000, \mu = 0.5 $\relax }}{84}{table.caption.58}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Simulation condition parameters.\relax }}{84}{table.caption.53}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Straight vessel test results.\relax }}{85}{table.caption.54}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Resolution independence test results.\relax }}{86}{table.caption.56}
-\contentsline {table}{\numberline {A.4}{\ignorespaces Mean pressure drop of single stenosis for different blocking ratio\relax }}{88}{table.caption.59}
-\contentsline {table}{\numberline {A.5}{\ignorespaces Pressure drop among multiple subcritical stenoses\relax }}{94}{table.caption.63}
-\contentsline {table}{\numberline {A.6}{\ignorespaces Pressure drop comparison between original and deformed stenosis.\relax }}{99}{table.caption.70}
-\contentsline {table}{\numberline {A.7}{\ignorespaces Pressure drop of different interval spacing.\relax }}{102}{table.caption.74}
 \contentsfinish 
